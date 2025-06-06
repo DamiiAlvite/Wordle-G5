@@ -39,8 +39,8 @@ export default function Login() {
 
   return (
     <View style={styles.container}>
-      <LoginBackground style={styles.background}/>
-      <Logo style={styles.logo} width={300}/>
+      <LoginBackground style={styles.background} pointerEvents="none"/>
+      <Logo style={styles.logo} width={300}pointerEvents="none"/>
       <Text style={styles.title}>Bienvenido!</Text>
       <Text style={styles.subtitle}>Inicia sesión en tu cuenta</Text>
 
@@ -153,6 +153,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         color: 'black',
         fontSize: 20,
+        zIndex:100,
     },
     forgotPassword: {
         color: 'grey',
