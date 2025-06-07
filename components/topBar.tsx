@@ -1,5 +1,6 @@
 import React from "react";
 import { View, TouchableOpacity, StyleSheet } from "react-native";
+import { router } from "expo-router";
 import { MaterialCommunityIcons, Ionicons, Feather } from "@expo/vector-icons";
 
 export default function TopBar({ logOut }) {
@@ -9,7 +10,7 @@ export default function TopBar({ logOut }) {
       <TouchableOpacity style={styles.iconButton}>
         <MaterialCommunityIcons name="lightbulb-on-outline" size={28} color="#333" />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.iconButton}>
+      <TouchableOpacity onPress={() => router.push("/stats")} style={styles.iconButton}>
         <Ionicons name="stats-chart" size={28} color="#333" />
       </TouchableOpacity>
       <TouchableOpacity onPress={logOut} style={styles.iconButton}>

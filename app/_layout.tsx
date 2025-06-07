@@ -33,6 +33,13 @@ export default function RootLayout() {
           <Stack.Screen name="index" options={{ headerShown: false }} />
           <Stack.Screen name="(auth)/signin/index" options={{ headerShown: false }} />
           <Stack.Screen name="(auth)/signup/index" options={{ headerShown: false }} />
+          <Stack.Screen
+            name="stats"
+            options={{
+              headerShown: true,
+              headerTitle: "",
+            }}
+          />
         </Stack>
         <StatusBar style="auto" />
       </GestureHandlerRootView>
