@@ -12,7 +12,7 @@ const ACCENTED = {
   E: ["É"],
   I: ["Í"],
   O: ["Ó"],
-  U: ["Ú"],
+  U: ["Ú", "Ü"],
 };
 const SCREEN_WIDTH = Dimensions.get("window").width;
 const keyWidth = (SCREEN_WIDTH - 16 * 2 - 10 * 6) / 10;
