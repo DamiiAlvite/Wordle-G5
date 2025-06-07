@@ -7,7 +7,7 @@ export default function TopBar({ logOut }) {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.iconButton}>
+      <TouchableOpacity onPress={() => router.push("/rules")} style={styles.iconButton}>
         <MaterialCommunityIcons name="lightbulb-on-outline" size={28} color="#333" />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => router.push("/stats")} style={styles.iconButton}>
