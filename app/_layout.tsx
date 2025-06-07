@@ -39,6 +39,12 @@ export default function RootLayout() {
               headerShown: true,
               headerTitle: "",
             }}
+          /><Stack.Screen
+            name="rules"
+            options={{
+              headerShown: true,
+              headerTitle: "",
+            }}
           />
         </Stack>
         <StatusBar style="auto" />
