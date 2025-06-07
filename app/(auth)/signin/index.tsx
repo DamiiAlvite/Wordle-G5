@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
         marginTop: 23,
         width: '80%',
         height: 50,
-        borderRadius: 30,
+        borderRadius: 20,
         backgroundColor: '#fff',
         color: 'black',
         fontSize: 20,
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     },
     loginButton: {
         backgroundColor: '#5792EE',
-        borderRadius: 30,
+        borderRadius: 20,
         paddingVertical: 15,
         paddingHorizontal: 40,
         alignItems: 'center',
