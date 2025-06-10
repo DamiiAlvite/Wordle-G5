@@ -11,7 +11,7 @@ const COLORS = {
 const ROWS = 6;
 const COLS = 5;
 
-export default function WordsList({ letters }: { letters: string[][] }) {
+export default function WordsList({ letters, colors }: { letters: string[][], colors: string[][] }) {
   return (
     <View style={styles.grid}>
       {letters.map((row, rowIdx) =>
@@ -20,7 +20,7 @@ export default function WordsList({ letters }: { letters: string[][] }) {
             key={`cell-${rowIdx}-${colIdx}`}
             style={[
               styles.cell,
-              { backgroundColor: COLORS.default },
+              { backgroundColor: COLORS[colors?.[rowIdx]?.[colIdx] || "default"] },
             ]}
             testID={`cell-${rowIdx}-${colIdx}`}
           >
