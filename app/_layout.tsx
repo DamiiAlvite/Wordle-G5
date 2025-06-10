@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import 'react-native-reanimated';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import AuthProvider from '@/providers/authProvider';
+import { WordOfDayProvider } from '@/context/wordOfTheDayProvider';
 
 // Evita que la pantalla inicial se oculte hasta que las fuentes estén cargadas.
 SplashScreen.preventAutoHideAsync();
@@ -29,25 +30,27 @@ export default function RootLayout() {
   return (
     <AuthProvider>
       <GestureHandlerRootView>
-        <Stack>
-          <Stack.Screen name="index" options={{ headerShown: false }} />
-          <Stack.Screen name="(auth)/signin/index" options={{ headerShown: false }} />
-          <Stack.Screen name="(auth)/signup/index" options={{ headerShown: false }} />
-          <Stack.Screen
-            name="stats"
-            options={{
-              headerShown: true,
-              headerTitle: "",
-            }}
-          /><Stack.Screen
-            name="rules"
-            options={{
-              headerShown: true,
-              headerTitle: "",
-            }}
-          />
-        </Stack>
-        <StatusBar style="auto" />
+        <WordOfDayProvider>
+          <Stack>
+            <Stack.Screen name="index" options={{ headerShown: false }} />
+            <Stack.Screen name="(auth)/signin/index" options={{ headerShown: false }} />
+            <Stack.Screen name="(auth)/signup/index" options={{ headerShown: false }} />
+            <Stack.Screen
+              name="stats"
+              options={{
+                headerShown: true,
+                headerTitle: "",
+              }}
+            /><Stack.Screen
+              name="rules"
+              options={{
+                headerShown: true,
+                headerTitle: "",
+              }}
+            />
+          </Stack>
+          <StatusBar style="auto" />
+        </WordOfDayProvider>
       </GestureHandlerRootView>
     </AuthProvider>
   );
