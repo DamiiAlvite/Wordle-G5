@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     },
     logo: {
         position: 'absolute',
-        top: -325,
+        top: -950,
         zIndex: 10,
     },
     title: {
