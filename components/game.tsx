@@ -37,7 +37,7 @@ export default function Game() {
         .select("*")
         .eq("date", today)
         .eq("user_id", (await user).data.user?.id)
-        .single();
+        .maybeSingle();
 
       if (data) {
         setGameOfTheDay(data);
