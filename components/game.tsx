@@ -51,6 +51,27 @@ export default function Game() {
       }
     }
 
+    const saveGame = async (guess:string, target:string) => {
+      const today = new Date().toISOString().split("T")[0];
+      const user = supabase.auth.getUser();
+      const attemp = currentRow + 1;
+      const win = guess === target;
+      const { error } = await supabase
+        .from("game")
+        .insert({
+          date: today,
+          user_id: (await user).data.user?.id,
+          win_attemp: attemp,
+          win: win,
+        });
+
+      if (error) {
+        console.error("Error al guardar el juego:", error.message);
+      } else {
+        console.log("Juego guardado exitosamente");
+      }
+    }
+
     const handleKeyPress = (key: string) => {  
       if (gameOver) return;
         if (currentCol < COLS && currentRow < ROWS) {
@@ -77,6 +98,8 @@ export default function Game() {
   };
 
 const handleEnter = () => {
+  
+  console.log(`${currentRow + 1} intentos`);
   if (gameOver) return;
   if (currentCol === COLS) {
       const guess = letters[currentRow].join("").toLowerCase();
@@ -116,6 +139,7 @@ const handleEnter = () => {
       if (guess === target || currentRow === ROWS - 1) {
         setGameOver(true);
         setShowEndModal(true);
+        saveGame(guess, target);
       } else {
         setCurrentRow((row) => (row < ROWS - 1 ? row + 1 : row));
         setCurrentCol(0);

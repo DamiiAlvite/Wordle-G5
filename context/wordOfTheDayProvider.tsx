@@ -4,16 +4,19 @@ import wordsData from "@/utils/5letters.json";
 
 type WordOfDayContextType = {
   word: string | null;
+  wordId: number | null;
   loading: boolean;
 };
 
 const WordOfDayContext = createContext<WordOfDayContextType>({
   word: null,
+  wordId: null,
   loading: true,
 });
 
 export const WordOfDayProvider = ({ children }: { children: React.ReactNode }) => {
   const [word, setWord] = useState<string | null>(null);
+  const [wordId, setWordId] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
 
   const getTodayDate = () => new Date().toISOString().split("T")[0];
@@ -24,25 +27,29 @@ export const WordOfDayProvider = ({ children }: { children: React.ReactNode }) =
     // Verificar si ya existe
     const { data, error } = await supabase
       .from("word")
-      .select("description")
+      .select("id, description")
       .eq("date", today)
       .single();
 
     if (data) {
       setWord(data.description);
+      setWordId(data.id);
     } else {
       const words = wordsData;
       const randomWord = words[Math.floor(Math.random() * words.length)];
 
-      const { error: insertError } = await supabase
+      const { data: insertData, error: insertError } = await supabase
         .from("word")
-        .insert([{ description: randomWord, date: today }]);
-        console.log("Inserted word:", randomWord);
+        .insert([{ description: randomWord, date: today }])
+        .select("id")
+        .single();
 
-      if (!insertError) {
+      if (!insertError && insertData) {
         setWord(randomWord);
+        setWordId(insertData.id);
+        console.log("Inserted word:", randomWord);
       } else {
-        console.error("Error inserting word:", insertError.message);
+        console.error("Error inserting word:", insertError?.message);
       }
     }
 
@@ -54,7 +61,7 @@ export const WordOfDayProvider = ({ children }: { children: React.ReactNode }) =
   }, []);
 
   return (
-    <WordOfDayContext.Provider value={{ word, loading }}>
+    <WordOfDayContext.Provider value={{ word, wordId, loading }}>
       {children}
     </WordOfDayContext.Provider>
   );
