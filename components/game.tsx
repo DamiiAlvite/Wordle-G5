@@ -1,9 +1,10 @@
-import { set } from "react-hook-form";
+import React, { useState, useEffect } from "react";
+import { View, Text, StyleSheet, TouchableOpacity, Modal } from "react-native";
+import { supabase } from "@/lib/supabase";
+import { useWordOfDay } from "@/context/wordOfTheDayProvider";
 import Keyboard from "./keyboard";
 import WordsList from "./wordsList";
-import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { useWordOfDay } from "@/context/wordOfTheDayProvider";
+import EndGame from "./endGame";
 
 const ROWS = 6;
 const COLS = 5;
@@ -25,6 +26,30 @@ export default function Game() {
     const [currentRow, setCurrentRow] = useState(0);
     const [currentCol, setCurrentCol] = useState(0);
     const [gameOver, setGameOver] = useState(false);
+    const [gameOfTheDay, setGameOfTheDay] = useState(null);
+    const [showEndModal, setShowEndModal] = useState(false);
+
+    const getGameOfTheDay = async () => {
+      const today = new Date().toISOString().split("T")[0];
+      const user = supabase.auth.getUser();
+      const { data, error } = await supabase
+        .from("game")
+        .select("*")
+        .eq("date", today)
+        .eq("user_id", (await user).data.user?.id)
+        .single();
+
+      if (data) {
+        setGameOfTheDay(data);
+        setGameOver(true);
+        setShowEndModal(true);
+        console.log("Juego del día:", data);
+        return data;
+      }
+      if (error) {
+        console.error("Error al obtener el juego del día:", error.message);
+      }
+    }
 
     const handleKeyPress = (key: string) => {  
       if (gameOver) return;
@@ -90,6 +115,7 @@ const handleEnter = () => {
 
       if (guess === target || currentRow === ROWS - 1) {
         setGameOver(true);
+        setShowEndModal(true);
       } else {
         setCurrentRow((row) => (row < ROWS - 1 ? row + 1 : row));
         setCurrentCol(0);
@@ -97,17 +123,31 @@ const handleEnter = () => {
     }
   };
 
+  useEffect(() => {
+      getGameOfTheDay();
+    }, [word]);
+
     return (
-        <View>
-            <WordsList letters={letters} colors={colors} />
-            <View style={styles.keyboard}>
-               <Keyboard
-                    onKeyPress={handleKeyPress}
-                    onBackspace={handleBackspace}
-                    onEnter={handleEnter}
-                />
-            </View>
-        </View>
+      <>
+          <View>
+              <WordsList letters={letters} colors={colors} />
+              <View style={styles.keyboard}>
+                <Keyboard
+                      onKeyPress={handleKeyPress}
+                      onBackspace={handleBackspace}
+                      onEnter={handleEnter}
+                  />
+              </View>
+          </View>
+          <Modal
+          visible={showEndModal}
+          transparent
+          animationType="slide"
+          onRequestClose={() => setShowEndModal(false)}
+        >
+          <EndGame game={gameOfTheDay}/>
+        </Modal>
+      </>
     );
 }
 
