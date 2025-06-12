@@ -11,10 +11,7 @@ const COLS = 5;
 
 export default function Game() {
     const {word, loading} = useWordOfDay();
-    if (loading) {
-        return <Text>Cargando...</Text>;
-    }
-
+    
     const [letters, setLetters] = useState(
         Array.from({ length: ROWS }, () => Array(COLS).fill(""))
     );
@@ -151,6 +148,10 @@ const handleEnter = () => {
       getGameOfTheDay();
     }, [word]);
 
+  if (loading) {
+    return <Text>Cargando...</Text>;
+  }
+  
     return (
       <View style={styles.container}>
           <Text style={styles.day} >
