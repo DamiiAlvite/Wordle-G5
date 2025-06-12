@@ -10,7 +10,7 @@ const ROWS = 6;
 const COLS = 5;
 
 export default function Game() {
-    const {word, loading} = useWordOfDay();
+    const {word, wordId, loading} = useWordOfDay();
     
     const [letters, setLetters] = useState(
         Array.from({ length: ROWS }, () => Array(COLS).fill(""))
@@ -60,6 +60,7 @@ export default function Game() {
           user_id: (await user).data.user?.id,
           win_attemp: attemp,
           win: win,
+          word_id: wordId,
         });
 
       if (error) {
@@ -94,7 +95,7 @@ export default function Game() {
     }
   };
 
-const handleEnter = () => {
+const handleEnter = async () => {
   
   console.log(`${currentRow + 1} intentos`);
   if (gameOver) return;
@@ -135,8 +136,9 @@ const handleEnter = () => {
 
       if (guess === target || currentRow === ROWS - 1) {
         setGameOver(true);
+        await saveGame(guess, target);
+        await getGameOfTheDay();
         setShowEndModal(true);
-        saveGame(guess, target);
       } else {
         setCurrentRow((row) => (row < ROWS - 1 ? row + 1 : row));
         setCurrentCol(0);
