@@ -5,6 +5,7 @@ import { useWordOfDay } from "@/context/wordOfTheDayProvider";
 import Keyboard from "./keyboard";
 import WordsList from "./wordsList";
 import EndGame from "./gameOver";
+import { useAuth } from "@/providers/authProvider";
 
 const ROWS = 6;
 const COLS = 5;
@@ -25,15 +26,15 @@ export default function Game() {
     const [gameOver, setGameOver] = useState(false);
     const [gameOfTheDay, setGameOfTheDay] = useState(null);
     const [showEndModal, setShowEndModal] = useState(false);
+    const { userId } = useAuth();
 
     const getGameOfTheDay = async () => {
       const today = new Date().toISOString().split("T")[0];
-      const user = supabase.auth.getUser();
       const { data, error } = await supabase
         .from("game")
         .select("*")
         .eq("date", today)
-        .eq("user_id", (await user).data.user?.id)
+        .eq("user_id", userId)
         .maybeSingle();
 
       if (data) {
@@ -50,14 +51,13 @@ export default function Game() {
 
     const saveGame = async (guess:string, target:string) => {
       const today = new Date().toISOString().split("T")[0];
-      const user = supabase.auth.getUser();
       const attemp = currentRow + 1;
       const win = guess === target;
       const { error } = await supabase
         .from("game")
         .insert({
           date: today,
-          user_id: (await user).data.user?.id,
+          user_id: userId,
           win_attemp: attemp,
           win: win,
           word_id: wordId,

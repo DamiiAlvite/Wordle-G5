@@ -1,6 +1,7 @@
 import { View, Text, ScrollView } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import { StyleSheet } from 'react-native';
+import { useAuth } from '@/providers/authProvider';
 
 export default function StatsScreen() {
 
@@ -13,6 +14,7 @@ export default function StatsScreen() {
     maxStreak: 5,
     guessDistribution: [0, 1, 2, 3, 1, 1], // victorias en el intento 1 a 6
   };
+  const { userId } = useAuth();
 
   return (
     <ScrollView contentContainerStyle={{ padding: 20 }}>

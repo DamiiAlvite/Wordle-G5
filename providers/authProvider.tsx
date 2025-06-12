@@ -6,11 +6,13 @@ import { supabase } from "../lib/supabase";
 type AuthData = {
     loading: boolean;
     session: Session | null;
+    userId: string | null;
 };
 
 const AuthContext = createContext<AuthData>({
     loading: true,
     session: null,
+    userId: null,
 });
 
 interface Props {
@@ -20,6 +22,7 @@ interface Props {
 export default function AuthProvider( props: Props) {
     const [loading, setLoading] = useState(true);
     const [session, setSession] = useState<Session | null>(null);
+    const userId = session?.user?.id ?? null;
 
     useEffect(() => {
         async function fetchSession() {
@@ -52,7 +55,7 @@ export default function AuthProvider( props: Props) {
         }
     }, [])
     return (
-        <AuthContext.Provider value={{ loading, session }}>
+        <AuthContext.Provider value={{ loading, session, userId }}>
             {props.children}
         </AuthContext.Provider>
     );
