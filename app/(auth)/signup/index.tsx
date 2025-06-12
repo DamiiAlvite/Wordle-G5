@@ -30,15 +30,21 @@ export default function Register() {
       const { error } = await supabase.auth.signUp({
         email: data.email,
         password: data.password,
-        options: {
-          data: {
-            username: data.username,
-          },
-        },
       });
-
       if (error) {
         throw error;
+      }else {
+        const user = await supabase.auth.getUser();
+        const userId = user.data.user?.id;
+        if (userId) {
+          const { error: userInsertError } = await supabase
+            .from("user")
+            .insert([{ user_id: userId, name: data.username }]);
+          if (userInsertError) {
+            setError("Error al guardar el nombre de usuario");
+            return;
+          }
+        }
       }
       const { error: loginError } = await supabase.auth.signInWithPassword({
         email: data.email,
