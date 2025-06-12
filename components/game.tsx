@@ -4,7 +4,7 @@ import { supabase } from "@/lib/supabase";
 import { useWordOfDay } from "@/context/wordOfTheDayProvider";
 import Keyboard from "./keyboard";
 import WordsList from "./wordsList";
-import EndGame from "./endGame";
+import EndGame from "./gameOver";
 
 const ROWS = 6;
 const COLS = 5;
@@ -152,33 +152,51 @@ const handleEnter = () => {
     }, [word]);
 
     return (
-      <>
-          <View>
-              <WordsList letters={letters} colors={colors} />
-              <View style={styles.keyboard}>
-                <Keyboard
-                      onKeyPress={handleKeyPress}
-                      onBackspace={handleBackspace}
-                      onEnter={handleEnter}
-                  />
-              </View>
+      <View style={styles.container}>
+          <Text style={styles.day} >
+            {new Date().toLocaleDateString("es-ES", { weekday: "long" }).toUpperCase()}
+          </Text>
+          <WordsList letters={letters} colors={colors} />
+          <View style={styles.keyboard}>
+            <Keyboard
+                  onKeyPress={handleKeyPress}
+                  onBackspace={handleBackspace}
+                  onEnter={handleEnter}
+              />
           </View>
-          <Modal
-          visible={showEndModal}
-          transparent
-          animationType="slide"
-          onRequestClose={() => setShowEndModal(false)}
-        >
-          <EndGame game={gameOfTheDay}/>
-        </Modal>
-      </>
+          {showEndModal && (
+        <View style={styles.overlay}>
+          <EndGame game={gameOfTheDay} />
+        </View>
+      )}
+      </View>
     );
 }
 
 const styles = StyleSheet.create({
-    keyboard:{
-        marginTop: 60,
-        alignItems: "center",
-        justifyContent: "flex-end",
-    },
+  container: {
+    flex: 1,
+    position: "relative",
+    alignItems: "center",
+  },
+  day: {
+    marginTop: 20,
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#333",
+  },
+    keyboard: {
+    marginTop: 60,
+    alignItems: "center",
+    justifyContent: "flex-end",
+  },
+  overlay: {
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+    backgroundColor: "rgba(0,0,0,0.4)",
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 10,
+  },
 });

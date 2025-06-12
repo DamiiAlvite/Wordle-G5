@@ -13,12 +13,7 @@ export default function Home() {
   return (
       <View style={styles.container}>
           <TopBar logOut={logOut} />
-          <Text style={styles.day} >
-            {new Date().toLocaleDateString("es-ES", { weekday: "long" }).toUpperCase()}
-          </Text>
-          <View>
-        <Game/>
-          </View>
+          <Game />
       </View>
   );
 }
