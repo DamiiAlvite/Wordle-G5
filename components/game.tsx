@@ -6,6 +6,7 @@ import Keyboard from "./keyboard";
 import WordsList from "./wordsList";
 import EndGame from "./gameOver";
 import { useAuth } from "@/providers/authProvider";
+import wordsData from "@/utils/5letters.json";
 
 const ROWS = 6;
 const COLS = 5;
@@ -101,6 +102,10 @@ const handleEnter = async () => {
   console.log(`${currentRow + 1} intentos`);
   if (gameOver) return;
   if (currentCol === COLS) {
+    if (!wordsData.includes(guess)) {
+      alert("La palabra no está en el diccionario.");
+      return;
+    }
     setFlipRow(currentRow);
     setTimeout(() => setFlipRow(null), 700);
     const guess = letters[currentRow].join("").toLowerCase();
