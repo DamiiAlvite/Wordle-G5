@@ -12,6 +12,7 @@ const COLS = 5;
 
 export default function Game() {
     const {word, wordId, loading} = useWordOfDay();
+    const [flipRow, setFlipRow] = useState<number | null>(null);
     
     const [letters, setLetters] = useState(
         Array.from({ length: ROWS }, () => Array(COLS).fill(""))
@@ -100,51 +101,53 @@ const handleEnter = async () => {
   console.log(`${currentRow + 1} intentos`);
   if (gameOver) return;
   if (currentCol === COLS) {
-      const guess = letters[currentRow].join("").toLowerCase();
-      const target = word?.toLowerCase() || "";
-      const newColors = Array(COLS).fill("absent");
+    setFlipRow(currentRow);
+    setTimeout(() => setFlipRow(null), 700);
+    const guess = letters[currentRow].join("").toLowerCase();
+    const target = word?.toLowerCase() || "";
+    const newColors = Array(COLS).fill("absent");
 
-      // Manejar letras repetidas
-      const targetLetters = target.split("");
-      const guessLetters = guess.split("");
-      const used = Array(COLS).fill(false);
+    // Manejar letras repetidas
+    const targetLetters = target.split("");
+    const guessLetters = guess.split("");
+    const used = Array(COLS).fill(false);
 
-      // Correctas
-      for (let i = 0; i < COLS; i++) {
-          if (guessLetters[i] === targetLetters[i]) {
-              newColors[i] = "correct";
-              used[i] = true;
-              targetLetters[i] = null as any; // Marca como usada
-          }
-      }
-      // Presentes
-      for (let i = 0; i < COLS; i++) {
-          if (newColors[i] !== "correct" && guessLetters[i]) {
-              const idx = targetLetters.indexOf(guessLetters[i]);
-              if (idx !== -1 && !used[idx]) {
-                  newColors[i] = "present";
-                  targetLetters[idx] = null as any; // Marca como usada
-              }
-          }
-      }
-
-      setColors((prev) => {
-          const updated = prev.map((row) => [...row]);
-          updated[currentRow] = newColors;
-          return updated;
-      });
-
-      if (guess === target || currentRow === ROWS - 1) {
-        setGameOver(true);
-        await saveGame(guess, target);
-        await getGameOfTheDay();
-        setShowEndModal(true);
-      } else {
-        setCurrentRow((row) => (row < ROWS - 1 ? row + 1 : row));
-        setCurrentCol(0);
-      }
+    // Correctas
+    for (let i = 0; i < COLS; i++) {
+        if (guessLetters[i] === targetLetters[i]) {
+            newColors[i] = "correct";
+            used[i] = true;
+            targetLetters[i] = null as any; // Marca como usada
+        }
     }
-  };
+    // Presentes
+    for (let i = 0; i < COLS; i++) {
+        if (newColors[i] !== "correct" && guessLetters[i]) {
+            const idx = targetLetters.indexOf(guessLetters[i]);
+            if (idx !== -1 && !used[idx]) {
+                newColors[i] = "present";
+                targetLetters[idx] = null as any; // Marca como usada
+            }
+        }
+    }
+
+    setColors((prev) => {
+        const updated = prev.map((row) => [...row]);
+        updated[currentRow] = newColors;
+        return updated;
+    });
+
+    if (guess === target || currentRow === ROWS - 1) {
+      setGameOver(true);
+      await saveGame(guess, target);
+      await getGameOfTheDay();
+      setShowEndModal(true);
+    } else {
+      setCurrentRow((row) => (row < ROWS - 1 ? row + 1 : row));
+      setCurrentCol(0);
+    }
+  }
+};
 
   useEffect(() => {
       getGameOfTheDay();
@@ -159,7 +162,7 @@ const handleEnter = async () => {
           <Text style={styles.day} >
             {new Date().toLocaleDateString("es-ES", { weekday: "long" }).toUpperCase()}
           </Text>
-          <WordsList letters={letters} colors={colors} />
+          <WordsList letters={letters} colors={colors} flipRow={flipRow} />
           <View style={styles.keyboard}>
             <Keyboard
                   onKeyPress={handleKeyPress}
