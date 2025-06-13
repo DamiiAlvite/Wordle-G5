@@ -12,76 +12,75 @@ const ROWS = 6;
 const COLS = 5;
 
 export default function Game() {
-    const {word, wordId, loading} = useWordOfDay();
-    const [flipRow, setFlipRow] = useState<number | null>(null);
-    
-    const [letters, setLetters] = useState(
-        Array.from({ length: ROWS }, () => Array(COLS).fill(""))
-    );
 
-    const [colors, setColors] = useState(
-        Array.from({ length: ROWS }, () => Array(COLS).fill("default"))
-    );
+  const { userId } = useAuth();
+  const { word, wordId, loading } = useWordOfDay();
+  const [currentRow, setCurrentRow] = useState(0);
+  const [currentCol, setCurrentCol] = useState(0);
+  const [letters, setLetters] = useState(
+    Array.from({ length: ROWS }, () => Array(COLS).fill(""))
+  );
+  const [colors, setColors] = useState(
+    Array.from({ length: ROWS }, () => Array(COLS).fill("default"))
+  );
+  const [flipRow, setFlipRow] = useState<number | null>(null);
+  const [errorRow, setErrorRow] = useState<number | null>(null);
+  const [gameOfTheDay, setGameOfTheDay] = useState(null);
+  const [gameOver, setGameOver] = useState(false);
+  const [showEndModal, setShowEndModal] = useState(false);
 
-    const [currentRow, setCurrentRow] = useState(0);
-    const [currentCol, setCurrentCol] = useState(0);
-    const [gameOver, setGameOver] = useState(false);
-    const [gameOfTheDay, setGameOfTheDay] = useState(null);
-    const [showEndModal, setShowEndModal] = useState(false);
-    const { userId } = useAuth();
+  const getGameOfTheDay = async () => {
+    const today = new Date().toISOString().split("T")[0];
+    const { data, error } = await supabase
+      .from("game")
+      .select("*")
+      .eq("date", today)
+      .eq("user_id", userId)
+      .maybeSingle();
 
-    const getGameOfTheDay = async () => {
-      const today = new Date().toISOString().split("T")[0];
-      const { data, error } = await supabase
-        .from("game")
-        .select("*")
-        .eq("date", today)
-        .eq("user_id", userId)
-        .maybeSingle();
-
-      if (data) {
-        setGameOfTheDay(data);
-        setGameOver(true);
-        setShowEndModal(true);
-        console.log("Juego del día:", data);
-        return data;
-      }
-      if (error) {
-        console.error("Error al obtener el juego del día:", error.message);
-      }
+    if (data) {
+      setGameOfTheDay(data);
+      setGameOver(true);
+      setShowEndModal(true);
+      console.log("Juego del día:", data);
+      return data;
     }
-
-    const saveGame = async (guess:string, target:string) => {
-      const today = new Date().toISOString().split("T")[0];
-      const attemp = currentRow + 1;
-      const win = guess === target;
-      const { error } = await supabase
-        .from("game")
-        .insert({
-          date: today,
-          user_id: userId,
-          win_attemp: attemp,
-          win: win,
-          word_id: wordId,
-        });
-
-      if (error) {
-        console.error("Error al guardar el juego:", error.message);
-      } else {
-        console.log("Juego guardado exitosamente");
-      }
+    if (error) {
+      console.error("Error al obtener el juego del día:", error.message);
     }
+  }
 
-    const handleKeyPress = (key: string) => {  
-      if (gameOver) return;
-        if (currentCol < COLS && currentRow < ROWS) {
-            setLetters((prev) => {
-                const update = prev.map((row) => [...row]);
-                update[currentRow][currentCol] = key;
-                return update;
-        });
-        setCurrentCol((col) => col + 1);
-        console.log(`${letters[currentRow]}`);
+  const saveGame = async (guess: string, target: string) => {
+    const today = new Date().toISOString().split("T")[0];
+    const attemp = currentRow + 1;
+    const win = guess === target;
+    const { error } = await supabase
+      .from("game")
+      .insert({
+        date: today,
+        user_id: userId,
+        win_attemp: attemp,
+        win: win,
+        word_id: wordId,
+      });
+
+    if (error) {
+      console.error("Error al guardar el juego:", error.message);
+    } else {
+      console.log("Juego guardado exitosamente");
+    }
+  }
+
+  const handleKeyPress = (key: string) => {
+    if (gameOver) return;
+    if (currentCol < COLS && currentRow < ROWS) {
+      setLetters((prev) => {
+        const update = prev.map((row) => [...row]);
+        update[currentRow][currentCol] = key;
+        return update;
+      });
+      setCurrentCol((col) => col + 1);
+      console.log(`${letters[currentRow]}`);
     }
   };
 
@@ -97,91 +96,102 @@ export default function Game() {
     }
   };
 
-const handleEnter = async () => {
-  
-  console.log(`${currentRow + 1} intentos`);
-  if (gameOver) return;
-  if (currentCol === COLS) {
-    if (!wordsData.includes(guess)) {
-      alert("La palabra no está en el diccionario.");
+  const handleEnter = async () => {
+    console.log(`${currentRow + 1} intentos`);
+    if (gameOver) return;
+    if (currentCol === COLS) {
+      const guess = letters[currentRow].join("").toLowerCase();
+      if (!wordsData.includes(guess)) {
+      setErrorRow(currentRow);
+      setFlipRow(currentRow);
+      setTimeout(() => {
+        setErrorRow(null);
+        setFlipRow(null);
+        setLetters((prev) => {
+          const updated = prev.map((row, idx) =>
+            idx === currentRow ? Array(COLS).fill("") : row
+          );
+          return updated;
+        });
+        setCurrentCol(0);
+      }, 1000);
       return;
     }
-    setFlipRow(currentRow);
-    setTimeout(() => setFlipRow(null), 700);
-    const guess = letters[currentRow].join("").toLowerCase();
-    const target = word?.toLowerCase() || "";
-    const newColors = Array(COLS).fill("absent");
+      setFlipRow(currentRow);
+      setTimeout(() => setFlipRow(null), 700);
+      const target = word?.toLowerCase() || "";
+      const newColors = Array(COLS).fill("absent");
 
-    // Manejar letras repetidas
-    const targetLetters = target.split("");
-    const guessLetters = guess.split("");
-    const used = Array(COLS).fill(false);
+      // Manejar letras repetidas
+      const targetLetters = target.split("");
+      const guessLetters = guess.split("");
+      const used = Array(COLS).fill(false);
 
-    // Correctas
-    for (let i = 0; i < COLS; i++) {
+      // Correctas
+      for (let i = 0; i < COLS; i++) {
         if (guessLetters[i] === targetLetters[i]) {
-            newColors[i] = "correct";
-            used[i] = true;
-            targetLetters[i] = null as any; // Marca como usada
+          newColors[i] = "correct";
+          used[i] = true;
+          targetLetters[i] = null as any; // Marca como usada
         }
-    }
-    // Presentes
-    for (let i = 0; i < COLS; i++) {
+      }
+      // Presentes
+      for (let i = 0; i < COLS; i++) {
         if (newColors[i] !== "correct" && guessLetters[i]) {
-            const idx = targetLetters.indexOf(guessLetters[i]);
-            if (idx !== -1 && !used[idx]) {
-                newColors[i] = "present";
-                targetLetters[idx] = null as any; // Marca como usada
-            }
+          const idx = targetLetters.indexOf(guessLetters[i]);
+          if (idx !== -1 && !used[idx]) {
+            newColors[i] = "present";
+            targetLetters[idx] = null as any; // Marca como usada
+          }
         }
-    }
+      }
 
-    setColors((prev) => {
+      setColors((prev) => {
         const updated = prev.map((row) => [...row]);
         updated[currentRow] = newColors;
         return updated;
-    });
+      });
 
-    if (guess === target || currentRow === ROWS - 1) {
-      setGameOver(true);
-      await saveGame(guess, target);
-      await getGameOfTheDay();
-      setShowEndModal(true);
-    } else {
-      setCurrentRow((row) => (row < ROWS - 1 ? row + 1 : row));
-      setCurrentCol(0);
+      if (guess === target || currentRow === ROWS - 1) {
+        setGameOver(true);
+        await saveGame(guess, target);
+        await getGameOfTheDay();
+        setShowEndModal(true);
+      } else {
+        setCurrentRow((row) => (row < ROWS - 1 ? row + 1 : row));
+        setCurrentCol(0);
+      }
     }
-  }
-};
+  };
 
   useEffect(() => {
-      getGameOfTheDay();
-    }, [word]);
+    getGameOfTheDay();
+  }, [word]);
 
   if (loading) {
     return <Text>Cargando...</Text>;
   }
-  
-    return (
-      <View style={styles.container}>
-          <Text style={styles.day} >
-            {new Date().toLocaleDateString("es-ES", { weekday: "long" }).toUpperCase()}
-          </Text>
-          <WordsList letters={letters} colors={colors} flipRow={flipRow} />
-          <View style={styles.keyboard}>
-            <Keyboard
-                  onKeyPress={handleKeyPress}
-                  onBackspace={handleBackspace}
-                  onEnter={handleEnter}
-              />
-          </View>
-          {showEndModal && (
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.day} >
+        {new Date().toLocaleDateString("es-ES", { weekday: "long" }).toUpperCase()}
+      </Text>
+      <WordsList letters={letters} colors={colors} flipRow={flipRow} errorRow={errorRow} />
+      <View style={styles.keyboard}>
+        <Keyboard
+          onKeyPress={handleKeyPress}
+          onBackspace={handleBackspace}
+          onEnter={handleEnter}
+        />
+      </View>
+      {showEndModal && (
         <View style={styles.overlay}>
           <EndGame game={gameOfTheDay} />
         </View>
       )}
-      </View>
-    );
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -196,7 +206,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#333",
   },
-    keyboard: {
+  keyboard: {
     marginTop: 60,
     alignItems: "center",
     justifyContent: "flex-end",

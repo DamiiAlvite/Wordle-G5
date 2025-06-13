@@ -6,11 +6,14 @@ const COLORS = {
   present: "#ffd54f",
   absent: "#787c7e",
   correct: "#6aaa64",
+  error: "#ff4d4f",
 };
 
-export default function AnimatedCell({ letter, color, flipTrigger }) {
+export default function AnimatedCell({ letter, color, flipTrigger, shakeTrigger }) {
   const animatedValue = useRef(new Animated.Value(0)).current;
+  const shakeValue = useRef(new Animated.Value(0)).current;
 
+  // Flip animation
   useEffect(() => {
     if (flipTrigger) {
       Animated.timing(animatedValue, {
@@ -18,28 +21,41 @@ export default function AnimatedCell({ letter, color, flipTrigger }) {
         duration: 600,
         useNativeDriver: true,
       }).start();
-    } 
+    }
   }, [flipTrigger]);
+
+  // Shake animation
+  useEffect(() => {
+    if (shakeTrigger) {
+      Animated.sequence([
+        Animated.timing(shakeValue, { toValue: 8, duration: 40, useNativeDriver: true }),
+        Animated.timing(shakeValue, { toValue: -8, duration: 40, useNativeDriver: true }),
+        Animated.timing(shakeValue, { toValue: 6, duration: 40, useNativeDriver: true }),
+        Animated.timing(shakeValue, { toValue: -6, duration: 40, useNativeDriver: true }),
+        Animated.timing(shakeValue, { toValue: 3, duration: 40, useNativeDriver: true }),
+        Animated.timing(shakeValue, { toValue: -3, duration: 40, useNativeDriver: true }),
+        Animated.timing(shakeValue, { toValue: 0, duration: 40, useNativeDriver: true }),
+      ]).start();
+    }
+  }, [shakeTrigger]);
 
   const rotateY = animatedValue.interpolate({
     inputRange: [0, 1],
     outputRange: ["0deg", "180deg"],
   });
 
-  // Para ocultar el frente cuando gira más de 90 grados
   const frontOpacity = animatedValue.interpolate({
     inputRange: [0, 0.5, 1],
     outputRange: [1, 0, 0],
   });
 
-  // Para mostrar el dorso después de 90 grados
   const backOpacity = animatedValue.interpolate({
     inputRange: [0, 0.5, 1],
     outputRange: [0, 0, 1],
   });
 
   return (
-    <View style={styles.cell}>
+    <Animated.View style={[styles.cell, { transform: [{ translateX: shakeValue }] }]}>
       {/* Frente */}
       <Animated.View
         style={[
@@ -62,16 +78,20 @@ export default function AnimatedCell({ letter, color, flipTrigger }) {
           {
             backgroundColor: COLORS[color] || COLORS.default,
             opacity: backOpacity,
-            transform: [{ rotateY: animatedValue.interpolate({
-              inputRange: [0, 1],
-              outputRange: ["180deg", "360deg"],
-            }) }],
+            transform: [
+              {
+                rotateY: animatedValue.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: ["180deg", "360deg"],
+                }),
+              },
+            ],
           },
         ]}
       >
         <Text style={styles.letter}>{letter}</Text>
       </Animated.View>
-    </View>
+    </Animated.View>
   );
 }
 
@@ -87,7 +107,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "transparent",
-    perspective: 1000, // importante para el efecto 3D
+    transform:[{perspective: 1000}],
   },
   inner: {
     alignItems: "center",

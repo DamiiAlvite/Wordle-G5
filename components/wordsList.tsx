@@ -5,7 +5,7 @@ import AnimatedCell from "./animatedCell";
 const ROWS = 6;
 const COLS = 5;
 
-export default function WordsList({ letters, colors, flipRow }) {
+export default function WordsList({ letters, colors, flipRow, errorRow }) {
   return (
     <View style={styles.grid}>
       {letters.map((row, rowIdx) =>
@@ -13,8 +13,9 @@ export default function WordsList({ letters, colors, flipRow }) {
           <AnimatedCell
             key={`cell-${rowIdx}-${colIdx}`}
             letter={letter}
-            color={colors?.[rowIdx]?.[colIdx] || "default"}
+            color={errorRow === rowIdx ? "error" : colors?.[rowIdx]?.[colIdx] || "default"}
             flipTrigger={flipRow === rowIdx}
+            shakeTrigger={errorRow === rowIdx}
           />
         ))
       )}
