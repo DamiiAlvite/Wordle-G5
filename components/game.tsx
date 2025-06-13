@@ -74,13 +74,15 @@ export default function Game() {
   const handleKeyPress = (key: string) => {
     if (gameOver) return;
     if (currentCol < COLS && currentRow < ROWS) {
-      setLetters((prev) => {
-        const update = prev.map((row) => [...row]);
-        update[currentRow][currentCol] = key;
-        return update;
-      });
-      setCurrentCol((col) => col + 1);
-      console.log(`${letters[currentRow]}`);
+      if (currentCol === 0 || letters[currentRow][currentCol - 1] !== "") {
+        setLetters((prev) => {
+          const update = prev.map((row) => [...row]);
+          update[currentRow][currentCol] = key;
+          return update;
+        });
+        setCurrentCol((col) => col + 1);
+        console.log(`${letters[currentRow]}`);
+      }
     }
   };
 
@@ -102,21 +104,21 @@ export default function Game() {
     if (currentCol === COLS) {
       const guess = letters[currentRow].join("").toLowerCase();
       if (!wordsData.includes(guess)) {
-      setErrorRow(currentRow);
-      setFlipRow(currentRow);
-      setTimeout(() => {
-        setErrorRow(null);
-        setFlipRow(null);
-        setLetters((prev) => {
-          const updated = prev.map((row, idx) =>
-            idx === currentRow ? Array(COLS).fill("") : row
-          );
-          return updated;
-        });
-        setCurrentCol(0);
-      }, 1000);
-      return;
-    }
+        setErrorRow(currentRow);
+        setFlipRow(currentRow);
+        setTimeout(() => {
+          setErrorRow(null);
+          setFlipRow(null);
+          setLetters((prev) => {
+            const updated = prev.map((row, idx) =>
+              idx === currentRow ? Array(COLS).fill("") : row
+            );
+            return updated;
+          });
+          setCurrentCol(0);
+        }, 1000);
+        return;
+      }
       setFlipRow(currentRow);
       setTimeout(() => setFlipRow(null), 700);
       const target = word?.toLowerCase() || "";
