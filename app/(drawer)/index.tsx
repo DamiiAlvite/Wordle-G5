@@ -6,13 +6,10 @@ import TopBar from "@/components/topBar";
 import { supabase } from "@/lib/supabase";
 
 export default function Home() {
-  const logOut = () => {
-    supabase.auth.signOut()
-  }
 
   return (
       <View style={styles.container}>
-          <TopBar logOut={logOut} />
+          <TopBar/>
           <Game />
       </View>
   );

@@ -52,3 +52,4 @@ Join our community of developers creating universal apps.
 MEQaGErY1y2xAWUK
 npm install @supabase/supabase-js
 npm install react-hook-form
+npx expo install @react-navigation/drawer react-native-gesture-handler react-native-reanimated

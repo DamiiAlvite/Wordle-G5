@@ -32,22 +32,9 @@ export default function RootLayout() {
       <GestureHandlerRootView>
         <WordOfDayProvider>
           <Stack>
-            <Stack.Screen name="index" options={{ headerShown: false }} />
             <Stack.Screen name="(auth)/signin/index" options={{ headerShown: false }} />
             <Stack.Screen name="(auth)/signup/index" options={{ headerShown: false }} />
-            <Stack.Screen
-              name="stats"
-              options={{
-                headerShown: true,
-                headerTitle: "",
-              }}
-            /><Stack.Screen
-              name="rules"
-              options={{
-                headerShown: true,
-                headerTitle: "",
-              }}
-            />
+            <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
           </Stack>
           <StatusBar style="auto" />
         </WordOfDayProvider>

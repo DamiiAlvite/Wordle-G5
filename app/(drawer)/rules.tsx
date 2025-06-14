@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
+import TopBar from "@/components/topBar";
 
 const rules = [
   "Tienes 6 intentos para adivinar la palabra secreta.",
@@ -14,36 +15,35 @@ const rules = [
 
 export default function RulesPage() {
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <View style={styles.subcontainer}>
-        <Text style={styles.title}>Reglas de Wordle</Text>
-        <View style={styles.rulesList}>
-          {rules.map((rule, idx) => (
-            <Text key={idx} style={styles.rule}>
-              {rule}
-            </Text>
-          ))}
+    <View style={styles.container}>
+      <TopBar />
+        <View style={styles.subcontainer}>
+          <Text style={styles.title}>Reglas de Wordle</Text>
+          <View style={styles.rulesList}>
+            {rules.map((rule, idx) => (
+              <Text key={idx} style={styles.rule}>
+                {rule}
+              </Text>
+            ))}
+          </View>
+          <Text style={styles.footer}>
+            ¡Diviértete y demuestra tu vocabulario en español!
+          </Text>
         </View>
-        <Text style={styles.footer}>
-          ¡Diviértete y demuestra tu vocabulario en español!
-        </Text>
-      </View>
-    </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    backgroundColor: "#d5e6ff", // igual que index
+    backgroundColor: "#d5e6ff",
     alignItems: "center",
-    justifyContent: "center",
-    padding: 24,
   },
   subcontainer: {
-    width: "100%",
-    maxWidth: 600,
-    backgroundColor: "rgba(255,255,255,0.85)", // fondo blanco semitransparente
+    width: "90%",
+    marginTop: 30,
+    backgroundColor: "rgba(255,255,255,0.85)",
     borderRadius: 16,
     padding: 24,
     alignItems: "center",

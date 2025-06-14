@@ -2,6 +2,7 @@ import { View, Text, ScrollView } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import { StyleSheet } from 'react-native';
 import { useAuth } from '@/providers/authProvider';
+import TopBar from "@/components/topBar";
 
 export default function StatsScreen() {
 
@@ -17,36 +18,38 @@ export default function StatsScreen() {
   const { userId } = useAuth();
 
   return (
-    <ScrollView contentContainerStyle={{ padding: 20 }}>
-      <Text style={styles.title}>Estadísticas</Text>
-
-      <View style={styles.statRow}>
-        <StatBlock label="Jugados" value={stats.played} />
-        <StatBlock label="Ganados" value={stats.wins} />
-        <StatBlock label="% Éxito" value={stats.winPercentage} />
-      </View>
-
-      <View style={styles.statRow}>
-        <StatBlock label="Racha actual" value={stats.currentStreak} />
-        <StatBlock label="Racha máxima" value={stats.maxStreak} />
-      </View>
-
-      <Text style={styles.subTitle}>Distribución de intentos</Text>
-      {stats.guessDistribution.map((count, i) => (
-        <View key={i} style={styles.guessDistributionRow}>
-          <Text style={styles.try}>{i + 1}</Text>
-          <View
-            style={{
-              height: 20,
-              width: count * 20,
-              backgroundColor: '#4caf50',
-              borderRadius: 4,
-              marginLeft: 4,
-            }}
-          />
-          <Text style={{ marginLeft: 8 }}>{count}</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <TopBar />
+      <View style={styles.statsContainer}>
+        <Text style={styles.title}>Estadísticas</Text>
+        <View style={styles.statRow}>
+          <StatBlock label="Jugados" value={stats.played} />
+          <StatBlock label="Ganados" value={stats.wins} />
+          <StatBlock label="% Éxito" value={stats.winPercentage} />
         </View>
-      ))}
+
+        <View style={styles.statRow}>
+          <StatBlock label="Racha actual" value={stats.currentStreak} />
+          <StatBlock label="Racha máxima" value={stats.maxStreak} />
+        </View>
+
+        <Text style={styles.subTitle}>Distribución de intentos</Text>
+        {stats.guessDistribution.map((count, i) => (
+          <View key={i} style={styles.guessDistributionRow}>
+            <Text style={styles.try}>{i + 1}</Text>
+            <View
+              style={{
+                height: 20,
+                width: count * 20,
+                backgroundColor: '#4caf50',
+                borderRadius: 4,
+                marginLeft: 4,
+              }}
+            />
+            <Text style={{ marginLeft: 8 }}>{count}</Text>
+          </View>
+        ))}
+      </View>
     </ScrollView>
   );
 }
@@ -61,6 +64,13 @@ function StatBlock({ label, value }: { label: string; value: number | string }) 
 }
 
 const styles = StyleSheet.create({
+    container: {
+      flex:1,
+    },
+    statsContainer: {
+      flex: 1,
+      padding: 20,
+    },
     title: { 
         fontSize: 32,
         fontWeight: 'bold',
