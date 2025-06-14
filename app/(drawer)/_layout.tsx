@@ -1,9 +1,10 @@
 import { Drawer } from 'expo-router/drawer';
-import { DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
-import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { DrawerContentScrollView, DrawerItemList, } from '@react-navigation/drawer';
+import { View, Text, TouchableOpacity, StyleSheet, } from 'react-native';
 import { useAuth } from '@/providers/authProvider';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
+import Feather from '@expo/vector-icons/Feather';
 
 function CustomDrawerContent(props) {
   const { userId } = useAuth();
@@ -29,6 +30,7 @@ function CustomDrawerContent(props) {
   return (
     <DrawerContentScrollView {...props} contentContainerStyle={{ flex: 1 }}>
       <View style={styles.header}>
+        <Feather name="user" size={32} color="black" style={styles.userIcon}/>
         <Text style={styles.username}>Bienvenido, {userName || 'Usuario'}</Text>
       </View>
       <View style={styles.menu}>
@@ -67,6 +69,11 @@ export default function DrawerLayout() {
 const styles = StyleSheet.create({
   header: {
     marginVertical: 24,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  userIcon: {
+    marginRight: 12,
   },
   username: {
     fontWeight: 'bold',
