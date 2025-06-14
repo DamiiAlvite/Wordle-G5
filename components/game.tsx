@@ -25,11 +25,15 @@ export default function Game() {
   );
   const [flipRow, setFlipRow] = useState<number | null>(null);
   const [errorRow, setErrorRow] = useState<number | null>(null);
+  const [keyColors, setKeyColors] = useState<{ [key: string]: "default" | "absent" | "present" | "correct" }>({});
   const [gameOfTheDay, setGameOfTheDay] = useState(null);
   const [gameOver, setGameOver] = useState(false);
   const [showEndModal, setShowEndModal] = useState(false);
 
   const getGameOfTheDay = async () => {
+    if (userId === null) {
+      return;
+    }
     const today = new Date().toISOString().split("T")[0];
     const { data, error } = await supabase
       .from("game")
@@ -154,6 +158,22 @@ export default function Game() {
         return updated;
       });
 
+      setKeyColors((prev) => {
+        const updated = { ...prev };
+        for (let i = 0; i < COLS; i++) {
+          const l = guessLetters[i].toUpperCase();
+          const color = newColors[i];
+          if (color === "correct") {
+            updated[l] = "correct";
+          } else if (color === "present") {
+            if (updated[l] !== "correct") updated[l] = "present";
+          } else if (color === "absent") {
+            if (!updated[l]) updated[l] = "absent";
+          }
+        }
+        return updated;
+      });
+
       if (guess === target || currentRow === ROWS - 1) {
         setGameOver(true);
         await saveGame(guess, target);
@@ -168,7 +188,7 @@ export default function Game() {
 
   useEffect(() => {
     getGameOfTheDay();
-  }, [word]);
+  }, [word, userId]);
 
   if (loading) {
     return <Text>Cargando...</Text>;
@@ -185,6 +205,7 @@ export default function Game() {
           onKeyPress={handleKeyPress}
           onBackspace={handleBackspace}
           onEnter={handleEnter}
+          keyColors={keyColors}
         />
       </View>
       {showEndModal && (

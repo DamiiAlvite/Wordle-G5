@@ -1,15 +1,15 @@
-import * as React from "react";
-import Svg, { Path } from 'react-native-svg';
+import * as React from "react"
+import Svg, { Path } from "react-native-svg"
 
-const LoginBackground = (props) => (
-  <Svg
+function SvgComponent(props) {
+  return (
+    <Svg
       viewBox="0 0 540 960"
       width={540}
       height={960}
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <Path fill="#f1f1f1" d="M0 0H540V960H0z" />
       <Path
         d="M0 319l12.8 2.5c12.9 2.5 38.5 7.5 64.2 5.3 25.7-2.1 51.3-11.5 77-10.6 25.7.8 51.3 11.8 77.2 7.8 25.8-4 51.8-23 77.6-29 25.9-6 51.5 1 77.2 15.7 25.7 14.6 51.3 37 77 35.6 25.7-1.3 51.3-26.3 64.2-38.8L540 295V0H0z"
         fill="#69a4fa"
@@ -31,6 +31,7 @@ const LoginBackground = (props) => (
         fill="#245cc7"
       />
     </Svg>
-);
+  )
+}
 
-export default LoginBackground;
+export default SvgComponent

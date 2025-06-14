@@ -17,7 +17,14 @@ const ACCENTED = {
 const SCREEN_WIDTH = Dimensions.get("window").width;
 const keyWidth = (SCREEN_WIDTH - 16 * 2 - 10 * 6) / 10;
 
-export default function Keyboard({ onKeyPress, onBackspace, onEnter }) {
+const COLORS = {
+  default: "#5792EE",
+  present: "#ffd54f",
+  absent: "#787c7e",
+  correct: "#6aaa64",
+};
+
+export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors = {} }) {
   const [accentModal, setAccentModal] = useState<{ visible: boolean; key: string | null; x: number; y: number }>({
     visible: false,
     key: null,
@@ -44,7 +51,10 @@ export default function Keyboard({ onKeyPress, onBackspace, onEnter }) {
           {row.map((key) => (
             <TouchableOpacity
               key={key}
-              style={styles.key}
+              style={[
+                styles.key,
+                { backgroundColor: COLORS[keyColors[key] || "default"] }
+              ]}
               onPress={() => onKeyPress(key)}
               onLongPress={(e) => handleLongPress(key, e)}
               delayLongPress={250}
@@ -108,7 +118,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   key: {
-    backgroundColor: "#5792EE",
+    backgroundColor: "#black",
     margin: 3,
     borderRadius: 4,
     paddingVertical: 12,
@@ -117,7 +127,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   specialKey: {
-    backgroundColor: "black",
+    backgroundColor: "#5792EE",
     margin: 3,
     borderRadius: 4,
     paddingVertical: 12,

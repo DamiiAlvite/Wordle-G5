@@ -1,5 +1,5 @@
 import LoginBackground from "@/assets/svg/LoginBackground";
-import Logo from "@/assets/svg/Logo";
+import Logo from "@/assets/svg/LogoWhite";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
@@ -39,8 +39,8 @@ export default function Login() {
 
   return (
     <View style={styles.container}>
-      <LoginBackground style={styles.background} pointerEvents="none"/>
-      <Logo style={styles.logo} width={300}pointerEvents="none"/>
+      <LoginBackground style={styles.background} pointerEvents="none" />
+      <Logo style={styles.logo} width={300} pointerEvents="none" />
       <Text style={styles.title}>Bienvenido!</Text>
       <Text style={styles.subtitle}>Inicia sesión en tu cuenta</Text>
 
@@ -114,93 +114,98 @@ export default function Login() {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    background: {
-        position: 'absolute',
-        top: -20,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        zIndex: -1,
-    },
-    logo: {
-        position: 'absolute',
-        top: -825,
-        zIndex: 10,
-    },
-    title: {
-        fontSize: 70,
-        fontWeight: "bold",
-        color: '#34434d',
-        marginTop: 150,
-    },
-    subtitle:{
-        fontSize: 20,
-        color: 'grey',
-        marginBottom: 23,
-    },
-    textInput: {
-        padding: 10,
-        paddingStart: 30,
-        marginTop: 23,
-        width: '80%',
-        height: 50,
-        borderRadius: 20,
-        backgroundColor: '#fff',
-        color: 'black',
-        fontSize: 20,
-        zIndex:100,
-    },
-    forgotPassword: {
-        color: 'grey',
-        fontSize: 16,
-        alignSelf: 'flex-end',
-        marginRight: '-40%',
-        marginTop: 13,
-    },
-    loginButton: {
-        backgroundColor: '#5792EE',
-        borderRadius: 20,
-        paddingVertical: 15,
-        paddingHorizontal: 40,
-        alignItems: 'center',
-        marginTop: 33,
-        width: '80%',
-    },
-    loginButtonText: {
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  background: {
+    position: 'absolute',
+    top: -20,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    zIndex: -100,
+    backgroundColor: '#F2F2F2',
+  },
+  logo: {
+    position: 'absolute',
+    top: -825,
+    zIndex: -80,
+  },
+  title: {
+    fontSize: 70,
+    fontWeight: "bold",
+    color: '#34434d',
+    marginTop: 150,
+  },
+  subtitle: {
+    fontSize: 20,
+    color: 'grey',
+    marginBottom: 23,
+  },
+  textInput: {
+    padding: 10,
+    paddingStart: 30,
+    marginTop: 23,
+    width: '80%',
+    height: 50,
+    borderRadius: 20,
+    backgroundColor: '#fff',
+    color: 'black',
+    fontSize: 20,
+    zIndex: 100,
+  },
+  forgotPassword: {
+    color: 'grey',
+    fontSize: 16,
+    alignSelf: 'flex-end',
+    marginRight: '-40%',
+    marginTop: 13,
+    zIndex: 100,
+  },
+  loginButton: {
+    backgroundColor: '#5792EE',
+    borderRadius: 20,
+    paddingVertical: 15,
+    paddingHorizontal: 40,
+    alignItems: 'center',
+    marginTop: 33,
+    width: '80%',
+    zIndex: 100,
+  },
+  loginButtonText: {
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',
-    },
-    registerContainer: {
-        position: 'absolute',
-        bottom: 30,
-        left: 0,
-        right: 0,
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '100%',
-    },
-    registerText:{
-        color: 'grey',
-        fontSize: 18,
-    },
-    registerLink: {
-        color: '#5792EE',
-        fontSize: 18,
-    },
-    inputError: {
-      color: "red",
-      marginTop: 5,
-      marginLeft: "10%",
-      fontSize: 13,
-      width: "80%",
-      textAlign: "left",
-      alignSelf: "center",
-    },
+  },
+  registerContainer: {
+    position: 'absolute',
+    bottom: 30,
+    left: 0,
+    right: 0,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+  },
+  registerText: {
+    color: 'grey',
+    fontSize: 18,
+    zIndex: 100,
+  },
+  registerLink: {
+    color: '#5792EE',
+    fontSize: 18,
+    zIndex: 100,
+  },
+  inputError: {
+    color: "red",
+    marginTop: 5,
+    marginLeft: "10%",
+    fontSize: 13,
+    width: "80%",
+    textAlign: "left",
+    alignSelf: "center",
+  },
 });

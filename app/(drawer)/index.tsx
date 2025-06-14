@@ -3,20 +3,19 @@ import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { StyleSheet } from "react-native";
 import Game from "@/components/game";
 import TopBar from "@/components/topBar";
-import { supabase } from "@/lib/supabase";
 
 export default function Home() {
 
   return (
-      <View style={styles.container}>
-          <TopBar/>
-          <Game />
-      </View>
+    <View style={styles.container}>
+      <TopBar />
+      <Game />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container:{
+  container: {
     flex: 1,
     alignItems: "center",
   },
