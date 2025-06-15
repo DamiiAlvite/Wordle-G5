@@ -9,7 +9,7 @@ export default function TopBar() {
   
   const pathname = usePathname();
   const navigation = useNavigation();
-  const isRules = pathname === "/rules";
+  const showClose = ["/rules", "/profile", "/stats"].includes(pathname);
 
   return (
     <View style={styles.container}>
@@ -27,8 +27,8 @@ export default function TopBar() {
       <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())} style={styles.iconButton}>
         <SimpleLineIcons name="menu" size={28} color="black" />
       </TouchableOpacity>
-      {isRules ? (
-        <TouchableOpacity onPress={() => router.back()} style={styles.iconButton}>
+      {showClose ? (
+        <TouchableOpacity onPress={() => router.push("/")} style={styles.iconButton}>
           <AntDesign name="close" size={28} color="black" />
         </TouchableOpacity>
       ) : (
