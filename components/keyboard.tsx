@@ -18,7 +18,7 @@ const SCREEN_WIDTH = Dimensions.get("window").width;
 const keyWidth = (SCREEN_WIDTH - 16 * 2 - 10 * 6) / 10;
 
 const COLORS = {
-  default: "#5792EE",
+  default: "#111",
   present: "#ffd54f",
   absent: "#787c7e",
   correct: "#6aaa64",
@@ -47,33 +47,33 @@ export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors =
   return (
     <View style={styles.keyboardContainer}>
       {KEYS.map((row, rowIndex) => (
-        <View key={rowIndex} style={styles.row}>
-          {row.map((key) => (
-            <TouchableOpacity
-              key={key}
-              style={[
-                styles.key,
-                { backgroundColor: COLORS[keyColors[key] || "default"] }
-              ]}
-              onPress={() => onKeyPress(key)}
-              onLongPress={(e) => handleLongPress(key, e)}
-              delayLongPress={250}
-            >
-              <Text style={styles.keyText}>{key}</Text>
-            </TouchableOpacity>
-          ))}
-          {rowIndex === 2 && (
-            <>
-              <TouchableOpacity style={styles.specialKey} onPress={onEnter}>
-                <Text style={styles.keyText}>ENTER</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.specialKey} onPress={onBackspace}>
-                <Text style={styles.keyText}>⌫</Text>
-              </TouchableOpacity>
-            </>
-          )}
-        </View>
-      ))}
+  <View key={rowIndex} style={styles.row}>
+    {rowIndex === 2 && (
+      <TouchableOpacity style={styles.specialKey} onPress={onEnter}>
+        <Text style={styles.keyText}>ENTER</Text>
+      </TouchableOpacity>
+    )}
+    {row.map((key) => (
+      <TouchableOpacity
+        key={key}
+        style={[
+          styles.key,
+          { backgroundColor: COLORS[keyColors[key] || "default"] }
+        ]}
+        onPress={() => onKeyPress(key)}
+        onLongPress={(e) => handleLongPress(key, e)}
+        delayLongPress={250}
+      >
+        <Text style={styles.keyText}>{key}</Text>
+      </TouchableOpacity>
+    ))}
+    {rowIndex === 2 && (
+      <TouchableOpacity style={styles.specialKey} onPress={onBackspace}>
+        <Text style={styles.keyText}>⌫</Text>
+      </TouchableOpacity>
+    )}
+  </View>
+))}
       <Modal
         visible={accentModal.visible}
         transparent
