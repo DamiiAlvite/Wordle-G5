@@ -75,10 +75,13 @@ export default function StatsScreen() {
     }
     if (games) {
       console.log('Games data:', games);
-      setPlayed(games.length);
-      setWins(games.filter(game => game.win === true).length);
+      const playedCount = games.length;
+      const winsCount = games.filter(game => game.win === true).length;
+      const percentage = playedCount > 0 ? Math.round((winsCount / playedCount) * 100) : 0;
+      setPlayed(playedCount);
+      setWins(winsCount);
       setWinPercentage(
-        games.length > 0 ? Math.round((wins / played) * 100) : 0
+        percentage
       );
       setCurrentStreak(getCurrentStreak(games));
       setMaxStreak(getMaxStreak(games));
