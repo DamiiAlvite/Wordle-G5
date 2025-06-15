@@ -51,6 +51,10 @@ export default function DrawerLayout() {
       }}
       drawerContent={props => <CustomDrawerContent {...props} />}>
         <Drawer.Screen
+          name="profile"
+          options={{ drawerLabel: "Mi Perfil" }}
+        />
+        <Drawer.Screen
           name="index"
           options={{ drawerLabel: "Juego" }}
         />
