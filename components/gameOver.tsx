@@ -2,7 +2,14 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { useWordOfDay } from "@/context/wordOfTheDayProvider";
 
-export default function EndGame({game}) {
+type GameProps = {
+  game: {
+    date?: string;
+    win_attemp?: number;
+  };
+};
+
+export default function EndGame({ game }: GameProps) {
 
     const {word, loading} = useWordOfDay();
 
