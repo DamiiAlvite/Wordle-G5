@@ -1,10 +1,9 @@
 import * as React from "react"
-import Svg, { Defs, ClipPath, Path, Image, G, Mask } from "react-native-svg"
+import Svg, { Defs, ClipPath, Path, Image, G, Mask, SvgProps } from "react-native-svg"
 
-function SvgComponent(props) {
+function SvgComponent(props: SvgProps) {
   return (
     <Svg
-      xmlns="http://www.w3.org/2000/svg"
       width={1587}
       viewBox="0 0 1190.25 1683.749949"
       height={2245}
