@@ -1,17 +1,18 @@
 import { Drawer } from 'expo-router/drawer';
-import { DrawerContentScrollView, DrawerItemList, } from '@react-navigation/drawer';
+import { DrawerContentScrollView, DrawerItemList, DrawerContentComponentProps, } from '@react-navigation/drawer';
 import { View, Text, TouchableOpacity, StyleSheet, } from 'react-native';
 import { useAuth } from '@/providers/authProvider';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import Feather from '@expo/vector-icons/Feather';
 
-function CustomDrawerContent(props) {
+function CustomDrawerContent(props: DrawerContentComponentProps) {
   const { userId } = useAuth();
   const [userName, setUserName] = useState('');
+
   const logOut = () => {
-    supabase.auth.signOut()
-  }
+    supabase.auth.signOut();
+  };
 
   useEffect(() => {
     const getUserName = async () => {
@@ -47,25 +48,14 @@ export default function DrawerLayout() {
   return (
     <Drawer
       screenOptions={{
-        headerShown: false, // Oculta el título de la página
+        headerShown: false,
       }}
-      drawerContent={props => <CustomDrawerContent {...props} />}>
-        <Drawer.Screen
-          name="profile"
-          options={{ drawerLabel: "Mi Perfil" }}
-        />
-        <Drawer.Screen
-          name="index"
-          options={{ drawerLabel: "Juego" }}
-        />
-        <Drawer.Screen
-          name="rules"
-          options={{ drawerLabel: "Reglas" }}
-        />
-        <Drawer.Screen
-          name="stats"
-          options={{ drawerLabel: "Estadísticas" }}
-        />
+      drawerContent={(props) => <CustomDrawerContent {...props} />}
+    >
+      <Drawer.Screen name="profile" options={{ drawerLabel: 'Mi Perfil' }} />
+      <Drawer.Screen name="index" options={{ drawerLabel: 'Juego' }} />
+      <Drawer.Screen name="rules" options={{ drawerLabel: 'Reglas' }} />
+      <Drawer.Screen name="stats" options={{ drawerLabel: 'Estadísticas' }} />
     </Drawer>
   );
 }
