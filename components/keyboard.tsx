@@ -7,6 +7,7 @@ const KEYS = [
   ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Ñ"],
   ["Z", "X", "C", "V", "B", "N", "M"],
 ];
+
 const ACCENTED = {
   A: ["Á"],
   E: ["É"],
@@ -14,9 +15,20 @@ const ACCENTED = {
   O: ["Ó"],
   U: ["Ú", "Ü"],
 };
+
+type KeyStatus = "correct" | "present" | "absent" | "default";
+type KeyboardProps = {
+  onKeyPress: (key: string) => void;
+  onBackspace: () => void;
+  onEnter: () => void;
+  keyColors?: Record<string, KeyStatus>;
+};
+
 const SCREEN_WIDTH = Dimensions.get("window").width;
 const keyWidth = (SCREEN_WIDTH - 16 * 2 - 10 * 6) / 10;
-
+const isAccentedKey = (key: string): key is keyof typeof ACCENTED => {
+  return key in ACCENTED;
+};
 const COLORS = {
   default: "#111",
   present: "#ffd54f",
@@ -24,7 +36,7 @@ const COLORS = {
   correct: "#6aaa64",
 };
 
-export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors = {} }) {
+export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors = {} }: KeyboardProps) {
   const [accentModal, setAccentModal] = useState<{ visible: boolean; key: string | null; x: number; y: number }>({
     visible: false,
     key: null,
@@ -33,7 +45,7 @@ export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors =
   });
 
   const handleLongPress = (key: string, event: any) => {
-    if (ACCENTED[key]) {
+    if (Object.prototype.hasOwnProperty.call(ACCENTED, key)) {
       const { pageX, pageY } = event.nativeEvent;
       setAccentModal({ visible: true, key, x: pageX, y: pageY });
     }
@@ -91,7 +103,7 @@ export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors =
               { top: accentModal.y - 60, left: accentModal.x - 30 },
             ]}
           >
-            {accentModal.key &&
+            {accentModal.key && isAccentedKey(accentModal.key) &&
               ACCENTED[accentModal.key].map((accent) => (
                 <TouchableOpacity
                   key={accent}
@@ -100,7 +112,7 @@ export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors =
                 >
                   <Text style={styles.accentText}>{accent}</Text>
                 </TouchableOpacity>
-              ))}
+            ))}
           </View>
         </TouchableOpacity>
       </Modal>
