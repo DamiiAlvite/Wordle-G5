@@ -4,6 +4,7 @@ import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useForm, Controller, set } from "react-hook-form";
 import { supabase } from "@/lib/supabase";
+import SignUpBackground from "@/assets/svg/signUpBackground";
 
 type FormData = {
   username: string;
@@ -62,6 +63,7 @@ export default function Register() {
 
   return (
     <View style={styles.container}>
+      <SignUpBackground style={styles.signUpBackground}/>
       <View style={styles.subcontainer}>
         <Text style={styles.title}>Registrate</Text>
         <Text style={styles.subtitle}>Crea tu cuenta</Text>
@@ -183,8 +185,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#d5e6ff",
   },
+  signUpBackground: {
+    position: "absolute",
+    bottom: 0,
+    right: 0,
+    width: "100%",
+    height: "100%",
+  },
   subcontainer: {
-    marginTop: '-20%',
+    marginTop: '-10%',
     width: "80%",
     paddingVertical: 40,
     alignItems: "center",
@@ -253,5 +262,5 @@ const styles = StyleSheet.create({
     width: "80%",
     textAlign: "left",
     alignSelf: "center",
-},
+  },
 });
