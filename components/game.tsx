@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, Modal } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { supabase } from "@/lib/supabase";
 import { useWordOfDay } from "@/context/wordOfTheDayProvider";
 import Keyboard from "./keyboard";
@@ -25,15 +25,28 @@ export default function Game() {
   );
   const [flipRow, setFlipRow] = useState<number | null>(null);
   const [errorRow, setErrorRow] = useState<number | null>(null);
-  const [keyColors, setKeyColors] = useState<{ [key: string]: "default" | "absent" | "present" | "correct" }>({});
+  const [keyColors, setKeyColors] = useState<{
+    [key: string]: "default" | "absent" | "present" | "correct";
+  }>({});
   const [gameOfTheDay, setGameOfTheDay] = useState(null);
   const [gameOver, setGameOver] = useState(false);
   const [showEndModal, setShowEndModal] = useState(false);
+  const [pendingGameOver, setPendingGameOver] = useState(false); // 🔹 NUEVO
+
+  const handleFlipEnd = async () => {
+    if (pendingGameOver && !gameOver) {
+      setGameOver(true);
+      setPendingGameOver(false);
+      const guess = letters[currentRow].join("").toLowerCase();
+      const target = word?.toLowerCase() || "";
+      await saveGame(guess, target);
+      await getGameOfTheDay();
+      setShowEndModal(true);
+    }
+  };
 
   const getGameOfTheDay = async () => {
-    if (userId === null) {
-      return;
-    }
+    if (userId === null) return;
     const today = new Date().toISOString().split("T")[0];
     const { data, error } = await supabase
       .from("game")
@@ -46,34 +59,33 @@ export default function Game() {
       setGameOfTheDay(data);
       setGameOver(true);
       setShowEndModal(true);
-      console.log("Juego del día:", data);
-      return data;
     }
+
     if (error) {
       console.error("Error al obtener el juego del día:", error.message);
     }
-  }
+  };
 
   const saveGame = async (guess: string, target: string) => {
     const today = new Date().toISOString().split("T")[0];
     const attemp = currentRow + 1;
     const win = guess === target;
     const { error } = await supabase
-      .from("game")
-      .insert({
-        date: today,
-        user_id: userId,
-        win_attemp: attemp,
-        win: win,
-        word_id: wordId,
-      });
+    .from("game")
+    .insert({
+      date: today,
+      user_id: userId,
+      win_attemp: attemp,
+      win: win,
+      word_id: wordId,
+    });
 
     if (error) {
       console.error("Error al guardar el juego:", error.message);
     } else {
       console.log("Juego guardado exitosamente");
     }
-  }
+  };
 
   const handleKeyPress = (key: string) => {
     if (gameOver) return;
@@ -85,7 +97,6 @@ export default function Game() {
           return update;
         });
         setCurrentCol((col) => col + 1);
-        console.log(`${letters[currentRow]}`);
       }
     }
   };
@@ -103,7 +114,6 @@ export default function Game() {
   };
 
   const handleEnter = async () => {
-    console.log(`${currentRow + 1} intentos`);
     if (gameOver) return;
     if (currentCol === COLS) {
       const guess = letters[currentRow].join("").toLowerCase();
@@ -175,10 +185,7 @@ export default function Game() {
       });
 
       if (guess === target || currentRow === ROWS - 1) {
-        setGameOver(true);
-        await saveGame(guess, target);
-        await getGameOfTheDay();
-        setShowEndModal(true);
+        setPendingGameOver(true);
       } else {
         setCurrentRow((row) => (row < ROWS - 1 ? row + 1 : row));
         setCurrentCol(0);
@@ -196,10 +203,18 @@ export default function Game() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.day} >
-        {new Date().toLocaleDateString("es-ES", { weekday: "long" }).toUpperCase()}
+      <Text style={styles.day}>
+        {new Date()
+          .toLocaleDateString("es-ES", { weekday: "long" })
+          .toUpperCase()}
       </Text>
-      <WordsList letters={letters} colors={colors} flipRow={flipRow} errorRow={errorRow} />
+      <WordsList
+        letters={letters}
+        colors={colors}
+        flipRow={flipRow}
+        errorRow={errorRow}
+        onFlipEnd={handleFlipEnd}
+      />
       <View style={styles.keyboard}>
         <Keyboard
           onKeyPress={handleKeyPress}

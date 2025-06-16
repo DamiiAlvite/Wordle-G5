@@ -9,22 +9,38 @@ const COLORS = {
   error: "#ff4d4f",
 };
 
-export default function AnimatedCell({ letter, color, flipTrigger, shakeTrigger }) {
+type CellColor = keyof typeof COLORS;
+
+interface AnimatedCellProps {
+  letter: string;
+  color: CellColor;
+  flipTrigger: boolean;
+  shakeTrigger: boolean;
+  onFlipEnd?: () => void;
+}
+
+export default function AnimatedCell({
+  letter,
+  color,
+  flipTrigger,
+  shakeTrigger,
+  onFlipEnd,
+}: AnimatedCellProps) {
   const animatedValue = useRef(new Animated.Value(0)).current;
   const shakeValue = useRef(new Animated.Value(0)).current;
 
-  // Flip animation
   useEffect(() => {
     if (flipTrigger) {
       Animated.timing(animatedValue, {
         toValue: 1,
         duration: 600,
         useNativeDriver: true,
-      }).start();
+      }).start(() => {
+        if (onFlipEnd) onFlipEnd();
+      });
     }
   }, [flipTrigger]);
 
-  // Shake animation
   useEffect(() => {
     if (shakeTrigger) {
       Animated.sequence([
@@ -70,13 +86,14 @@ export default function AnimatedCell({ letter, color, flipTrigger, shakeTrigger 
       >
         <Text style={styles.letter}>{letter}</Text>
       </Animated.View>
+
       {/* Dorso */}
       <Animated.View
         style={[
           StyleSheet.absoluteFill,
           styles.inner,
           {
-            backgroundColor: COLORS[color] || COLORS.default,
+            backgroundColor: COLORS[color],
             opacity: backOpacity,
             transform: [
               {
@@ -104,7 +121,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "transparent",
-    transform:[{perspective: 1000}],
+    transform: [{ perspective: 1000 }],
   },
   inner: {
     alignItems: "center",
