@@ -2,9 +2,9 @@ import React, { useRef, useEffect } from "react";
 import { Animated, Text, StyleSheet, View } from "react-native";
 
 const COLORS = {
-  default: "#d3d6da",
+  default: "#e0e0e0",
   present: "#ffd54f",
-  absent: "#787c7e",
+  absent: "#b0b0b0",
   correct: "#6aaa64",
   error: "#ff4d4f",
 };
@@ -71,8 +71,7 @@ export default function AnimatedCell({
   });
 
   return (
-    <Animated.View style={[styles.cell, { transform: [{ translateX: shakeValue }] }]}>
-      {/* Frente */}
+    <Animated.View style={[styles.cell, { transform: [{ translateX: shakeValue }] }]}>      
       <Animated.View
         style={[
           StyleSheet.absoluteFill,
@@ -87,7 +86,6 @@ export default function AnimatedCell({
         <Text style={styles.letter}>{letter}</Text>
       </Animated.View>
 
-      {/* Dorso */}
       <Animated.View
         style={[
           StyleSheet.absoluteFill,
@@ -129,7 +127,7 @@ const styles = StyleSheet.create({
     backfaceVisibility: "hidden",
     width: "100%",
     height: "100%",
-    borderRadius: 4,
+    borderRadius: 8,
   },
   letter: {
     fontSize: 24,

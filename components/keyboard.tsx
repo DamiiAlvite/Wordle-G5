@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Modal } from "react-native";
 
-// Letras del teclado divididas en filas
 const KEYS = [
   ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
   ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Ñ"],
@@ -59,33 +58,33 @@ export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors =
   return (
     <View style={styles.keyboardContainer}>
       {KEYS.map((row, rowIndex) => (
-  <View key={rowIndex} style={styles.row}>
-    {rowIndex === 2 && (
-      <TouchableOpacity style={styles.specialKey} onPress={onEnter}>
-        <Text style={styles.keyText}>ENTER</Text>
-      </TouchableOpacity>
-    )}
-    {row.map((key) => (
-      <TouchableOpacity
-        key={key}
-        style={[
-          styles.key,
-          { backgroundColor: COLORS[keyColors[key] || "default"] }
-        ]}
-        onPress={() => onKeyPress(key)}
-        onLongPress={(e) => handleLongPress(key, e)}
-        delayLongPress={250}
-      >
-        <Text style={styles.keyText}>{key}</Text>
-      </TouchableOpacity>
-    ))}
-    {rowIndex === 2 && (
-      <TouchableOpacity style={styles.specialKey} onPress={onBackspace}>
-        <Text style={styles.keyText}>⌫</Text>
-      </TouchableOpacity>
-    )}
-  </View>
-))}
+        <View key={rowIndex} style={styles.row}>
+          {rowIndex === 2 && (
+            <TouchableOpacity style={styles.specialKey} onPress={onEnter}>
+              <Text style={styles.keyText}>ENTER</Text>
+            </TouchableOpacity>
+          )}
+          {row.map((key) => (
+            <TouchableOpacity
+              key={key}
+              style={[
+                styles.key,
+                { backgroundColor: COLORS[keyColors[key] || "default"] }
+              ]}
+              onPress={() => onKeyPress(key)}
+              onLongPress={(e) => handleLongPress(key, e)}
+              delayLongPress={250}
+            >
+              <Text style={styles.keyText}>{key}</Text>
+            </TouchableOpacity>
+          ))}
+          {rowIndex === 2 && (
+            <TouchableOpacity style={styles.specialKey} onPress={onBackspace}>
+              <Text style={styles.keyText}>⌫</Text>
+            </TouchableOpacity>
+          )}
+        </View>
+      ))}
       <Modal
         visible={accentModal.visible}
         transparent
@@ -103,15 +102,14 @@ export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors =
               { top: accentModal.y - 60, left: accentModal.x - 30 },
             ]}
           >
-            {accentModal.key && isAccentedKey(accentModal.key) &&
-              ACCENTED[accentModal.key].map((accent) => (
-                <TouchableOpacity
-                  key={accent}
-                  style={styles.accentKey}
-                  onPress={() => handleAccentSelect(accent)}
-                >
-                  <Text style={styles.accentText}>{accent}</Text>
-                </TouchableOpacity>
+            {accentModal.key && isAccentedKey(accentModal.key) && ACCENTED[accentModal.key].map((accent) => (
+              <TouchableOpacity
+                key={accent}
+                style={styles.accentKey}
+                onPress={() => handleAccentSelect(accent)}
+              >
+                <Text style={styles.accentText}>{accent}</Text>
+              </TouchableOpacity>
             ))}
           </View>
         </TouchableOpacity>
@@ -130,18 +128,16 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   key: {
-    backgroundColor: "#black",
     margin: 3,
-    borderRadius: 4,
+    borderRadius: 8,
     paddingVertical: 12,
-    paddingHorizontal: 10,
     width: keyWidth,
     alignItems: "center",
   },
   specialKey: {
     backgroundColor: "#5792EE",
     margin: 3,
-    borderRadius: 4,
+    borderRadius: 8,
     paddingVertical: 12,
     paddingHorizontal: 12,
   },
@@ -160,15 +156,11 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     elevation: 5,
     padding: 4,
-    zIndex: 1000,
   },
   accentKey: {
     marginHorizontal: 4,
     padding: 8,
-    backgroundColor: "#e3f2fd",
     borderRadius: 6,
-    alignItems: "center",
-    justifyContent: "center",
   },
   accentText: {
     fontSize: 20,
