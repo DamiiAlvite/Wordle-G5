@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import TopBar from "@/components/topBar";
+import WavesBackground from "@/assets/svg/wavesBackground2";
 
 const rules = [
   "Tienes 6 intentos para adivinar la palabra secreta.",
@@ -17,6 +18,7 @@ export default function RulesPage() {
   return (
     <View style={styles.container}>
       <TopBar />
+      <WavesBackground style={styles.wavesBackground} pointerEvents="none" />
         <View style={styles.subcontainer}>
           <Text style={styles.title}>Reglas de Wordle</Text>
           <View style={styles.rulesList}>
@@ -39,6 +41,13 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     backgroundColor: "#d5e6ff",
     alignItems: "center",
+    zIndex: -1000,
+  },
+  wavesBackground: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    zIndex: -1,
   },
   subcontainer: {
     width: "90%",
