@@ -1,24 +1,11 @@
 import { View, Text, ScrollView } from 'react-native';
-import { useLocalSearchParams } from 'expo-router';
+import { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { useAuth } from '@/providers/authProvider';
 import TopBar from "@/components/topBar";
 import { supabase } from "@/lib/supabase";
-import { useState, useEffect } from 'react';
-import { set } from 'react-hook-form';
 
 export default function StatsScreen() {
-
-  // Valores simulados hasta tener la BBDD
-  const stats = {
-    played: 10,
-    wins: 8,
-    winPercentage: 80,
-    currentStreak: 3,
-    maxStreak: 5,
-    guessDistribution: [0, 1, 2, 3, 1, 1], // victorias en el intento 1 a 6
-  };
-
   const { userId } = useAuth();
 
   const [wins, setWins] = useState(0);
@@ -59,7 +46,6 @@ export default function StatsScreen() {
         distribution[game.win_attemp - 1]++;
       }
     });
-    console.log('Guess distribution:', distribution);
     return distribution;
   }
 
@@ -69,20 +55,20 @@ export default function StatsScreen() {
       .from('game')
       .select('*')
       .eq('user_id', userId);
+
     if (error) {
       console.error('Error fetching games:', error);
       return;
     }
+
     if (games) {
-      console.log('Games data:', games);
       const playedCount = games.length;
       const winsCount = games.filter(game => game.win === true).length;
       const percentage = playedCount > 0 ? Math.round((winsCount / playedCount) * 100) : 0;
+
       setPlayed(playedCount);
       setWins(winsCount);
-      setWinPercentage(
-        percentage
-      );
+      setWinPercentage(percentage);
       setCurrentStreak(getCurrentStreak(games));
       setMaxStreak(getMaxStreak(games));
       setGuessDistribution(getGuessDistribution(games.filter(game => game.win === true)));
@@ -96,15 +82,16 @@ export default function StatsScreen() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <TopBar />
-      <View style={styles.statsContainer}>
+      <View style={styles.contentBox}>
         <Text style={styles.title}>Estadísticas</Text>
+
         <View style={styles.statRow}>
           <StatBlock label="Jugados" value={played} />
           <StatBlock label="Ganados" value={wins} />
           <StatBlock label="% Éxito" value={winPercentage} />
         </View>
 
-        <View style={styles.statRow}>
+        <View style={styles.statRowTight}>
           <StatBlock label="Racha actual" value={currentStreak} />
           <StatBlock label="Racha máxima" value={maxStreak} />
         </View>
@@ -113,16 +100,8 @@ export default function StatsScreen() {
         {guessDistribution.map((count, i) => (
           <View key={i} style={styles.guessDistributionRow}>
             <Text style={styles.try}>{i + 1}</Text>
-            <View
-              style={{
-                height: 20,
-                width: count * 20,
-                backgroundColor: '#4caf50',
-                borderRadius: 4,
-                marginLeft: 4,
-              }}
-            />
-            <Text style={{ marginLeft: 8 }}>{count}</Text>
+            <View style={[styles.bar, { width: count * 20 }]} />
+            <Text style={styles.count}>{count}</Text>
           </View>
         ))}
       </View>
@@ -132,52 +111,113 @@ export default function StatsScreen() {
 
 function StatBlock({ label, value }: { label: string; value: number | string }) {
   return (
-    <View style={{ alignItems: 'center' }}>
-      <Text style={{ fontSize: 20, fontWeight: 'bold' }}>{value}</Text>
-      <Text style={{ fontSize: 14 }}>{label}</Text>
+    <View style={styles.statBlock}>
+      <View style={styles.statValueBox}>
+        <Text style={styles.statValue}>{value}</Text>
+      </View>
+      <View style={styles.statLabelBox}>
+        <Text style={styles.statLabel}>{label}</Text>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#E8F0FE',
     flex: 1,
   },
-  statsContainer: {
-    flex: 1,
-    padding: 20,
+  contentBox: {
+    backgroundColor: '#fff',
+    borderRadius: 24,
+    padding: 24,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+    elevation: 4,
+    margin: 20,
   },
   title: {
-    fontSize: 32,
+    fontSize: 28,
     fontWeight: 'bold',
-    marginBottom: 40,
+    color: '#2C3E50',
+    textAlign: 'center',
+    marginBottom: 32,
   },
   statRow: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginBottom: 60
+    marginBottom: 28,
   },
-  subTitle: {
-    fontSize: 24,
+  statRowTight: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 24,
+    marginBottom: 16,
+  },
+  statBlock: {
+    width: 100,
+    borderRadius: 12,
+    overflow: 'hidden',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  statValueBox: {
+    backgroundColor: '#EAF2FF',
+    paddingVertical: 12,
+    alignItems: 'center',
+  },
+  statLabelBox: {
+    backgroundColor: 'white',
+    paddingVertical: 6,
+    alignItems: 'center',
+  },
+
+  statLabel: {
+    fontSize: 12,
+    color: '#2C3E50',
+  },
+  statValue: {
+    fontSize: 22,
     fontWeight: 'bold',
+    color: '#1F3A93',
+  },
+
+  subTitle: {
+    fontSize: 20,
+    fontWeight: '600',
     textAlign: 'center',
-    marginBottom: 30
+    color: '#2C3E50',
+    marginBottom: 16,
+    marginTop: 16,
   },
   guessDistributionRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 4
-  },
-  count: {
-    backgroundColor: 'grey',
-    marginLeft: 8
+    marginBottom: 8,
+    marginLeft: 10,
   },
   try: {
-    backgroundColor: 'grey',
+    width: 24,
+    textAlign: 'center',
+    backgroundColor: '#EAF2FF',
+    color: '#2C3E50',
     paddingVertical: 4,
-    paddingHorizontal: 8,
-    marginLeft: 8,
     borderRadius: 4,
-    color: 'white',
-  }
+  },
+  bar: {
+    height: 20,
+    backgroundColor: '#1F3A93',
+    borderRadius: 6,
+    marginLeft: 8,
+  },
+  count: {
+    marginLeft: 8,
+    color: '#2C3E50',
+    fontWeight: '500',
+  },
 });
