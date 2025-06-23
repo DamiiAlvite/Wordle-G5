@@ -4,6 +4,7 @@ import { StyleSheet } from 'react-native';
 import { useAuth } from '@/providers/authProvider';
 import TopBar from "@/components/topBar";
 import { supabase } from "@/lib/supabase";
+import WavesBackground from "@/assets/svg/wavesBackground2";
 
 export default function StatsScreen() {
   const { userId } = useAuth();
@@ -26,6 +27,7 @@ export default function StatsScreen() {
     }
     return streak;
   }
+
   function getMaxStreak(games: { win: boolean }[]) {
     let maxStreak = 0;
     let currentStreak = 0;
@@ -39,6 +41,7 @@ export default function StatsScreen() {
     }
     return maxStreak;
   }
+
   function getGuessDistribution(games: { win: boolean; win_attemp?: number }[]) {
     const distribution = [0, 0, 0, 0, 0, 0];
     games.forEach(game => {
@@ -73,7 +76,7 @@ export default function StatsScreen() {
       setMaxStreak(getMaxStreak(games));
       setGuessDistribution(getGuessDistribution(games.filter(game => game.win === true)));
     }
-  }
+  };
 
   useEffect(() => {
     getGames();
@@ -82,20 +85,23 @@ export default function StatsScreen() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <TopBar />
+      <WavesBackground style={styles.wavesBackground} pointerEvents="none" />
       <View style={styles.contentBox}>
-        <Text style={styles.title}>Estadísticas</Text>
-
-        <View style={styles.statRow}>
-          <StatBlock label="Jugados" value={played} />
-          <StatBlock label="Ganados" value={wins} />
-          <StatBlock label="% Éxito" value={winPercentage} />
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>Estadísticas</Text>
         </View>
+        <View style={styles.statContainer}>
+          <View style={styles.statRow}>
+            <StatBlock label="Jugados" value={played} />
+            <StatBlock label="Ganados" value={wins} />
+            <StatBlock label="% Éxito" value={winPercentage} />
+          </View>
 
-        <View style={styles.statRowTight}>
-          <StatBlock label="Racha actual" value={currentStreak} />
-          <StatBlock label="Racha máxima" value={maxStreak} />
+          <View style={styles.statRowTight}>
+            <StatBlock label="Racha actual" value={currentStreak} />
+            <StatBlock label="Racha máxima" value={maxStreak} />
+          </View>
         </View>
-
         <Text style={styles.subTitle}>Distribución de intentos</Text>
         {guessDistribution.map((count, i) => (
           <View key={i} style={styles.guessDistributionRow}>
@@ -104,6 +110,9 @@ export default function StatsScreen() {
             <Text style={styles.count}>{count}</Text>
           </View>
         ))}
+        <Text style={[styles.statLabel, { textAlign: 'center'}]}>
+          Este gráfico muestra cuantas veces ganaste en cada intento.
+        </Text>
       </View>
     </ScrollView>
   );
@@ -111,11 +120,9 @@ export default function StatsScreen() {
 
 function StatBlock({ label, value }: { label: string; value: number | string }) {
   return (
-    <View style={styles.statBlock}>
-      <View style={styles.statValueBox}>
+    <View style={styles.statShadowWrapper}>
+      <View style={styles.statBlock}>
         <Text style={styles.statValue}>{value}</Text>
-      </View>
-      <View style={styles.statLabelBox}>
         <Text style={styles.statLabel}>{label}</Text>
       </View>
     </View>
@@ -127,23 +134,41 @@ const styles = StyleSheet.create({
     backgroundColor: '#E8F0FE',
     flex: 1,
   },
+  wavesBackground: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    zIndex: -1,
+  },
   contentBox: {
+    position: 'relative',
     backgroundColor: '#fff',
     borderRadius: 24,
-    padding: 24,
+    paddingBottom: 24,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.1,
     shadowRadius: 6,
     elevation: 4,
+    marginTop: 40,
     margin: 20,
+  },
+  titleContainer: {
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+    backgroundColor: 'rgba(31, 58, 147, 0.9)',
+    margin: 0,
+    padding: 10,
+    width: '100%',
   },
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#2C3E50',
+    color: '#fff',
     textAlign: 'center',
-    marginBottom: 32,
+  },
+  statContainer: {
+    padding: 20,
   },
   statRow: {
     flexDirection: 'row',
@@ -156,27 +181,27 @@ const styles = StyleSheet.create({
     gap: 24,
     marginBottom: 16,
   },
-  statBlock: {
+
+  statShadowWrapper: {
     width: 100,
     borderRadius: 12,
-    overflow: 'hidden',
+    //sombra para ios
+    backgroundColor: '#fff',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
+    // Sombra para Android
     elevation: 3,
   },
-  statValueBox: {
-    backgroundColor: '#EAF2FF',
-    paddingVertical: 12,
-    alignItems: 'center',
-  },
-  statLabelBox: {
-    backgroundColor: 'white',
-    paddingVertical: 6,
-    alignItems: 'center',
-  },
 
+  statBlock: {
+    borderRadius: 12,
+    overflow: 'hidden',
+    alignItems: 'center',
+    paddingVertical: 12,
+    backgroundColor: '#fff',
+  },
   statLabel: {
     fontSize: 12,
     color: '#2C3E50',
@@ -185,21 +210,25 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: 'bold',
     color: '#1F3A93',
+    marginBottom: 4,
   },
 
   subTitle: {
+    width: '100%',
+    backgroundColor: 'rgba(31, 58, 147, 0.9)',
+    color: '#fff',
     fontSize: 20,
     fontWeight: '600',
     textAlign: 'center',
-    color: '#2C3E50',
-    marginBottom: 16,
-    marginTop: 16,
+    marginBottom: 24,
+    padding: 10,
   },
   guessDistributionRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 8,
+    marginBottom: 10,
     marginLeft: 10,
+    paddingHorizontal: 20,
   },
   try: {
     width: 24,
