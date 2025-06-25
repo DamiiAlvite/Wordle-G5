@@ -264,5 +264,6 @@ const styles = StyleSheet.create({
     height: "100%",
     backgroundColor: "rgba(0,0,0,0.4)",
     zIndex: 10,
+    paddingTop: 75
   },
 });

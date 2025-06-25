@@ -1,66 +1,131 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { useWordOfDay } from "@/context/wordOfTheDayProvider";
+import AnimatedCell from "./animatedCell";
 
 type GameProps = {
   game: {
     date?: string;
     win_attemp?: number;
-  };
+    win?: boolean;
+  } | null;
 };
 
 export default function EndGame({ game }: GameProps) {
+  const { word, loading } = useWordOfDay();
+  const [flipTriggers, setFlipTriggers] = useState<boolean[]>([]);
 
-    const {word, loading} = useWordOfDay();
+  // Inicializar los flip triggers cuando se cargue la palabra
+  useEffect(() => {
+    if (word) {
+      setFlipTriggers(new Array(word.length).fill(false));
+      // Activar animaciones en secuencia
+      const timer = setTimeout(() => {
+        word.split('').forEach((_, index) => {
+          setTimeout(() => {
+            setFlipTriggers(prev => {
+              const newTriggers = [...prev];
+              newTriggers[index] = true;
+              return newTriggers;
+            });
+          }, index * 150);
+        });
+      }, 500);
+
+      return () => clearTimeout(timer);
+    }
+  }, [word]);
 
   return (
-    <View style={Styles.container}>
-      <Text style={Styles.title}>Juego Terminado!</Text>
-      <View style={Styles.stat}>
-        <View>
-          <Text style={Styles.label}>Fecha:</Text>
-          <Text>{game?.date ?? "-"}</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Juego Terminado!</Text>
+      <View style={styles.stat}>
+        <View style={styles.statItem}>
+          <Text style={styles.label}>Fecha:</Text>
+          <Text style={styles.value}>{game?.date ?? "-"}</Text>
         </View>
-        <View>
-          <Text style={Styles.label}>Intento Ganador:</Text>
-          <Text>{game?.win_attemp ?? "-"}</Text>
-        </View>
-        <View>
-          <Text style={Styles.label}>Palabra:</Text>
-          <Text>{word ?? "-"}</Text>
+        {game?.win ? (
+          <View style={styles.statItem}>
+            <Text style={styles.label}>Intento Ganador:</Text>
+            <Text style={styles.value}>{game?.win_attemp ?? "-"}</Text>
+          </View>
+        ) : (
+          <View style={styles.statItem}>
+            <Text style={styles.label}>No adivinaste la palabra del día.</Text>
+          </View>
+        )}
+        <View style={styles.statItem}>
+          <Text style={styles.label}>Palabra:</Text>
+          {word ? (
+            <View style={styles.wordContainer}>
+              {word.split('').map((letter, index) => (
+                <AnimatedCell
+                  key={`word-${index}`}
+                  letter={letter.toUpperCase()}
+                  color="correct"
+                  flipTrigger={flipTriggers[index] || false}
+                  shakeTrigger={false}
+                />
+              ))}
+            </View>
+          ) : (
+            <Text style={styles.value}>-</Text>
+          )}
         </View>
       </View>
-      <Text style={Styles.footer}>Vuelve mañana para un nuevo desafío.</Text>
+      <Text style={styles.footer}>Vuelve mañana para un nuevo desafío.</Text>
     </View>
   );
 }
 
-const Styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
-    width: "80%",
-    height: "45%",
-    marginHorizontal: "auto",
-    marginVertical: "30%",
-    padding: 20,
-    backgroundColor: "white",
-    borderRadius: 40,
+    width: "90%",
+    maxWidth: 400,
+    padding: 28,
+    backgroundColor: "#f9f9fb",
+    borderRadius: 32,
+    alignSelf: "center",
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 4 },
+    shadowRadius: 12,
+    elevation: 6,
   },
   title: {
-    fontSize: 24,
-    textAlign: "center",
+    fontSize: 26,
     fontWeight: "bold",
-    marginBottom: 10,
+    textAlign: "center",
+    marginBottom: 24,
+    color: "#222",
+  },
+  stat: {
+    marginBottom: 24,
+  },
+  statItem: {
+    marginBottom: 16,
+  },
+  label: {
+    fontWeight: "600",
+    fontSize: 17,
+    color: "#444",
+    marginBottom: 4,
+  },
+  value: {
+    fontSize: 17,
+    color: "#222",
+  },
+  wordContainer: {
+    flexDirection: "row",
+    marginTop: 12,
+    gap: 6,
+    alignItems: "center",
+    justifyContent: "center",
   },
   footer: {
+    marginTop: 12,
     textAlign: "center",
-    fontSize: 16,
+    fontSize: 15,
+    color: "#666",
   },
-    stat: {
-        marginVertical: 20,
-    },
-    label: {
-        fontWeight: "bold",
-        fontSize: 16,
-        marginBottom: 5,
-    },
 });
