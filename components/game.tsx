@@ -7,6 +7,7 @@ import WordsList from "./wordsList";
 import EndGame from "./gameOver";
 import { useAuth } from "@/providers/authProvider";
 import wordsData from "@/utils/5letters.json";
+import WavesBackground from "@/assets/svg/wavesBackground";
 
 const ROWS = 6;
 const COLS = 5;
@@ -203,6 +204,7 @@ export default function Game() {
 
   return (
     <View style={styles.container}>
+      <WavesBackground style={styles.wavesBackground} />
       <Text style={styles.day}>
         {new Date()
           .toLocaleDateString("es-ES", { weekday: "long" })
@@ -237,6 +239,13 @@ const styles = StyleSheet.create({
     flex: 1,
     position: "relative",
     alignItems: "center",
+    backgroundColor: "#E8F0FE",
+  },
+  wavesBackground: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    zIndex: 0,
   },
   day: {
     marginTop: 20,

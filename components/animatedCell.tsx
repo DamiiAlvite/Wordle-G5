@@ -2,10 +2,10 @@ import React, { useRef, useEffect } from "react";
 import { Animated, Text, StyleSheet, View } from "react-native";
 
 const COLORS = {
-  default: "#e0e0e0",
-  present: "#ffd54f",
-  absent: "#b0b0b0",
-  correct: "#6aaa64",
+  default: "#cbd5e1",
+  present: "#facc15",
+  absent: "#9ca3af",
+  correct: "#22c55e",
   error: "#ff4d4f",
 };
 

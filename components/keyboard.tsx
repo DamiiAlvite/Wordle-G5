@@ -30,9 +30,9 @@ const isAccentedKey = (key: string): key is keyof typeof ACCENTED => {
 };
 const COLORS = {
   default: "#111",
-  present: "#ffd54f",
-  absent: "#787c7e",
-  correct: "#6aaa64",
+  present: "#facc15",
+  absent: "#9ca3af",
+  correct: "#22c55e",
 };
 
 export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors = {} }: KeyboardProps) {
