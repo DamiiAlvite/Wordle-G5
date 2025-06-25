@@ -17,6 +17,7 @@ interface AnimatedCellProps {
   flipTrigger: boolean;
   shakeTrigger: boolean;
   onFlipEnd?: () => void;
+  persistColor?: boolean;
 }
 
 export default function AnimatedCell({
@@ -25,6 +26,7 @@ export default function AnimatedCell({
   flipTrigger,
   shakeTrigger,
   onFlipEnd,
+  persistColor = true,
 }: AnimatedCellProps) {
   const animatedValue = useRef(new Animated.Value(0)).current;
   const shakeValue = useRef(new Animated.Value(0)).current;
@@ -39,14 +41,14 @@ export default function AnimatedCell({
       }).start(() => {
         if (onFlipEnd) onFlipEnd();
       });
-    } else {
+    } else if (!persistColor) {
       Animated.timing(animatedValue, {
         toValue: 0,
         duration: 400,
         useNativeDriver: true,
       }).start();
     }
-  }, [flipTrigger]);
+  }, [flipTrigger, persistColor]);
 
   useEffect(() => {
     if (shakeTrigger) {

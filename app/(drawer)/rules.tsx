@@ -80,6 +80,7 @@ export default function RulesPage() {
                 color={colorRule.color}
                 flipTrigger={flipTriggers[idx]}
                 shakeTrigger={false}
+                persistColor={false}
               />
               <Text style={styles.colorRuleText}>{colorRule.text}</Text>
             </View>
@@ -97,6 +98,7 @@ export default function RulesPage() {
                 color="error"
                 flipTrigger={false}
                 shakeTrigger={errorTriggers[index]}
+                persistColor={false}
               />
             ))}
           </View>
