@@ -31,6 +31,7 @@ export default function AnimatedCell({
 
   useEffect(() => {
     if (flipTrigger) {
+      animatedValue.setValue(0);
       Animated.timing(animatedValue, {
         toValue: 1,
         duration: 600,
@@ -38,6 +39,12 @@ export default function AnimatedCell({
       }).start(() => {
         if (onFlipEnd) onFlipEnd();
       });
+    } else {
+      Animated.timing(animatedValue, {
+        toValue: 0,
+        duration: 400,
+        useNativeDriver: true,
+      }).start();
     }
   }, [flipTrigger]);
 
@@ -106,6 +113,12 @@ export default function AnimatedCell({
       >
         <Text style={styles.letter}>{letter}</Text>
       </Animated.View>
+      
+      {shakeTrigger && !flipTrigger && (
+        <View style={[StyleSheet.absoluteFill, styles.inner, { backgroundColor: COLORS[color] }]}>
+          <Text style={styles.letter}>{letter}</Text>
+        </View>
+      )}
     </Animated.View>
   );
 }
