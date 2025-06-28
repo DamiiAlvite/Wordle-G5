@@ -6,7 +6,7 @@ import Keyboard from "./keyboard";
 import WordsList from "./wordsList";
 import EndGame from "./gameOver";
 import { useAuth } from "@/providers/authProvider";
-import wordsData from "@/utils/5letters.json";
+import wordsData from "@/utils/validGuesses.json";
 import WavesBackground from "@/assets/svg/wavesBackground";
 
 const ROWS = 6;
