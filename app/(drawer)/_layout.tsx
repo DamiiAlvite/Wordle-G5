@@ -7,32 +7,19 @@ import { supabase } from '@/lib/supabase';
 import Feather from '@expo/vector-icons/Feather';
 
 function CustomDrawerContent(props: DrawerContentComponentProps) {
-  const { userId } = useAuth();
-  const [userName, setUserName] = useState('');
+  const { userId, username } = useAuth();
 
   const logOut = () => {
     supabase.auth.signOut();
   };
 
-  useEffect(() => {
-    const getUserName = async () => {
-      const { data, error } = await supabase
-        .from('user')
-        .select('name')
-        .eq('user_id', userId)
-        .single();
-      if (!error && data?.name) {
-        setUserName(data.name);
-      }
-    };
-    if (userId) getUserName();
-  }, [userId]);
+  
 
   return (
     <DrawerContentScrollView {...props} contentContainerStyle={{ flex: 1 }}>
       <View style={styles.header}>
         <Feather name="user" size={32} color="black" style={styles.userIcon}/>
-        <Text style={styles.username}>Bienvenido, {userName || 'Usuario'}</Text>
+        <Text style={styles.username}>Bienvenido, {username || 'Usuario'}</Text>
       </View>
       <View style={styles.menu}>
         <DrawerItemList {...props} />
