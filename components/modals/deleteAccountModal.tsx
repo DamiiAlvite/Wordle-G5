@@ -86,6 +86,7 @@ export default function deleteAccounteModal({ visible, onClose }: deleteAccountM
                   value={value}
                   onChangeText={onChange}
                   secureTextEntry
+                  placeholderTextColor="#a3b1bd"
                 />
               )}
             />

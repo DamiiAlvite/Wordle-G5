@@ -96,6 +96,7 @@ export default function UpdatePasswordModal({ visible, onClose }: UpdatePassword
                   value={value}
                   onChangeText={onChange}
                   secureTextEntry
+                  placeholderTextColor="#a3b1bd"
                 />
               )}
             />
@@ -114,6 +115,7 @@ export default function UpdatePasswordModal({ visible, onClose }: UpdatePassword
                   value={value}
                   onChangeText={onChange}
                   secureTextEntry
+                  placeholderTextColor="#a3b1bd"
                 />
               )}
             />
@@ -132,6 +134,7 @@ export default function UpdatePasswordModal({ visible, onClose }: UpdatePassword
                   value={value}
                   onChangeText={onChange}
                   secureTextEntry
+                  placeholderTextColor="#a3b1bd"
                 />
               )}
             />

@@ -86,6 +86,7 @@ export default function UpdateUsernameModal({ visible, onClose }: UpdateUsername
                   autoCapitalize="none"
                   value={value}
                   onChangeText={onChange}
+                  placeholderTextColor="#a3b1bd"
                 />
               )}
             />
@@ -105,6 +106,7 @@ export default function UpdateUsernameModal({ visible, onClose }: UpdateUsername
                   autoCapitalize="none"
                   value={value}
                   onChangeText={onChange}
+                  placeholderTextColor="#a3b1bd"
                 />
               )}
             />
