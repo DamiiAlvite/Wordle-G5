@@ -5,6 +5,7 @@ import { useAuth } from '@/providers/authProvider';
 import TopBar from "@/components/topBar";
 import { supabase } from "@/lib/supabase";
 import WavesBackground from "@/assets/svg/wavesBackground2";
+import { Shadow } from 'react-native-shadow-2';
 
 export default function StatsScreen() {
   const { userId } = useAuth();
@@ -86,33 +87,45 @@ export default function StatsScreen() {
     <ScrollView contentContainerStyle={styles.container}>
       <TopBar />
       <WavesBackground style={styles.wavesBackground} pointerEvents="none" />
-      <View style={styles.contentBox}>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>Estadísticas</Text>
-        </View>
-        <View style={styles.statContainer}>
-          <View style={styles.statRow}>
-            <StatBlock label="Jugados" value={played} />
-            <StatBlock label="Ganados" value={wins} />
-            <StatBlock label="% Éxito" value={winPercentage} />
-          </View>
+      <View style={styles.centerContentWrapper}>
+        <Shadow
+          distance={6}
+          startColor="rgba(0,0,0,0.2)"
+          offset={[0, 4]}
+          style={{
+            backgroundColor: "rgba(255, 255, 255, 0.69)",
+            borderRadius: 24,
+          }}
+        >
+          <View style={styles.contentBox}>
+            <View style={styles.titleContainer}>
+              <Text style={styles.title}>Estadísticas</Text>
+            </View>
+            <View style={styles.statContainer}>
+              <View style={styles.statRow}>
+                <StatBlock label="Jugados" value={played} />
+                <StatBlock label="Ganados" value={wins} />
+                <StatBlock label="% Éxito" value={winPercentage} />
+              </View>
 
-          <View style={styles.statRowTight}>
-            <StatBlock label="Racha actual" value={currentStreak} />
-            <StatBlock label="Racha máxima" value={maxStreak} />
+              <View style={styles.statRowTight}>
+                <StatBlock label="Racha actual" value={currentStreak} />
+                <StatBlock label="Racha máxima" value={maxStreak} />
+              </View>
+            </View>
+            <Text style={styles.subTitle}>Distribución de intentos</Text>
+            {guessDistribution.map((count, i) => (
+              <View key={i} style={styles.guessDistributionRow}>
+                <Text style={styles.try}>{i + 1}</Text>
+                <View style={[styles.bar, { width: count * 20 }]} />
+                <Text style={styles.count}>{count}</Text>
+              </View>
+            ))}
+            <Text style={[styles.statLabel, { textAlign: 'center' }]}>
+              Este gráfico muestra cuantas veces ganaste en cada intento.
+            </Text>
           </View>
-        </View>
-        <Text style={styles.subTitle}>Distribución de intentos</Text>
-        {guessDistribution.map((count, i) => (
-          <View key={i} style={styles.guessDistributionRow}>
-            <Text style={styles.try}>{i + 1}</Text>
-            <View style={[styles.bar, { width: count * 20 }]} />
-            <Text style={styles.count}>{count}</Text>
-          </View>
-        ))}
-        <Text style={[styles.statLabel, { textAlign: 'center'}]}>
-          Este gráfico muestra cuantas veces ganaste en cada intento.
-        </Text>
+        </Shadow>
       </View>
     </ScrollView>
   );
@@ -140,23 +153,20 @@ const styles = StyleSheet.create({
     left: 0,
     zIndex: -1,
   },
+  centerContentWrapper: {
+    flex: 1,
+    alignItems: 'center',
+    paddingVertical: 40,
+  },
   contentBox: {
     position: 'relative',
-    backgroundColor: '#fff',
     borderRadius: 24,
     paddingBottom: 24,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.1,
-    shadowRadius: 6,
-    elevation: 4,
-    marginTop: 40,
-    margin: 20,
   },
   titleContainer: {
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
-    backgroundColor: 'rgba(31, 58, 147, 0.9)',
+    backgroundColor: '#FFF',
     margin: 0,
     padding: 10,
     width: '100%',
@@ -164,7 +174,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#fff',
+    color: '#222',
     textAlign: 'center',
   },
   statContainer: {
@@ -200,23 +210,25 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     alignItems: 'center',
     paddingVertical: 12,
-    backgroundColor: '#fff',
+    backgroundColor: "rgba(255,255,255,0.85)",
   },
   statLabel: {
     fontSize: 12,
-    color: '#2C3E50',
+    textAlign: 'center',
+    lineHeight: 16,
+    paddingHorizontal: 20,
   },
   statValue: {
     fontSize: 22,
     fontWeight: 'bold',
-    color: '#1F3A93',
+    color: '#222',
     marginBottom: 4,
   },
 
   subTitle: {
     width: '100%',
-    backgroundColor: 'rgba(31, 58, 147, 0.9)',
-    color: '#fff',
+    backgroundColor: '#fff',
+    color: '#222',
     fontSize: 20,
     fontWeight: '600',
     textAlign: 'center',
@@ -233,20 +245,20 @@ const styles = StyleSheet.create({
   try: {
     width: 24,
     textAlign: 'center',
-    backgroundColor: '#EAF2FF',
-    color: '#2C3E50',
+    backgroundColor: 'rgba(197, 226, 251, 0.85)',
+    color: '#222',
     paddingVertical: 4,
     borderRadius: 4,
   },
   bar: {
     height: 20,
-    backgroundColor: '#1F3A93',
+    backgroundColor: 'rgba(140, 201, 255, 0.85)',
     borderRadius: 6,
     marginLeft: 8,
   },
   count: {
     marginLeft: 8,
-    color: '#2C3E50',
+    color: '#222',
     fontWeight: '500',
   },
 });
