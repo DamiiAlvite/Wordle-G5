@@ -19,7 +19,7 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
     <DrawerContentScrollView {...props} contentContainerStyle={{ flex: 1 }}>
       <View style={styles.header}>
         <Feather name="user" size={32} color="black" style={styles.userIcon}/>
-        <Text style={styles.username}>Bienvenido, {username || 'Usuario'}</Text>
+        <Text style={styles.username}>Hola! {username || 'Usuario'}</Text>
       </View>
       <View style={styles.menu}>
         <DrawerItemList {...props} />
@@ -59,6 +59,8 @@ const styles = StyleSheet.create({
   username: {
     fontWeight: 'bold',
     fontSize: 28,
+    marginLeft: 8,
+    paddingRight: "10%",
   },
   menu: {
     flex: 1,
