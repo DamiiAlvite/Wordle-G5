@@ -7,32 +7,50 @@ type AuthData = {
     loading: boolean;
     session: Session | null;
     userId: string | null;
+    username: string | null;
+    refreshUserData: () => Promise<void>;
 };
 
 const AuthContext = createContext<AuthData>({
     loading: true,
     session: null,
     userId: null,
+    username: null,
+    refreshUserData: async () => { },
 });
 
 interface Props {
     children: React.ReactNode;
 }
 
-export default function AuthProvider( props: Props) {
+export default function AuthProvider(props: Props) {
     const [loading, setLoading] = useState(true);
     const [session, setSession] = useState<Session | null>(null);
-    const userId = session?.user?.id ?? null;
+    const [username, setUsername] = useState<string | null>(null);
+    const refreshUserData = async (id: string | null) => {
+        if (!id) return;
+        const { data, error } = await supabase
+            .from("user")
+            .select("name")
+            .eq("user_id", id)
+            .single();
+
+        if (error) {
+            console.error("Error fetching user name:", error);
+            return;
+        }
+        setUsername(data?.name ?? null);
+    };
 
     useEffect(() => {
         async function fetchSession() {
-            const {error, data} = await supabase.auth.getSession();
+            const { error, data } = await supabase.auth.getSession();
             if (error) {
                 console.error("Error fetching session:", error);
             }
             if (data.session) {
                 setSession(data.session);
-            }else {
+            } else {
                 router.replace("/signin");
             }
             setLoading(false);
@@ -40,12 +58,12 @@ export default function AuthProvider( props: Props) {
 
         fetchSession();
 
-        const { data: authListener } = supabase.auth.onAuthStateChange(async(_, session) => {
+        const { data: authListener } = supabase.auth.onAuthStateChange(async (_, session) => {
             setSession(session);
             setLoading(false);
-            if (session){
+            if (session) {
                 router.replace("/");
-            }else {
+            } else {
                 router.replace("/signin");
             }
         });
@@ -54,8 +72,15 @@ export default function AuthProvider( props: Props) {
             authListener?.subscription.unsubscribe();
         }
     }, [])
+
+    useEffect(() => {
+        if (session?.user?.id) {
+            refreshUserData(session.user.id);
+        }
+    }, [session]);
+
     return (
-        <AuthContext.Provider value={{ loading, session, userId }}>
+        <AuthContext.Provider value={{ loading, session, userId: session?.user?.id ?? null, username, refreshUserData: () => refreshUserData(session?.user?.id ?? null) }}>
             {props.children}
         </AuthContext.Provider>
     );
