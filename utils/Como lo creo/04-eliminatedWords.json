@@ -1,0 +1,6704 @@
+[
+  {
+    "palabra": "aaaah",
+    "reglas_violadas": [
+      "H no seguida por vocal",
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "abbas",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "abbey",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "abbie",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "abbot",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "abdel",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "abdul",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "addie",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "adieu",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "aeryn",
+    "reglas_violadas": [
+      "Termina con 3 consonantes"
+    ]
+  },
+  {
+    "palabra": "aggie",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "agnes",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "agnew",
+    "reglas_violadas": [
+      "Contiene W",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "ahhhh",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "ahmad",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "ahmed",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "ahmet",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "aiido",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "aiios",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "aisha",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "akash",
+    "reglas_violadas": [
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "alcoh",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "alexx",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "allah",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "alpha",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "amaia",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "amish",
+    "reglas_violadas": [
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "anwar",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "arrow",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "ashby",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "asher",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "ashok",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "asign",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "asmmr",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "assad",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "athos",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "aubry",
+    "reglas_violadas": [
+      "Termina con 3 consonantes"
+    ]
+  },
+  {
+    "palabra": "avril",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "balls",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "banks",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "barry",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "bauer",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "beach",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "becks",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "becky",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "bells",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "belly",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "bengt",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "benjy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "benny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "berry",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "beryl",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "betsy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "bette",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "betts",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "betty",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "biggs",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "bills",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "billy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "birch",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "birds",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "bitch",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "bixby",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "bjorn",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "blanc",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "blank",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "bligh",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "blind",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "bliss",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "blitz",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "block",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "blogs",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "bluff",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "blunt",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "bluth",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "bobbi",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "bobby",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "boggs",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "bonny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "booth",
+    "reglas_violadas": [
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "bosch",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "bowen",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "bowie",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "brady",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "bragg",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "brand",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "brant",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "brass",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "brent",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "brett",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "brick",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "brind",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "britt",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "brock",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "brody",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "bronx",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "bryan",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "bryce",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "bubba",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "bucks",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "bucky",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "buddy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "buffy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "buggy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "bugsy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "buick",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "bulls",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "bully",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "bunch",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "bundy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "bunny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "bunty",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "burns",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "butch",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "bwana",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "byers",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "byrne",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "byron",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "caddy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "cally",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "cammy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "candy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "carly",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "cathy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "caían",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "caías",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "champ",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "chang",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "chazz",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "chefs",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "cheng",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "chess",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "chevy",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "chick",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "chill",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "ching",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "chips",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "chist",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "chloé",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "chong",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "chris",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "chuck",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "chung",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "chuny",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "cindy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "cissy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "clark",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "clary",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "clash",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "clegg",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "click",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "clics",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "cliff",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "clint",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "clips",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "clown",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "clubs",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "clyde",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "coach",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "colby",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "compr",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "consp",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "cordy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "corky",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "corps",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "cosby",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "crack",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "crash",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "crest",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "crews",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "creía",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "crfas",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "crick",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "crisp",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "croft",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "crowe",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "crown",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "crumb",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "cuddy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "cully",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "cumpl",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "curly",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "curry",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "cyber",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "cylon",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "cyril",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "cyrus",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "daddy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "daiio",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "damme",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "dandy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "danny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "darby",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "darcy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "darhk",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "darth",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "daryl",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "dawes",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "debby",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "delhi",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "delko",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "denny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "derby",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "derry",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "dewey",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "diagn",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "dicky",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "diddy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "digby",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "diggs",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "digna",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "digno",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "dinah",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "dinky",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "dizzy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "djinn",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "dobbs",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "dobby",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "dolls",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "dolly",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "donny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "dotty",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "downs",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "draft",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "drill",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "ducks",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "ducky",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "duffy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "durst",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "dusty",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "dutch",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "dwyer",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "dylan",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "dyson",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "eddie",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "edith",
+    "reglas_violadas": [
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "edwin",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "effie",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "emmet",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "enoch",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "eppes",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "erich",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "erick",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "ernst",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "erwin",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "essex",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "ethan",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "ethel",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "ewing",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "faith",
+    "reglas_violadas": [
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "falls",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "fancy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "fanny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "farah",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "fatah",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "fatty",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "femme",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "ferry",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "films",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "finch",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "fitch",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "flack",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "flagg",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "flash",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "flats",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "flick",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "flint",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "floyd",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "fluía",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "flynn",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "foggy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "folcl",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "folkl",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "foxxy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "frank",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "franz",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "frell",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "frfos",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "frick",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "fritz",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "frost",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "funky",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "fuzzy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "gabby",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "gaius",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "gamma",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "garry",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "garth",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "gauss",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "gecko",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "gekko",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "gemma",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "geoff",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "gerry",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "ghost",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "gibbs",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "gilly",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "ginny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "girls",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "glenn",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "glock",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "glory",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "glynn",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "gnita",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "gnomo",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "gokuh",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "gordy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "gotta",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "gower",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "grady",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "graff",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "grand",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "grant",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "grass",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "gregg",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "griff",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "grill",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "grimm",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "grodd",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "gross",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "guauu",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "guiar",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "guión",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "guían",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "guías",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "guíen",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "gwang",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "gypsy",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "hajji",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "haleh",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "hands",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "hanks",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "hardy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "harry",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "hatch",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "havre",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "hawke",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "hawks",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "hawái",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "heath",
+    "reglas_violadas": [
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "hecht",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "hedda",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "henry",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "hetty",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "hewes",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "hicks",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "higgs",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "hildy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "hills",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "hilly",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "hippy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "hitch",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "hobbs",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "hobby",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "hoffa",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "holly",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "hooch",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "hoppy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "horst",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "hoshi",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "hotch",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "howdy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "howie",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "https",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Empieza con H y luego una consonante",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "hueón",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "hurst",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "hutch",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "huían",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "hwang",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W",
+      "H no seguida por vocal",
+      "Empieza con H y luego una consonante"
+    ]
+  },
+  {
+    "palabra": "hyang",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Empieza con H y luego una consonante"
+    ]
+  },
+  {
+    "palabra": "hyatt",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Empieza con H y luego una consonante",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "hydra",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Empieza con H y luego una consonante"
+    ]
+  },
+  {
+    "palabra": "hyeon",
+    "reglas_violadas": [
+      "H no seguida por vocal",
+      "Empieza con H y luego una consonante"
+    ]
+  },
+  {
+    "palabra": "hymie",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "H no seguida por vocal",
+      "Empieza con H y luego una consonante"
+    ]
+  },
+  {
+    "palabra": "hyoga",
+    "reglas_violadas": [
+      "H no seguida por vocal",
+      "Empieza con H y luego una consonante"
+    ]
+  },
+  {
+    "palabra": "hyung",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Empieza con H y luego una consonante"
+    ]
+  },
+  {
+    "palabra": "inoue",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "iqbal",
+    "reglas_violadas": [
+      "Q no seguida por U"
+    ]
+  },
+  {
+    "palabra": "irish",
+    "reglas_violadas": [
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "irwin",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "iuoso",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "izzie",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "jabba",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "jacko",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "jacks",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "jacky",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "jaffa",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "jaffe",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "jelly",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "jemma",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "jenny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "jerry",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "jesse",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "jessi",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "jessy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "jewel",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "jilly",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "jimmy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "johns",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "johny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "jolly",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "jonah",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "jonny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "jordy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "judah",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "kappa",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "kathy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "keith",
+    "reglas_violadas": [
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "kelly",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "kenny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "kerry",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "kimmi",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "kimmy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "kings",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "kirby",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "kisha",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "kitty",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "kizzy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "kjell",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "knock",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "knows",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "kraft",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "krill",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "kroll",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "krupp",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "kurtz",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "kwang",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "kylie",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes"
+    ]
+  },
+  {
+    "palabra": "kyung",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "lakhs",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "larry",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "lasky",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "lasse",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "latfn",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "latte",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "leach",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "lefty",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "leigh",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "leith",
+    "reglas_violadas": [
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "lenny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "letty",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "lewis",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "leías",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "lfder",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "lfnea",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes"
+    ]
+  },
+  {
+    "palabra": "libby",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "liddy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "lilah",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "lilly",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "linds",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "lindy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "lissa",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "liszt",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "lizzy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "llhan",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "lloyd",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "lobby",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "locke",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "lolly",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "lonny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "lotta",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "lotte",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "louie",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "louis",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "lowen",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "lower",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "lowry",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "lucky",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "lunch",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "lundy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "lydia",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes"
+    ]
+  },
+  {
+    "palabra": "lyman",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "lynch",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "lynda",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "lynne",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "lyons",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "maddy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "maggi",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "magna",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "magno",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "mahdi",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "mamma",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "mammy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "mandy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "manny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "march",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "marcy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "marks",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "marky",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "marsh",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "marty",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "masha",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "matty",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "mccoy",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "mcfly",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "mcgee",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes"
+    ]
+  },
+  {
+    "palabra": "mckay",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "mckee",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "mehra",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "mehta",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "mercy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "merry",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "meryl",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "micah",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "micky",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "might",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "mills",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "milly",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "minds",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "mindy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "minsk",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "misha",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "missy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "misty",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "mitch",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "mitzi",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "mmmmm",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "molly",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "momma",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "monty",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "morty",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "mosby",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "mostr",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "mouch",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "mouth",
+    "reglas_violadas": [
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "muddy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "muffy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "munch",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "mundy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "murph",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "musso",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "myers",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "myles",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "myrna",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "myron",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "myung",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "nancy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "nanny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "nasty",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "nelly",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "nerds",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "nerys",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "nessa",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "niamh",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "nicki",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "nicks",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "nicky",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "niiio",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "nikki",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "nisha",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "nishi",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "noooo",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "norah",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "north",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "nucky",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "nygma",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "nylon",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "nyssa",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "obtén",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "ooooh",
+    "reglas_violadas": [
+      "H no seguida por vocal",
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "oprah",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "ossis",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "ossum",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "ought",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "ouija",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "owens",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "ozzie",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "paddy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "palms",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "pappu",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "pappy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "parfs",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "parks",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "parry",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "pasha",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "patch",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "patsy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "patti",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "patty",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "peach",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "peggy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "penny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "peppe",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "percy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "perry",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "perth",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "petty",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "phill",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "philo",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "phlox",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "piggy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "pinky",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "pippa",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "pippi",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "pippo",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "pizza",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "plasm",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "platt",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "pnvar",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "polka",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "polly",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "poppy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "porch",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "porgy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "porky",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "potts",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "pratt",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "proxy",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "pryce",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "pryor",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "pugna",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "punch",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "punks",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "purdy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "pussy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "qaeda",
+    "reglas_violadas": [
+      "Q no seguida por U"
+    ]
+  },
+  {
+    "palabra": "qasim",
+    "reglas_violadas": [
+      "Q no seguida por U"
+    ]
+  },
+  {
+    "palabra": "qdian",
+    "reglas_violadas": [
+      "Q no seguida por U"
+    ]
+  },
+  {
+    "palabra": "qdias",
+    "reglas_violadas": [
+      "Q no seguida por U"
+    ]
+  },
+  {
+    "palabra": "queen",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "quier",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "quién",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "rajjo",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "rally",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "ralph",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "ranch",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "randy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "raoul",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "rawls",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "reddy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "reich",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "remmy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "rengl",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "renny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "reían",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "reías",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "rhade",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "rhett",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "rhino",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "rhoda",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "rhode",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "ricky",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "rigby",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "riggs",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "rigth",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "rikki",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "rishi",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "rizzo",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "rngia",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes"
+    ]
+  },
+  {
+    "palabra": "roach",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "robby",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "robyn",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "rocks",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "rocky",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "roddy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "rolls",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "rolly",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "ronny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "rossi",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "rouen",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "rowan",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "rugby",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "rummy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "russo",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "rusty",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "ryder",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "rygel",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "sachs",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "sacks",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "sally",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "sammi",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "sammy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "sands",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "sandy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "sarah",
+    "reglas_violadas": [
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "sasha",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "scott",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "selby",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "seltz",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "sentf",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "sexys",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "seáis",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "shack",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shado",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shady",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shaft",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shaka",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shake",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shalu",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shana",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shane",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shang",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shari",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shark",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shaun",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shawn",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "sheba",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "sheen",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shell",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "sheng",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "sheri",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shhhh",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shine",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shing",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shiro",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shiva",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shizu",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shock",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shore",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shows",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shrek",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "shyam",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "signe",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "signi",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "signo",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "simms",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "sincr",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "sindy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "singh",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "sioux",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "sissi",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "sissy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "skull",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "skype",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "slash",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "slick",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "smash",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "smith",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "snack",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "snart",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "soffa",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "sokka",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "solly",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "sonny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "spitz",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "split",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "spock",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "spray",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "stack",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "stacy",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "staff",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "stagg",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "stahl",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "stark",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "starr",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "stars",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "stash",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "steph",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "stern",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "stick",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "sting",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "stock",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "storm",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "strip",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "stroh",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "stuff",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "style",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "subte",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "sully",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "sunny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "sushi",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "swain",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "swami",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "swann",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "swift",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "swing",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "sword",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "sybil",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "sykes",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "sylar",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "tabby",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "taffy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "tally",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "talyn",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "tammi",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "tammy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "tandy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "tansy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "tariq",
+    "reglas_violadas": [
+      "Q no seguida por U"
+    ]
+  },
+  {
+    "palabra": "taryn",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "tasha",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "teddy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "terry",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "tessa",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "tests",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "thane",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "theta",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "thorn",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "three",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "thule",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "tibbs",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "tilly",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "timmy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "tippi",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "toddy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "tommy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "tonny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "toshi",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "tower",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "track",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "tracy",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "trans",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "trask",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "traía",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "trent",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "trick",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "tripp",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "trish",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "troll",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "truck",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "trudy",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "truly",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "trump",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "truth",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "tsung",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "tubbs",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "tully",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "twain",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "tweed",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "tweet",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "twist",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "tyler",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "tyson",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "upper",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "usher",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "uther",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "veáis",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "veían",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "veías",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "vichy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "vicki",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "vicky",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "viggo",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "vinny",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "vytas",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "wagon",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "waits",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "waldo",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "wales",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "wally",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "walsh",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "wanda",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "wanna",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "wants",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "watts",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "wayne",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "weber",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "weeks",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "weird",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "weiss",
+    "reglas_violadas": [
+      "Contiene W",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "welch",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W",
+      "H no seguida por vocal"
+    ]
+  },
+  {
+    "palabra": "wells",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "welsh",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "wendy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "wesen",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "whale",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "white",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "whole",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "wilde",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "wiley",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "willa",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "willi",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "wills",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "willy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "wilma",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "windy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "wings",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "wirye",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "wolfe",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "wolff",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "women",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "wones",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "wonka",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "woods",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "woody",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "woolf",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "woong",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "words",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "wordy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "works",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "worry",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "worth",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W",
+      "H no seguida por vocal",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "wyatt",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "wyler",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "wylie",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "wáter",
+    "reglas_violadas": [
+      "Contiene W"
+    ]
+  },
+  {
+    "palabra": "xviii",
+    "reglas_violadas": [
+      "Tiene 3 vocales seguidas"
+    ]
+  },
+  {
+    "palabra": "yoshi",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "zhang",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "zheng",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "zhong",
+    "reglas_violadas": [
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos"
+    ]
+  },
+  {
+    "palabra": "ziggy",
+    "reglas_violadas": [
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "zmlkl",
+    "reglas_violadas": [
+      "Empieza con 3 consonantes",
+      "Termina con 3 consonantes",
+      "Tiene 4 o más consonantes",
+      "Tiene 1 vocal o menos",
+      "Contiene combinación inválida"
+    ]
+  },
+  {
+    "palabra": "ígneo",
+    "reglas_violadas": [
+      "Contiene combinación inválida"
+    ]
+  }
+]
