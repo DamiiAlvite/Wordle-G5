@@ -31,6 +31,7 @@ export default function classicMode() {
       .select("*")
       .eq("user_id", userId)
       .eq("date", today)
+      .eq("mode", "classic")
       .maybeSingle();
     if (error) {
       console.error("Error al verificar juego del día:", error.message);
@@ -65,6 +66,7 @@ export default function classicMode() {
         win_attemp: attempts,
         win: win,
         word_id: wordId,
+        mode: "classic",
       });
 
     if (error) {
@@ -99,10 +101,12 @@ export default function classicMode() {
     <View style={styles.container}>
       <WavesBackground style={styles.wavesBackground} />
       {!hasPlayedToday ? (
-        <Game mode="classic" onGameEnd={handleGameEnd} />
+        <>
+          <Text style={styles.title}> Clásico </Text>
+          <Game mode="classic" onGameEnd={handleGameEnd} />
+        </>
       ) : (
         <View style={styles.playedContainer}>
-        <Text style={styles.title}> Clásico </Text>
           <Text style={styles.playedText}>Ya jugaste hoy</Text>
           <Text style={styles.playedSubtext}>Vuelve mañana para un nuevo desafío</Text>
         </View>
