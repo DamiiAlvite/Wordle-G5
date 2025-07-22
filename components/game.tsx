@@ -7,12 +7,16 @@ import WordsList from "./wordsList";
 import EndGame from "./gameOver";
 import { useAuth } from "@/providers/authProvider";
 import wordsData from "@/utils/validGuesses.json";
-import WavesBackground from "@/assets/svg/wavesBackground";
 
 const ROWS = 6;
 const COLS = 5;
 
-export default function Game() {
+interface GameProps {
+  mode: string;
+  onGameEnd?: (gameData: { won: boolean; attempts: number; word: string }) => void;
+}
+
+export default function Game({ mode, onGameEnd }: GameProps) {
 
   const { userId } = useAuth();
   const { word, wordId, loading } = useWordOfDay();
@@ -204,12 +208,6 @@ export default function Game() {
 
   return (
     <View style={styles.container}>
-      <WavesBackground style={styles.wavesBackground} />
-      <Text style={styles.day}>
-        {new Date()
-          .toLocaleDateString("es-ES", { weekday: "long" })
-          .toUpperCase()}
-      </Text>
       <WordsList
         letters={letters}
         colors={colors}
@@ -239,19 +237,6 @@ const styles = StyleSheet.create({
     flex: 1,
     position: "relative",
     alignItems: "center",
-    backgroundColor: "#E8F0FE",
-  },
-  wavesBackground: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    zIndex: 0,
-  },
-  day: {
-    marginTop: 20,
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "#333",
   },
   keyboard: {
     marginTop: 60,
