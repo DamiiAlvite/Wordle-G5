@@ -1,27 +1,16 @@
-import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity } from "react-native";
-import { StyleSheet } from "react-native";
-import Game from "@/components/game";
-import TopBar from "@/components/topBar";
+import { useEffect } from 'react';
+import { View, ActivityIndicator } from 'react-native';
+import { router } from 'expo-router';
 
-export default function Home() {
+export default function RedirectHome() {
+  useEffect(() => {
+    router.replace('/(drawer)/(tabs)');
+  }, []);
 
+  // Mostrar un loading mientras redirige
   return (
-    <View style={styles.container}>
-      <TopBar />
-      <Game />
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <ActivityIndicator size="large" />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  day: {
-    marginTop: 20,
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "#333",
-  },
-});

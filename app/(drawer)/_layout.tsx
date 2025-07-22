@@ -2,7 +2,6 @@ import { Drawer } from 'expo-router/drawer';
 import { DrawerContentScrollView, DrawerItemList, DrawerContentComponentProps, } from '@react-navigation/drawer';
 import { View, Text, TouchableOpacity, StyleSheet, } from 'react-native';
 import { useAuth } from '@/providers/authProvider';
-import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import Feather from '@expo/vector-icons/Feather';
 
@@ -12,8 +11,6 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
   const logOut = () => {
     supabase.auth.signOut();
   };
-
-  
 
   return (
     <DrawerContentScrollView {...props} contentContainerStyle={{ flex: 1 }}>
@@ -40,9 +37,16 @@ export default function DrawerLayout() {
       drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
       <Drawer.Screen name="profile" options={{ drawerLabel: 'Mi Perfil' }} />
-      <Drawer.Screen name="index" options={{ drawerLabel: 'Juego' }} />
+      <Drawer.Screen name="(tabs)" options={{ drawerLabel: 'Juego' }} />
       <Drawer.Screen name="rules" options={{ drawerLabel: 'Reglas' }} />
       <Drawer.Screen name="stats" options={{ drawerLabel: 'Estadísticas' }} />
+      <Drawer.Screen
+          name="index"
+          options={{
+            drawerItemStyle: { height: 0 },
+            drawerLabelStyle: { display: 'none' }
+          }}
+        />
     </Drawer>
   );
 }
