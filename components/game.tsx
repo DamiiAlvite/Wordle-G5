@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { supabase } from "@/lib/supabase";
 import { useWordOfDay } from "@/context/wordOfTheDayProvider";
 import Keyboard from "./keyboard";
 import WordsList from "./wordsList";
-import EndGame from "./gameOver";
-import { useAuth } from "@/providers/authProvider";
 import wordsData from "@/utils/validGuesses.json";
 
 const ROWS = 6;
@@ -13,12 +10,16 @@ const COLS = 5;
 
 interface GameProps {
   mode: string;
-  onGameEnd?: (gameData: { won: boolean; attempts: number; word: string }) => void;
+  onGameEnd?: (gameData: { 
+    won: boolean; 
+    attempts: number; 
+    word: string;
+    wordId: number | null;
+  }) => void;
 }
 
 export default function Game({ mode, onGameEnd }: GameProps) {
 
-  const { userId } = useAuth();
   const { word, wordId, loading } = useWordOfDay();
   const [currentRow, setCurrentRow] = useState(0);
   const [currentCol, setCurrentCol] = useState(0);
@@ -33,10 +34,8 @@ export default function Game({ mode, onGameEnd }: GameProps) {
   const [keyColors, setKeyColors] = useState<{
     [key: string]: "default" | "absent" | "present" | "correct";
   }>({});
-  const [gameOfTheDay, setGameOfTheDay] = useState(null);
   const [gameOver, setGameOver] = useState(false);
-  const [showEndModal, setShowEndModal] = useState(false);
-  const [pendingGameOver, setPendingGameOver] = useState(false); // 🔹 NUEVO
+  const [pendingGameOver, setPendingGameOver] = useState(false);
 
   const handleFlipEnd = async () => {
     if (pendingGameOver && !gameOver) {
@@ -44,51 +43,12 @@ export default function Game({ mode, onGameEnd }: GameProps) {
       setPendingGameOver(false);
       const guess = letters[currentRow].join("").toLowerCase();
       const target = word?.toLowerCase() || "";
-      await saveGame(guess, target);
-      await getGameOfTheDay();
-      setShowEndModal(true);
-    }
-  };
-
-  const getGameOfTheDay = async () => {
-    if (userId === null) return;
-    const today = new Date().toISOString().split("T")[0];
-    const { data, error } = await supabase
-      .from("game")
-      .select("*")
-      .eq("date", today)
-      .eq("user_id", userId)
-      .maybeSingle();
-
-    if (data) {
-      setGameOfTheDay(data);
-      setGameOver(true);
-      setShowEndModal(true);
-    }
-
-    if (error) {
-      console.error("Error al obtener el juego del día:", error.message);
-    }
-  };
-
-  const saveGame = async (guess: string, target: string) => {
-    const today = new Date().toISOString().split("T")[0];
-    const attemp = currentRow + 1;
-    const win = guess === target;
-    const { error } = await supabase
-    .from("game")
-    .insert({
-      date: today,
-      user_id: userId,
-      win_attemp: attemp,
-      win: win,
-      word_id: wordId,
-    });
-
-    if (error) {
-      console.error("Error al guardar el juego:", error.message);
-    } else {
-      console.log("Juego guardado exitosamente");
+      onGameEnd?.({
+        won: guess === target,
+        attempts: currentRow + 1,
+        word: target,
+        wordId: wordId
+      });
     }
   };
 
@@ -198,10 +158,6 @@ export default function Game({ mode, onGameEnd }: GameProps) {
     }
   };
 
-  useEffect(() => {
-    getGameOfTheDay();
-  }, [word, userId]);
-
   if (loading) {
     return <Text>Cargando...</Text>;
   }
@@ -223,11 +179,6 @@ export default function Game({ mode, onGameEnd }: GameProps) {
           keyColors={keyColors}
         />
       </View>
-      {showEndModal && (
-        <View style={styles.overlay}>
-          <EndGame game={gameOfTheDay} />
-        </View>
-      )}
     </View>
   );
 }
@@ -242,13 +193,5 @@ const styles = StyleSheet.create({
     marginTop: 60,
     alignItems: "center",
     justifyContent: "flex-end",
-  },
-  overlay: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
-    backgroundColor: "rgba(0,0,0,0.4)",
-    zIndex: 10,
-    paddingTop: 75
   },
 });

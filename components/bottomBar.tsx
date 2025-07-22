@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     backgroundColor: 'transparent',
+    zIndex: 1000,
   },
   tabBar: {
     flexDirection: 'row',
@@ -108,7 +109,6 @@ const styles = StyleSheet.create({
     padding: 2,
   },
   activeIconContainer: {
-    // Additional styling for active icon if needed
   },
   label: {
     fontSize: 11,

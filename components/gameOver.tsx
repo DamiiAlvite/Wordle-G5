@@ -9,17 +9,16 @@ type GameProps = {
     win_attemp?: number;
     win?: boolean;
   } | null;
+  mode?: string;
 };
 
-export default function EndGame({ game }: GameProps) {
+export default function EndGame({ game, mode }: GameProps) {
   const { word, loading } = useWordOfDay();
   const [flipTriggers, setFlipTriggers] = useState<boolean[]>([]);
 
-  // Inicializar los flip triggers cuando se cargue la palabra
   useEffect(() => {
     if (word) {
       setFlipTriggers(new Array(word.length).fill(false));
-      // Activar animaciones en secuencia
       const timer = setTimeout(() => {
         word.split('').forEach((_, index) => {
           setTimeout(() => {
@@ -38,7 +37,10 @@ export default function EndGame({ game }: GameProps) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Juego Terminado!</Text>
+      {mode === "classic" && (
+        <Text style={styles.title}>Modo clásico</Text>
+      )}
+      <Text style={styles.subtitle}>Haz finalizado la partida:</Text>
       <View style={styles.stat}>
         <View style={styles.statItem}>
           <Text style={styles.label}>Fecha:</Text>
@@ -74,6 +76,8 @@ export default function EndGame({ game }: GameProps) {
         </View>
       </View>
       <Text style={styles.footer}>Vuelve mañana para un nuevo desafío.</Text>
+      <Text style={styles.footer}>o</Text>
+      <Text style={styles.footer}>Puedes probar otros modos.</Text>
     </View>
   );
 }
@@ -81,6 +85,7 @@ export default function EndGame({ game }: GameProps) {
 const styles = StyleSheet.create({
   container: {
     width: "90%",
+    height: "auto",
     maxWidth: 400,
     padding: 28,
     backgroundColor: "#f9f9fb",
@@ -93,14 +98,21 @@ const styles = StyleSheet.create({
     elevation: 6,
   },
   title: {
-    fontSize: 26,
+    fontSize: 32,
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 24,
     color: "#222",
   },
+  subtitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginBottom: 16,
+    color: "#555",
+  },
   stat: {
     marginBottom: 24,
+    paddingLeft: 16,
   },
   statItem: {
     marginBottom: 16,
@@ -119,11 +131,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginTop: 12,
     gap: 6,
-    alignItems: "center",
-    justifyContent: "center",
+    marginLeft: 24,
   },
   footer: {
-    marginTop: 12,
     textAlign: "center",
     fontSize: 15,
     color: "#666",
