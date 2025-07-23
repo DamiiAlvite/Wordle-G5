@@ -35,7 +35,6 @@ export default function RootLayout() {
             <Stack.Screen name="(auth)/signin/index" options={{ headerShown: false }} />
             <Stack.Screen name="(auth)/signup/index" options={{ headerShown: false }} />
             <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
-            <Stack.Screen name="(drawer)/index" options={{ headerShown: false }} />
           </Stack>
           <StatusBar style="auto" />
         </WordOfDayProvider>
