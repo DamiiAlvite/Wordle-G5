@@ -196,7 +196,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#E8F0FE',
     position: "relative",
-    paddingBottom: 120,
   },
   container: {
     backgroundColor: '#E8F0FE',
