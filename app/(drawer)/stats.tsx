@@ -7,17 +7,28 @@ import { supabase } from "@/lib/supabase";
 import WavesBackground from "@/assets/svg/wavesBackground2";
 import { Shadow } from 'react-native-shadow-2';
 
+type Game = {
+  win: boolean;
+  win_attempt?: number;
+};
+
+type Stats = {
+  played: number;
+  wins: number;
+  winPercentage: number;
+  currentStreak: number;
+  maxStreak: number;
+  guessDistribution: number[];
+};
+
 export default function StatsScreen() {
   const { userId } = useAuth();
 
-  const [wins, setWins] = useState(0);
-  const [played, setPlayed] = useState(0);
-  const [winPercentage, setWinPercentage] = useState(0);
-  const [currentStreak, setCurrentStreak] = useState(0);
-  const [maxStreak, setMaxStreak] = useState(0);
-  const [guessDistribution, setGuessDistribution] = useState([0, 0, 0, 0, 0, 0]);
+  const [classicStats, setClassicStats] = useState<Stats | null>(null);
+  const [slangStats, setSlangStats] = useState<Stats | null>(null);
+  const [timeTrialStats, setTimeTrialStats] = useState<Stats | null>(null);
 
-  function getCurrentStreak(games: { win: boolean }[]) {
+  function getCurrentStreak(games: Game[]) {
     let streak = 0;
     for (let i = games.length - 1; i >= 0; i--) {
       if (games[i].win) {
@@ -29,7 +40,7 @@ export default function StatsScreen() {
     return streak;
   }
 
-  function getMaxStreak(games: { win: boolean }[]) {
+  function getMaxStreak(games: Game[]) {
     let maxStreak = 0;
     let currentStreak = 0;
     for (let i = 0; i < games.length; i++) {
@@ -43,91 +54,129 @@ export default function StatsScreen() {
     return maxStreak;
   }
 
-  function getGuessDistribution(games: { win: boolean; win_attemp?: number }[]) {
+  function getGuessDistribution(games: Game[]) {
     const distribution = [0, 0, 0, 0, 0, 0];
     games.forEach(game => {
-      if (game.win && typeof game.win_attemp === 'number' && game.win_attemp >= 1 && game.win_attemp <= 6) {
-        distribution[game.win_attemp - 1]++;
+      if (
+        game.win &&
+        typeof game.win_attempt === 'number' &&
+        game.win_attempt >= 1 &&
+        game.win_attempt <= 6
+      ) {
+        distribution[game.win_attempt - 1]++;
       }
     });
     return distribution;
   }
 
-  const getGames = async () => {
-    if (!userId) return;
+  async function getGamesByMode(mode: string): Promise<Stats | null> {
+    if (!userId) return null;
     const { data: games, error } = await supabase
       .from('game')
       .select('*')
-      .eq('user_id', userId);
+      .eq('user_id', userId)
+      .eq('mode', mode);
 
     if (error) {
-      console.error('Error fetching games:', error);
-      return;
+      console.error(`Error fetching ${mode} games:`, error);
+      return null;
     }
 
-    if (games) {
-      const playedCount = games.length;
-      const winsCount = games.filter(game => game.win === true).length;
-      const percentage = playedCount > 0 ? Math.round((winsCount / playedCount) * 100) : 0;
+    if (!games) return null;
 
-      setPlayed(playedCount);
-      setWins(winsCount);
-      setWinPercentage(percentage);
-      setCurrentStreak(getCurrentStreak(games));
-      setMaxStreak(getMaxStreak(games));
-      setGuessDistribution(getGuessDistribution(games.filter(game => game.win === true)));
-    }
-  };
+    const played = games.length;
+    const wins = games.filter(g => g.win).length;
+    const winPercentage = played > 0 ? Math.round((wins / played) * 100) : 0;
+    const currentStreak = getCurrentStreak(games);
+    const maxStreak = getMaxStreak(games);
+    const guessDistribution = getGuessDistribution(games.filter(g => g.win));
+
+    return {
+      played,
+      wins,
+      winPercentage,
+      currentStreak,
+      maxStreak,
+      guessDistribution,
+    };
+  }
 
   useEffect(() => {
-    getGames();
-  }, []);
+    (async () => {
+      const [classic, slang, timeTrial] = await Promise.all([
+        getGamesByMode('classic'),
+        getGamesByMode('slang'),
+        getGamesByMode('timeTrial'),
+      ]);
+
+      setClassicStats(classic);
+      setSlangStats(slang);
+      setTimeTrialStats(timeTrial);
+    })();
+  }, [userId]);
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <View style={styles.background}>
       <TopBar />
-      <WavesBackground style={styles.wavesBackground} pointerEvents="none" />
-      <View style={styles.centerContentWrapper}>
-        <Shadow
-          distance={6}
-          startColor="rgba(0,0,0,0.2)"
-          offset={[0, 4]}
-          style={{
-            backgroundColor: "rgba(255, 255, 255, 0.69)",
-            borderRadius: 24,
-          }}
-        >
-          <View style={styles.contentBox}>
-            <View style={styles.titleContainer}>
-              <Text style={styles.title}>Estadísticas</Text>
-            </View>
-            <View style={styles.statContainer}>
-              <View style={styles.statRow}>
-                <StatBlock label="Jugados" value={played} />
-                <StatBlock label="Ganados" value={wins} />
-                <StatBlock label="% Éxito" value={winPercentage} />
-              </View>
+      <ScrollView contentContainerStyle={styles.container}>
+        <WavesBackground style={styles.wavesBackground} pointerEvents="none" />
+        <View style={styles.centerContentWrapper}>
+          {classicStats && (
+            <GameStats title="Modo Clásico" stats={classicStats} />
+          )}
+          {slangStats && (
+            <GameStats title="Modo Lunfardo" stats={slangStats} />
+          )}
+          {timeTrialStats && (
+            <GameStats title="Modo Contrarreloj" stats={timeTrialStats} />
+          )}
+        </View>
+      </ScrollView>
+    </View>
+  );
+}
 
-              <View style={styles.statRowTight}>
-                <StatBlock label="Racha actual" value={currentStreak} />
-                <StatBlock label="Racha máxima" value={maxStreak} />
-              </View>
-            </View>
-            <Text style={styles.subTitle}>Distribución de intentos</Text>
-            {guessDistribution.map((count, i) => (
-              <View key={i} style={styles.guessDistributionRow}>
-                <Text style={styles.try}>{i + 1}</Text>
-                <View style={[styles.bar, { width: count * 20 }]} />
-                <Text style={styles.count}>{count}</Text>
-              </View>
-            ))}
-            <Text style={[styles.statLabel, { textAlign: 'center' }]}>
-              Este gráfico muestra cuantas veces ganaste en cada intento.
-            </Text>
+function GameStats({ title, stats }: { title: string; stats: Stats }) {
+  return (
+    <Shadow
+      distance={6}
+      startColor="rgba(0,0,0,0.2)"
+      offset={[0, 4]}
+      style={{
+        backgroundColor: "rgba(255, 255, 255, 0.69)",
+        borderRadius: 24,
+        marginBottom: 32,
+      }}
+    >
+      <View style={styles.contentBox}>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>{title}</Text>
+        </View>
+        <View style={styles.statContainer}>
+          <View style={styles.statRow}>
+            <StatBlock label="Jugados" value={stats.played} />
+            <StatBlock label="Ganados" value={stats.wins} />
+            <StatBlock label="% Éxito" value={stats.winPercentage} />
           </View>
-        </Shadow>
+
+          <View style={styles.statRowTight}>
+            <StatBlock label="Racha actual" value={stats.currentStreak} />
+            <StatBlock label="Racha máxima" value={stats.maxStreak} />
+          </View>
+        </View>
+        <Text style={styles.subTitle}>Distribución de intentos</Text>
+        {stats.guessDistribution.map((count, i) => (
+          <View key={i} style={styles.guessDistributionRow}>
+            <Text style={styles.try}>{i + 1}</Text>
+            <View style={[styles.bar, { width: count * 20 }]} />
+            <Text style={styles.count}>{count}</Text>
+          </View>
+        ))}
+        <Text style={[styles.statLabel, { textAlign: 'center' }]}>
+          Este gráfico muestra cuántas veces ganaste en cada intento.
+        </Text>
       </View>
-    </ScrollView>
+    </Shadow>
   );
 }
 
@@ -143,9 +192,15 @@ function StatBlock({ label, value }: { label: string; value: number | string }) 
 }
 
 const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    backgroundColor: '#E8F0FE',
+    position: "relative",
+    paddingBottom: 120,
+  },
   container: {
     backgroundColor: '#E8F0FE',
-    flex: 1,
+    flexGrow: 1,
   },
   wavesBackground: {
     position: "absolute",
@@ -159,20 +214,16 @@ const styles = StyleSheet.create({
     paddingVertical: 40,
   },
   contentBox: {
-    position: 'relative',
     borderRadius: 24,
     paddingBottom: 24,
+    overflow: 'hidden',
   },
   titleContainer: {
-    borderTopLeftRadius: 24,
-    borderTopRightRadius: 24,
     backgroundColor: '#FFF',
-    margin: 0,
     padding: 10,
-    width: '100%',
   },
   title: {
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: 'bold',
     color: '#222',
     textAlign: 'center',
@@ -191,20 +242,16 @@ const styles = StyleSheet.create({
     gap: 24,
     marginBottom: 16,
   },
-
   statShadowWrapper: {
     width: 100,
     borderRadius: 12,
-    //sombra para ios
     backgroundColor: '#fff',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
-    // Sombra para Android
     elevation: 3,
   },
-
   statBlock: {
     borderRadius: 12,
     overflow: 'hidden',
@@ -224,12 +271,11 @@ const styles = StyleSheet.create({
     color: '#222',
     marginBottom: 4,
   },
-
   subTitle: {
     width: '100%',
     backgroundColor: '#fff',
     color: '#222',
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: '600',
     textAlign: 'center',
     marginBottom: 24,
