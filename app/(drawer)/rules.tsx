@@ -3,17 +3,23 @@ import { View, Text, StyleSheet, ScrollView } from "react-native";
 import TopBar from "@/components/topBar";
 import WavesBackground from "@/assets/svg/wavesBackground2";
 import AnimatedCell from "@/components/animatedCell";
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
-const rules = [
+type ColorRule = {
+  color: "correct" | "present" | "absent";
+  text: string;
+};
+
+const classicRules = [
   "Tienes 6 intentos para adivinar la palabra secreta.",
   "Cada intento debe ser una palabra válida de la misma longitud que la palabra secreta.",
   "Después de cada intento, las letras cambiarán de color para mostrar qué tan cerca estás de la palabra:",
 ];
 
-const colorRules = [
-  { color: "correct" as const, text: "Verde: la letra está en la palabra y en la posición correcta." },
-  { color: "present" as const, text: "Amarillo: la letra está en la palabra pero en una posición diferente." },
-  { color: "absent" as const, text: "Gris: la letra no está en la palabra." },
+const colorRules: ColorRule[] = [
+  { color: "correct", text: "Verde: la letra está en la palabra y en la posición correcta." },
+  { color: "present", text: "Amarillo: la letra está en la palabra pero en una posición diferente." },
+  { color: "absent", text: "Gris: la letra no está en la palabra." },
 ];
 
 const additionalRules = [
@@ -21,16 +27,54 @@ const additionalRules = [
   "No se permiten palabras inventadas o con caracteres especiales fuera del español.",
 ];
 
+const lunfardoRules = [
+  "En este modo, las palabras secretas pertenecen al lunfardo argentino.",
+  "El lunfardo es un argot típico de Buenos Aires que incluye palabras del italiano, francés y otros idiomas.",
+  "Dos ejemplos de palabras del lunfardo son: \"laburo\" y \"chabón\".",
+  "Las reglas de juego son las mismas que el modo clásico: 6 intentos para adivinar la palabra.",
+];
+
+const contrarrelojRules = [
+  "¡El desafío más emocionante! Tienes solo 10 segundos por intento.",
+  "Si no ingresas una palabra válida antes de que termine el tiempo, el intento se marca como fallido.",
+  "Cada vez que completes un intento (correcto o incorrecto), el timer se reinicia a 10 segundos.",
+  "Mantén las mismas reglas de colores: verde (correcto), amarillo (presente), gris (ausente).",
+  `Cuando el tiempo se agota, aparece un ícono de reloj y pierdes ese intento.`,
+  "¡Piensa rápido y escribe más rápido! La presión del tiempo hace que cada segundo cuente.",
+];
+
 const exampleWord = "XYZQW";
 
+const RuleSection = ({
+  title,
+  rules,
+  footer,
+  children,
+}: {
+  title: string;
+  rules: string[];
+  footer: string;
+  children?: React.ReactNode;
+}) => (
+  <View style={styles.subcontainer}>
+    <Text style={styles.title}>{title}</Text>
+    <View style={styles.rulesList}>
+      {rules.map((rule, idx) => (
+        <Text key={idx} style={styles.rule}>{rule}</Text>
+      ))}
+      {children}
+    </View>
+    <Text style={styles.footer}>{footer}</Text>
+  </View>
+);
+
 export default function RulesPage() {
-  const [flipTriggers, setFlipTriggers] = useState<boolean[]>([false, false, false]);
-  const [errorTriggers, setErrorTriggers] = useState<boolean[]>([false, false, false, false, false]);
+  const [flipTriggers, setFlipTriggers] = useState([false, false, false]);
+  const [errorTriggers, setErrorTriggers] = useState([false, false, false, false, false]);
 
   useEffect(() => {
     const startFlipCycle = () => {
       setFlipTriggers([false, false, false]);
-
       setTimeout(() => setFlipTriggers([false, true, false]), 100);
       setTimeout(() => setFlipTriggers([false, true, true]), 600);
       setTimeout(() => setFlipTriggers([true, true, true]), 1100);
@@ -64,30 +108,27 @@ export default function RulesPage() {
   }, []);
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <View style={styles.background}>
       <TopBar />
-      <WavesBackground style={styles.wavesBackground} pointerEvents="none" />
-      <View style={styles.subcontainer}>
-        <Text style={styles.title}>Reglas de Wordle</Text>
-        <View style={styles.rulesList}>
-          {rules.map((rule, idx) => (
-            <Text key={idx} style={styles.rule}>{rule}</Text>
-          ))}
-          {colorRules.map((colorRule, idx) => (
+      <ScrollView contentContainerStyle={styles.container}>
+        <WavesBackground style={styles.wavesBackground} pointerEvents="none" />
+
+        <RuleSection
+          title="Reglas de Wordle"
+          rules={classicRules.concat(additionalRules)}
+          footer="¡Diviértete y demuestra tu vocabulario en español!"
+        >
+          {colorRules.map((rule, idx) => (
             <View key={`color-${idx}`} style={styles.colorRuleContainer}>
               <AnimatedCell
                 letter="A"
-                color={colorRule.color}
+                color={rule.color}
                 flipTrigger={flipTriggers[idx]}
                 shakeTrigger={false}
                 persistColor={false}
               />
-              <Text style={styles.colorRuleText}>{colorRule.text}</Text>
+              <Text style={styles.colorRuleText}>{rule.text}</Text>
             </View>
-          ))}
-
-          {additionalRules.map((rule, idx) => (
-            <Text key={`additional-${idx}`} style={styles.rule}>{rule}</Text>
           ))}
 
           <View style={styles.wordContainer}>
@@ -102,14 +143,45 @@ export default function RulesPage() {
               />
             ))}
           </View>
-        </View>
-        <Text style={styles.footer}>¡Diviértete y demuestra tu vocabulario en español!</Text>
-      </View>
-    </ScrollView>
+        </RuleSection>
+
+        <RuleSection
+          title="Modo lunfardo"
+          rules={lunfardoRules}
+          footer="Demuestra tu conocimiento del argot porteño!"
+        />
+
+        <RuleSection
+          title="Modo contrarreloj "
+          rules={contrarrelojRules}
+          footer="Pon a prueba tu velocidad y demuestra tu vocabulario en español!"
+        >
+          <View style={styles.wordContainer}>
+            {Array.from({ length: 5 }, (_, index) => (
+              <AnimatedCell
+                key={`timer-${index}`}
+                letter={<MaterialCommunityIcons name="timer-off-outline" size={28} color="black" />}
+                color="error"
+                flipTrigger={false}
+                shakeTrigger={errorTriggers[index]}
+                persistColor={false}
+              />
+            ))}
+          </View>
+        </RuleSection>
+      </ScrollView>
+    </View>
   );
 }
 
+
+
 const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    backgroundColor: "#d5e6ff",
+    position: "relative",
+  },
   container: {
     flexGrow: 1,
     backgroundColor: "#d5e6ff",
