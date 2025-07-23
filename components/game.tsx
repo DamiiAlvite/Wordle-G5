@@ -4,6 +4,7 @@ import { useWordOfDay } from "@/context/wordOfTheDayProvider";
 import Keyboard from "./keyboard";
 import WordsList from "./wordsList";
 import wordsData from "@/utils/validGuesses.json";
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 const ROWS = 6;
 const COLS = 5;
@@ -49,6 +50,64 @@ export default function Game({ mode, onGameEnd }: GameProps) {
   }>({});
   const [gameOver, setGameOver] = useState(false);
   const [pendingGameOver, setPendingGameOver] = useState(false);
+
+  const [timeLeft, setTimeLeft] = useState(10);
+  const [totalAttempts, setTotalAttempts] = useState(0);
+  useEffect(() => {
+    if (mode !== "timeTrial" || gameOver || loading) return;
+
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          // Tiempo agotado, perder un intento
+          handleTimeUp();
+          return 10; // Reiniciar el cronómetro
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [mode, gameOver, loading, currentRow]);
+
+    const handleTimeUp = () => {
+    if (gameOver) return;
+
+    setTotalAttempts(prev => prev + 1);
+
+    // Llenar la fila actual con "X" cuando se agote el tiempo
+    setLetters((prev) => {
+      const updated = prev.map((row, idx) => {
+        if (idx === currentRow) {
+          // Llenar todas las celdas vacías con "X"
+          return Array(COLS).fill(<MaterialCommunityIcons name="timer-off-outline" size={28} color="black" />);
+        }
+        return row;
+      });
+      return updated;
+    });
+
+    // Mostrar error (rojo) en la fila
+    setErrorRow(currentRow);
+
+    // Limpiar la fila después del efecto visual
+    setTimeout(() => {
+      setCurrentCol(0);
+      setErrorRow(null);
+
+      if (currentRow >= ROWS - 1) {
+        setGameOver(true);
+        onGameEnd?.({
+          won: false,
+          attempts: totalAttempts + 1,
+          word: word?.toLowerCase() || "",
+          wordId: wordId
+        });
+      } else {
+        setCurrentRow((row) => row + 1);
+      }
+    }, 1000);
+  };
 
   const handleFlipEnd = async () => {
     if (pendingGameOver && !gameOver) {
@@ -111,6 +170,11 @@ export default function Game({ mode, onGameEnd }: GameProps) {
         }, 1000);
         return;
       }
+      if (mode === "timeTrial") {
+        setTotalAttempts(prev => prev + 1);
+        setTimeLeft(10); // Reiniciar cronómetro tras intento válido
+      }
+
       setFlipRow(currentRow);
       setTimeout(() => setFlipRow(null), 700);
       const target = word?.toLowerCase() || "";
@@ -177,6 +241,17 @@ export default function Game({ mode, onGameEnd }: GameProps) {
 
   return (
     <View style={styles.container}>
+      {mode === "timeTrial" && (
+        <View style={[
+          styles.timerContainer,
+          (timeLeft === 5 || timeLeft === 3 || timeLeft === 1) && styles.timerContainerWarning
+        ]}>
+          <Text style={[
+          styles.timerText,
+          (timeLeft === 5 || timeLeft === 3 || timeLeft === 1) && styles.timerTextWarning
+        ]}>Tiempo: {timeLeft}</Text>
+        </View>
+      )}
       <WordsList
         letters={letters}
         colors={colors}
@@ -203,8 +278,28 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   keyboard: {
-    marginTop: 60,
     alignItems: "center",
     justifyContent: "flex-end",
+  },
+  timerContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "90%",
+    paddingHorizontal: 20,
+    backgroundColor: "rgba(255, 255, 255, 0.9)",
+    borderRadius: 10,
+    paddingVertical: 10,
+  },
+  timerText: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#2E3A59",
+  },
+  timerContainerWarning: {
+    backgroundColor: "#ff4d4f",
+  },
+  timerTextWarning: {
+    color: "#fff",
   },
 });

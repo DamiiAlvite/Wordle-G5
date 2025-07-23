@@ -8,7 +8,7 @@ import { Shadow } from 'react-native-shadow-2'
 const TABS = [
   { name: 'Lunfardo', icon: 'book-variant', label: 'slangMode', iconLib: 'MaterialCommunityIcons' },
   { name: 'Clásico', icon: 'grid', label: 'classicMode', iconLib: 'MaterialCommunityIcons' },
-  { name: 'Contrarreloj', icon: 'timer-outline', label: 'trialTimeMode', iconLib: 'Ionicons' }
+  { name: 'Contrarreloj', icon: 'timer-outline', label: 'timeTrialMode', iconLib: 'Ionicons' }
 ]
 
 export default function GameModeTabBar() {
