@@ -18,6 +18,7 @@ export default function timeTrialMode() {
   const [showEndModal, setShowEndModal] = useState(false);
   const [showStartModal, setShowStartModal] = useState(false);
   const [hasPlayedToday, setHasPlayedToday] = useState(false);
+  const [gameStarted, setGameStarted] = useState(false);
   const [loading, setLoading] = useState(true);
 
   const { userId } = useAuth();
@@ -152,6 +153,7 @@ export default function timeTrialMode() {
       })
     ]).start(() => {
       setShowStartModal(false);
+      setGameStarted(true);
     });
   };
 
@@ -169,7 +171,7 @@ export default function timeTrialMode() {
   return (
     <View style={styles.container}>
       <WavesBackground style={styles.wavesBackground} />
-      {!hasPlayedToday && !showStartModal ? (
+      {gameStarted && !hasPlayedToday ? (
         <>
           <Text style={styles.title}> Contrarreloj </Text>
           <Game mode="timeTrial" onGameEnd={handleGameEnd} />
@@ -231,6 +233,7 @@ const styles = StyleSheet.create({
     fontSize: 36,
     fontWeight: "900",
     marginTop: 40,
+    marginBottom: 20,
     color: "#2E3A59",
     letterSpacing: 3,
     textAlign: "center",
