@@ -7,13 +7,14 @@ import slangWords from "@/utils/slang.json";
 type GameProps = {
   game: {
     date?: string;
-    win_attemp?: number;
+    win_attempt?: number;
     win?: boolean;
   } | null;
   mode?: string;
 };
 
 export default function EndGame({ game, mode }: GameProps) {
+  const today = new Date().toISOString().split("T")[0];
   const { wordClassic, wordSlang, wordTimeTrial, loading } = useWordOfDay();
   let word: string | null = null;
   if (mode === "classic") {
@@ -64,12 +65,12 @@ export default function EndGame({ game, mode }: GameProps) {
       <View style={styles.stat}>
         <View style={styles.statItem}>
           <Text style={styles.label}>Fecha:</Text>
-          <Text style={styles.value}>{game?.date ?? "-"}</Text>
+          <Text style={styles.value}>{game?.date ?? today}</Text>
         </View>
         {game?.win ? (
           <View style={styles.statItem}>
             <Text style={styles.label}>Intento Ganador:</Text>
-            <Text style={styles.value}>{game?.win_attemp ?? "-"}</Text>
+            <Text style={styles.value}>{game?.win_attempt ?? "-"}</Text>
           </View>
         ) : (
           <View style={styles.statItem}>

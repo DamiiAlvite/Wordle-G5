@@ -12,8 +12,8 @@ const COLS = 5;
 interface GameProps {
   mode: string;
   onGameEnd?: (gameData: {
-    won: boolean;
-    attempts: number;
+    win: boolean;
+    win_attempt: number;
     word: string;
     wordId: number | null;
   }) => void;
@@ -98,8 +98,8 @@ export default function Game({ mode, onGameEnd }: GameProps) {
       if (currentRow >= ROWS - 1) {
         setGameOver(true);
         onGameEnd?.({
-          won: false,
-          attempts: totalAttempts + 1,
+          win: false,
+          win_attempt: totalAttempts + 1,
           word: word?.toLowerCase() || "",
           wordId: wordId
         });
@@ -116,8 +116,8 @@ export default function Game({ mode, onGameEnd }: GameProps) {
       const guess = letters[currentRow].join("").toLowerCase();
       const target = word?.toLowerCase() || "";
       onGameEnd?.({
-        won: guess === target,
-        attempts: currentRow + 1,
+        win: guess === target,
+        win_attempt: currentRow + 1,
         word: target,
         wordId: wordId
       });

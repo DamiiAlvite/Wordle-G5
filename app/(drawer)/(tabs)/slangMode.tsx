@@ -10,8 +10,8 @@ import EndGame from "@/components/modals/gameOver";
 export default function slangMode() {
 
   const [gameOfTheDay, setGameOfTheDay] = useState<{
-    won: boolean;
-    attempts: number;
+    win: boolean;
+    win_attempt: number;
     word: string;
   } | null>(null);
   const [showEndModal, setShowEndModal] = useState(false);
@@ -52,7 +52,7 @@ export default function slangMode() {
 
   const saveGame = async (
     win: boolean,
-    attempts: number,
+    win_attempt: number,
     word: string,
     wordId: number | null
   ) => {
@@ -63,7 +63,7 @@ export default function slangMode() {
       .insert({
         date: today,
         user_id: userId,
-        win_attemp: attempts,
+        win_attempt: win_attempt,
         win: win,
         word_id: wordId,
         mode: "slang",
@@ -77,12 +77,12 @@ export default function slangMode() {
   };
 
   const handleGameEnd = async (gameData: {
-    won: boolean;
-    attempts: number;
+    win: boolean;
+    win_attempt: number;
     word: string;
     wordId: number | null;
   }) => {
-    await saveGame(gameData.won, gameData.attempts, gameData.word, gameData.wordId);
+    await saveGame(gameData.win, gameData.win_attempt, gameData.word, gameData.wordId);
     setGameOfTheDay(gameData);
     setHasPlayedToday(true);
     setShowEndModal(true);
