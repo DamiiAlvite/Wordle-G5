@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import React, { useState, useEffect, useRef } from "react";
+import { View, Text, Animated } from "react-native";
 import { StyleSheet } from "react-native";
 import { supabase } from "@/lib/supabase";
 import { useAuth } from "@/providers/authProvider";
@@ -21,6 +21,45 @@ export default function timeTrialMode() {
   const [loading, setLoading] = useState(true);
 
   const { userId } = useAuth();
+  
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const scaleAnim = useRef(new Animated.Value(0.3)).current;
+  const fadeAnimEnd = useRef(new Animated.Value(0)).current;
+  const scaleAnimEnd = useRef(new Animated.Value(0.3)).current;
+
+  const showModalWithAnimation = () => {
+    setShowEndModal(true);
+    Animated.parallel([
+      Animated.timing(fadeAnimEnd, {
+        toValue: 1,
+        duration: 300,
+        useNativeDriver: true,
+      }),
+      Animated.spring(scaleAnimEnd, {
+        toValue: 1,
+        tension: 50,
+        friction: 7,
+        useNativeDriver: true,
+      })
+    ]).start();
+  };
+
+  const showStartModalWithAnimation = () => {
+    setShowStartModal(true);
+    Animated.parallel([
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 300,
+        useNativeDriver: true,
+      }),
+      Animated.spring(scaleAnim, {
+        toValue: 1,
+        tension: 50,
+        friction: 7,
+        useNativeDriver: true,
+      })
+    ]).start();
+  };
 
   const checkTodayGame = async () => {
     if (!userId) {
@@ -43,10 +82,13 @@ export default function timeTrialMode() {
     if (data) {
       setGameOfTheDay(data);
       setHasPlayedToday(true);
-      setShowEndModal(true);
-    }
-    else {
-      setShowStartModal(true);
+      setTimeout(() => {
+        showModalWithAnimation();
+      }, 100);
+    } else {
+      setTimeout(() => {
+        showStartModalWithAnimation();
+      }, 100);
     }
     setLoading(false);
   };
@@ -90,14 +132,36 @@ export default function timeTrialMode() {
     await saveGame(gameData.win, gameData.win_attempt, gameData.word, gameData.wordId);
     setGameOfTheDay(gameData);
     setHasPlayedToday(true);
-    setShowEndModal(true);
+    
+    setTimeout(() => {
+      showModalWithAnimation();
+    }, 500);
+  };
+
+  const handleStartClose = () => {
+    Animated.parallel([
+      Animated.timing(fadeAnim, {
+        toValue: 0,
+        duration: 200,
+        useNativeDriver: true,
+      }),
+      Animated.timing(scaleAnim, {
+        toValue: 0.3,
+        duration: 200,
+        useNativeDriver: true,
+      })
+    ]).start(() => {
+      setShowStartModal(false);
+    });
   };
 
   if (loading) {
     return (
       <View style={styles.container}>
         <WavesBackground style={styles.wavesBackground} />
-        <Text style={styles.title}>Cargando...</Text>
+        <View style={styles.loadingContainer}>
+          <Text style={styles.loadingText}>Cargando...</Text>
+        </View>
       </View>
     );
   }
@@ -110,21 +174,41 @@ export default function timeTrialMode() {
           <Text style={styles.title}> Contrarreloj </Text>
           <Game mode="timeTrial" onGameEnd={handleGameEnd} />
         </>
-      ) : (
+      ) : hasPlayedToday ? (
         <View style={styles.playedContainer}>
           <Text style={styles.playedText}>Ya jugaste hoy</Text>
           <Text style={styles.playedSubtext}>Vuelve mañana para un nuevo desafío</Text>
         </View>
-      )}
+      ) : null}
+      
       {showEndModal && gameOfTheDay && (
-        <View style={styles.overlay}>
-          <EndGame game={gameOfTheDay} mode="timeTrial" />
-        </View>
+        <Animated.View style={[
+          styles.overlay,
+          {
+            opacity: fadeAnimEnd,
+          }
+        ]}>
+          <Animated.View style={{
+            transform: [{ scale: scaleAnimEnd }]
+          }}>
+            <EndGame game={gameOfTheDay} mode="timeTrial" />
+          </Animated.View>
+        </Animated.View>
       )}
+      
       {showStartModal && (
-        <View style={styles.overlay}>
-          <StartTimeTrial onClose={() => setShowStartModal(false)} />
-        </View>
+        <Animated.View style={[
+          styles.overlay,
+          {
+            opacity: fadeAnim,
+          }
+        ]}>
+          <Animated.View style={{
+            transform: [{ scale: scaleAnim }]
+          }}>
+            <StartTimeTrial onClose={handleStartClose} />
+          </Animated.View>
+        </Animated.View>
       )}
     </View>
   );
@@ -169,6 +253,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#666",
     textAlign: "center",
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  loadingText: {
+    fontSize: 18,
+    color: "#2E3A59",
+    fontWeight: "600",
   },
   day: {
     fontSize: 24,
