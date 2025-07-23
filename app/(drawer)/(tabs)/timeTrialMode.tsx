@@ -16,7 +16,7 @@ export default function timeTrialMode() {
     word: string;
   } | null>(null);
   const [showEndModal, setShowEndModal] = useState(false);
-  const [showStartModal, setShowStartModal] = useState(true);
+  const [showStartModal, setShowStartModal] = useState(false);
   const [hasPlayedToday, setHasPlayedToday] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -44,6 +44,9 @@ export default function timeTrialMode() {
       setGameOfTheDay(data);
       setHasPlayedToday(true);
       setShowEndModal(true);
+    }
+    else {
+      setShowStartModal(true);
     }
     setLoading(false);
   };
