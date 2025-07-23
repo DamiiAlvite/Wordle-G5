@@ -57,6 +57,9 @@ export default function EndGame({ game, mode }: GameProps) {
       {mode === "slang" && (
         <Text style={styles.title}>Modo lunfardo</Text>
       )}
+      {mode === "timeTrial" && (
+        <Text style={styles.title}>Modo contrarreloj</Text>
+      )}
       <Text style={styles.subtitle}>Haz finalizado la partida:</Text>
       <View style={styles.stat}>
         <View style={styles.statItem}>
