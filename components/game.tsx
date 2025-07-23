@@ -10,9 +10,9 @@ const COLS = 5;
 
 interface GameProps {
   mode: string;
-  onGameEnd?: (gameData: { 
-    won: boolean; 
-    attempts: number; 
+  onGameEnd?: (gameData: {
+    won: boolean;
+    attempts: number;
     word: string;
     wordId: number | null;
   }) => void;
@@ -20,7 +20,20 @@ interface GameProps {
 
 export default function Game({ mode, onGameEnd }: GameProps) {
 
-  const { word, wordId, loading } = useWordOfDay();
+  const { wordClassic, wordIdClassic, wordSlang, wordIdSlang, wordTimeTrial, wordIdTimeTrial, loading } = useWordOfDay();
+  let word: string | null = null;
+  let wordId: number | null = null;
+  if (mode === "classic") {
+    word = wordClassic;
+    wordId = wordIdClassic;
+  } else if (mode === "slang") {
+    word = wordSlang;
+    wordId = wordIdSlang;
+  } else if (mode === "timeTrial") {
+    word = wordTimeTrial;
+    wordId = wordIdTimeTrial;
+  }
+
   const [currentRow, setCurrentRow] = useState(0);
   const [currentCol, setCurrentCol] = useState(0);
   const [letters, setLetters] = useState(

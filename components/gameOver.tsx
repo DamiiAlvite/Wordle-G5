@@ -13,7 +13,16 @@ type GameProps = {
 };
 
 export default function EndGame({ game, mode }: GameProps) {
-  const { word, loading } = useWordOfDay();
+  const { wordClassic, wordSlang, wordTimeTrial, loading } = useWordOfDay();
+  let word: string | null = null;
+  if (mode === "classic") {
+    word = wordClassic;
+  } else if (mode === "slang") {
+    word = wordSlang;
+  } else if (mode === "timeTrial") {
+    word = wordTimeTrial;
+  }
+
   const [flipTriggers, setFlipTriggers] = useState<boolean[]>([]);
 
   useEffect(() => {
