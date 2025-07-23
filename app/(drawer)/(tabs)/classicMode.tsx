@@ -5,7 +5,7 @@ import { supabase } from "@/lib/supabase";
 import { useAuth } from "@/providers/authProvider";
 import WavesBackground from "@/assets/svg/wavesBackground";
 import Game from "@/components/game";
-import EndGame from "@/components/gameOver";
+import EndGame from "@/components/modals/gameOver";
 
 export default function classicMode() {
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { useWordOfDay } from "@/context/wordOfTheDayProvider";
-import AnimatedCell from "./animatedCell";
+import AnimatedCell from "../animatedCell";
 import slangWords from "@/utils/slang.json";
 
 type GameProps = {
