@@ -21,6 +21,7 @@ type KeyboardProps = {
   onBackspace: () => void;
   onEnter: () => void;
   keyColors?: Record<string, KeyStatus>;
+  disabled?: boolean;
 };
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
@@ -35,7 +36,7 @@ const COLORS = {
   correct: "#22c55e",
 };
 
-export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors = {} }: KeyboardProps) {
+export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors = {}, disabled = false}: KeyboardProps) {
   const [accentModal, setAccentModal] = useState<{ visible: boolean; key: string | null; x: number; y: number }>({
     visible: false,
     key: null,
@@ -44,6 +45,7 @@ export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors =
   });
 
   const handleLongPress = (key: string, event: any) => {
+    if (disabled) return;
     if (Object.prototype.hasOwnProperty.call(ACCENTED, key)) {
       const { pageX, pageY } = event.nativeEvent;
       setAccentModal({ visible: true, key, x: pageX, y: pageY });
@@ -51,6 +53,7 @@ export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors =
   };
 
   const handleAccentSelect = (accent: string) => {
+    if (disabled) return;
     setAccentModal({ visible: false, key: null, x: 0, y: 0 });
     onKeyPress(accent);
   };

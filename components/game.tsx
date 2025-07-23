@@ -50,6 +50,7 @@ export default function Game({ mode, onGameEnd }: GameProps) {
   }>({});
   const [gameOver, setGameOver] = useState(false);
   const [pendingGameOver, setPendingGameOver] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const [timeLeft, setTimeLeft] = useState(10);
   const [totalAttempts, setTotalAttempts] = useState(0);
@@ -59,9 +60,8 @@ export default function Game({ mode, onGameEnd }: GameProps) {
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
         if (prev <= 1) {
-          // Tiempo agotado, perder un intento
           handleTimeUp();
-          return 10; // Reiniciar el cronómetro
+          return 10;
         }
         return prev - 1;
       });
@@ -71,15 +71,14 @@ export default function Game({ mode, onGameEnd }: GameProps) {
   }, [mode, gameOver, loading, currentRow]);
 
     const handleTimeUp = () => {
-    if (gameOver) return;
+    if (gameOver || isAnimating) return;
 
+    setIsAnimating(true);
     setTotalAttempts(prev => prev + 1);
 
-    // Llenar la fila actual con "X" cuando se agote el tiempo
     setLetters((prev) => {
       const updated = prev.map((row, idx) => {
         if (idx === currentRow) {
-          // Llenar todas las celdas vacías con "X"
           return Array(COLS).fill(<MaterialCommunityIcons name="timer-off-outline" size={28} color="black" />);
         }
         return row;
@@ -87,13 +86,12 @@ export default function Game({ mode, onGameEnd }: GameProps) {
       return updated;
     });
 
-    // Mostrar error (rojo) en la fila
     setErrorRow(currentRow);
 
-    // Limpiar la fila después del efecto visual
     setTimeout(() => {
       setCurrentCol(0);
       setErrorRow(null);
+      setIsAnimating(false); 
 
       if (currentRow >= ROWS - 1) {
         setGameOver(true);
@@ -125,7 +123,7 @@ export default function Game({ mode, onGameEnd }: GameProps) {
   };
 
   const handleKeyPress = (key: string) => {
-    if (gameOver) return;
+    if (gameOver || isAnimating) return;
     if (currentCol < COLS && currentRow < ROWS) {
       if (currentCol === 0 || letters[currentRow][currentCol - 1] !== "") {
         setLetters((prev) => {
@@ -139,7 +137,7 @@ export default function Game({ mode, onGameEnd }: GameProps) {
   };
 
   const handleBackspace = () => {
-    if (gameOver) return;
+    if (gameOver || isAnimating) return;
     if (currentCol > 0) {
       setLetters((prev) => {
         const updated = prev.map((row) => [...row]);
@@ -151,10 +149,11 @@ export default function Game({ mode, onGameEnd }: GameProps) {
   };
 
   const handleEnter = async () => {
-    if (gameOver) return;
+    if (gameOver || isAnimating) return;
     if (currentCol === COLS) {
       const guess = letters[currentRow].join("").toLowerCase();
       if (!wordsData.includes(guess)) {
+        setIsAnimating(true);
         setErrorRow(currentRow);
         setFlipRow(currentRow);
         setTimeout(() => {
@@ -167,16 +166,20 @@ export default function Game({ mode, onGameEnd }: GameProps) {
             return updated;
           });
           setCurrentCol(0);
+          setIsAnimating(false); 
         }, 1000);
         return;
       }
       if (mode === "timeTrial") {
         setTotalAttempts(prev => prev + 1);
-        setTimeLeft(10); // Reiniciar cronómetro tras intento válido
+        setTimeLeft(10);
       }
-
+      setIsAnimating(false); 
       setFlipRow(currentRow);
-      setTimeout(() => setFlipRow(null), 700);
+      setTimeout(() => {
+        setFlipRow(null);
+        setIsAnimating(false);
+      }, 700);
       const target = word?.toLowerCase() || "";
       const newColors = Array(COLS).fill("absent");
 
@@ -265,6 +268,7 @@ export default function Game({ mode, onGameEnd }: GameProps) {
           onBackspace={handleBackspace}
           onEnter={handleEnter}
           keyColors={keyColors}
+          disabled={isAnimating}
         />
       </View>
     </View>
