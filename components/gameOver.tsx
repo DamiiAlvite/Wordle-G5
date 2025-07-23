@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { useWordOfDay } from "@/context/wordOfTheDayProvider";
 import AnimatedCell from "./animatedCell";
+import slangWords from "@/utils/slang.json";
 
 type GameProps = {
   game: {
@@ -22,6 +23,10 @@ export default function EndGame({ game, mode }: GameProps) {
   } else if (mode === "timeTrial") {
     word = wordTimeTrial;
   }
+  const getSlangDefinition = (word: string): string => {
+      const slangWord = slangWords.find(item => item.word.toLowerCase() === word.toLowerCase());
+      return slangWord ? slangWord.definition : "Definición no disponible";
+  };
 
   const [flipTriggers, setFlipTriggers] = useState<boolean[]>([]);
 
@@ -49,6 +54,9 @@ export default function EndGame({ game, mode }: GameProps) {
       {mode === "classic" && (
         <Text style={styles.title}>Modo clásico</Text>
       )}
+      {mode === "slang" && (
+        <Text style={styles.title}>Modo lunfardo</Text>
+      )}
       <Text style={styles.subtitle}>Haz finalizado la partida:</Text>
       <View style={styles.stat}>
         <View style={styles.statItem}>
@@ -67,7 +75,7 @@ export default function EndGame({ game, mode }: GameProps) {
         )}
         <View style={styles.statItem}>
           <Text style={styles.label}>Palabra:</Text>
-          {word ? (
+          {word ? (<>
             <View style={styles.wordContainer}>
               {word.split('').map((letter, index) => (
                 <AnimatedCell
@@ -79,6 +87,13 @@ export default function EndGame({ game, mode }: GameProps) {
                 />
               ))}
             </View>
+            {mode === "slang" && (
+            <View style={styles.statItem}>
+              <Text style={styles.label}>Significado:</Text>
+              <Text style={styles.value}>{getSlangDefinition(word)}</Text>
+            </View>
+            )}
+          </>
           ) : (
             <Text style={styles.value}>-</Text>
           )}
@@ -114,7 +129,7 @@ const styles = StyleSheet.create({
     color: "#222",
   },
   subtitle: {
-    fontSize: 18,
+    fontSize: 22,
     fontWeight: "bold",
     marginBottom: 16,
     color: "#555",
@@ -128,17 +143,19 @@ const styles = StyleSheet.create({
   },
   label: {
     fontWeight: "600",
-    fontSize: 17,
+    fontSize: 20,
     color: "#444",
     marginBottom: 4,
   },
   value: {
-    fontSize: 17,
+    marginLeft: 8,
+    marginTop: 4,
+    fontSize: 18,
     color: "#222",
   },
   wordContainer: {
     flexDirection: "row",
-    marginTop: 12,
+    marginVertical: 12,
     gap: 6,
     marginLeft: 24,
   },
