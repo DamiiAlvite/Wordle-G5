@@ -1,4 +1,3 @@
-// app/(drawer)/(tabs)/_layout.tsx
 import { Slot } from 'expo-router'
 import { View, StyleSheet } from 'react-native'
 import BottomBar from '@/components/bottomBar'

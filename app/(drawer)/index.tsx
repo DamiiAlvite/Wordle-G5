@@ -4,7 +4,7 @@ import { router } from 'expo-router';
 
 export default function RedirectHome() {
   useEffect(() => {
-    router.replace('/(drawer)/(tabs)');
+    router.replace('/(drawer)/(tabs)/classicMode');
   }, []);
 
   // Mostrar un loading mientras redirige
