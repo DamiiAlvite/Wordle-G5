@@ -19,6 +19,7 @@ export default function timeTrialMode() {
   const [showStartModal, setShowStartModal] = useState(false);
   const [hasPlayedToday, setHasPlayedToday] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
   const [loading, setLoading] = useState(true);
 
   const { userId } = useAuth();
@@ -94,6 +95,10 @@ export default function timeTrialMode() {
     setLoading(false);
   };
 
+  const handleGameStart = () => {
+    setGameStarted(true);
+  };
+
   useEffect(() => {
     checkTodayGame();
   }, [userId]);
@@ -133,6 +138,7 @@ export default function timeTrialMode() {
     await saveGame(gameData.win, gameData.win_attempt, gameData.word, gameData.wordId);
     setGameOfTheDay(gameData);
     setHasPlayedToday(true);
+    setGameOver(true);
     
     setTimeout(() => {
       showModalWithAnimation();
@@ -174,7 +180,11 @@ export default function timeTrialMode() {
       {gameStarted && !hasPlayedToday ? (
         <>
           <Text style={styles.title}> Contrarreloj </Text>
-          <Game mode="timeTrial" onGameEnd={handleGameEnd} />
+          <Game 
+            mode="timeTrial" 
+            onGameEnd={handleGameEnd}
+            onGameStart={handleGameStart}
+          />
         </>
       ) : hasPlayedToday ? (
         <View style={styles.playedContainer}>
@@ -182,6 +192,12 @@ export default function timeTrialMode() {
           <Text style={styles.playedSubtext}>Vuelve mañana para un nuevo desafío</Text>
         </View>
       ) : null}
+      
+      {gameStarted && !gameOver && (
+        <View style={styles.navigationBlocker}>
+          <Text style={styles.barBlockText}>Finaliza para cambiar de modo</Text>
+        </View>
+      )}
       
       {showEndModal && gameOfTheDay && (
         <Animated.View style={[
@@ -279,5 +295,20 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0,0,0,0.4)",
     zIndex: 10,
     paddingTop: 75
+  },
+  navigationBlocker: {
+    position: "absolute",
+    borderRadius: 24,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 100,
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+    zIndex: 10000,
+  },
+  barBlockText: {
+    color: "#5792EE",
+    textAlign: "center",
+    marginTop: 30,
   },
 });

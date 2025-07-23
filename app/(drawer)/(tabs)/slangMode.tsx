@@ -17,6 +17,8 @@ export default function slangMode() {
   const [showEndModal, setShowEndModal] = useState(false);
   const [hasPlayedToday, setHasPlayedToday] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [gameStarted, setGameStarted] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
 
   const { userId } = useAuth();
   
@@ -68,6 +70,10 @@ export default function slangMode() {
     setLoading(false);
   };
 
+  const handleGameStart = () => {
+    setGameStarted(true);
+  };
+
   useEffect(() => {
     checkTodayGame();
   }, [userId]);
@@ -107,6 +113,7 @@ export default function slangMode() {
     await saveGame(gameData.win, gameData.win_attempt, gameData.word, gameData.wordId);
     setGameOfTheDay(gameData);
     setHasPlayedToday(true);
+    setGameOver(true);
     
     setTimeout(() => {
       showModalWithAnimation();
@@ -130,12 +137,21 @@ export default function slangMode() {
       {!hasPlayedToday ? (
         <>
           <Text style={styles.title}> Lunfardo </Text>
-          <Game mode="slang" onGameEnd={handleGameEnd} />
+          <Game 
+            mode="slang" 
+            onGameEnd={handleGameEnd}
+            onGameStart={handleGameStart}
+          />
         </>
       ) : (
         <View style={styles.playedContainer}>
           <Text style={styles.playedText}>Ya jugaste hoy</Text>
           <Text style={styles.playedSubtext}>Vuelve mañana para un nuevo desafío</Text>
+        </View>
+      )}
+      {gameStarted && !gameOver && (
+        <View style={styles.navigationBlocker}>
+          <Text style={styles.barBlockText}>Finaliza para cambiar de modo</Text>
         </View>
       )}
       {showEndModal && gameOfTheDay && (
@@ -219,5 +235,20 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0,0,0,0.4)",
     zIndex: 10,
     paddingTop: 75
+  },
+  navigationBlocker: {
+    position: "absolute",
+    borderRadius: 24,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 100,
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+    zIndex: 10000,
+  },
+  barBlockText: {
+    color: "#5792EE",
+    textAlign: "center",
+    marginTop: 30,
   },
 });

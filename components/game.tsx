@@ -17,9 +17,10 @@ interface GameProps {
     word: string;
     wordId: number | null;
   }) => void;
+  onGameStart?: () => void;
 }
 
-export default function Game({ mode, onGameEnd }: GameProps) {
+export default function Game({ mode, onGameEnd, onGameStart }: GameProps) {
 
   const { wordClassic, wordIdClassic, wordSlang, wordIdSlang, wordTimeTrial, wordIdTimeTrial, loading } = useWordOfDay();
   let word: string | null = null;
@@ -54,6 +55,8 @@ export default function Game({ mode, onGameEnd }: GameProps) {
 
   const [timeLeft, setTimeLeft] = useState(10);
   const [totalAttempts, setTotalAttempts] = useState(0);
+  const [gameStarted, setGameStarted] = useState(false);
+
   useEffect(() => {
     if (mode !== "timeTrial" || gameOver || loading) return;
 
@@ -70,7 +73,7 @@ export default function Game({ mode, onGameEnd }: GameProps) {
     return () => clearInterval(timer);
   }, [mode, gameOver, loading, currentRow]);
 
-    const handleTimeUp = () => {
+  const handleTimeUp = () => {
     if (gameOver || isAnimating) return;
 
     setIsAnimating(true);
@@ -151,6 +154,10 @@ export default function Game({ mode, onGameEnd }: GameProps) {
   const handleEnter = async () => {
     if (gameOver || isAnimating) return;
     if (currentCol === COLS) {
+      if (!gameStarted) {
+        setGameStarted(true);
+        onGameStart?.();
+      }
       const guess = letters[currentRow].join("").toLowerCase();
       if (!wordsData.includes(guess)) {
         setIsAnimating(true);
