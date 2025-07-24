@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     width: 240,
-    marginVertical: 16,
+    marginVertical: "4%",
     alignSelf: "center",
   },
 });

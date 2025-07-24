@@ -5,8 +5,6 @@ function SvgComponent(props: SvgProps) {
   return (
     <Svg
       viewBox="0 0 540 960"
-      width={540}
-      height={960}
       {...props}
     >
       <Path

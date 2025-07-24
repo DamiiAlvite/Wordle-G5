@@ -123,7 +123,7 @@ export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors =
 
 const styles = StyleSheet.create({
   keyboardContainer: {
-    paddingVertical: 10,
+    paddingVertical: "1%",
   },
   row: {
     flexDirection: "row",

@@ -39,6 +39,7 @@ export default function Login() {
 
   return (
     <View style={styles.container}>
+      <View style={styles.solidBackground}></View>
       <LoginBackground style={styles.background} pointerEvents="none" />
       <Logo style={styles.logo} width={300} pointerEvents="none" />
       <Text style={styles.title}>Bienvenido!</Text>
@@ -119,14 +120,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  background: {
+  solidBackground: {
     position: 'absolute',
-    top: -20,
+    top: 0,
     left: 0,
     width: '100%',
-    height: '100%',
+    height: '5%',
+    backgroundColor: '#245CC7',
+    zIndex: 1150,
+  },
+  background: {
+    position: 'absolute',
+    top: -80,
+    left: 0,
     zIndex: -100,
-    backgroundColor: '#F2F2F2',
   },
   logo: {
     position: 'absolute',
