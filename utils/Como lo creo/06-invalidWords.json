@@ -1,0 +1,1750 @@
+[
+  {
+    "palabra": "abhay",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "akbar",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "akemi",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "akiko",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "akira",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "akron",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "alain",
+    "reglas_violadas": [
+      "ain"
+    ]
+  },
+  {
+    "palabra": "albie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "alfie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "alley",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "allie",
+    "reglas_violadas": [
+      "lli",
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "aloha",
+    "reglas_violadas": [
+      "oha"
+    ]
+  },
+  {
+    "palabra": "alvey",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "amour",
+    "reglas_violadas": [
+      "ou"
+    ]
+  },
+  {
+    "palabra": "andie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "anecd",
+    "reglas_violadas": [
+      "cd"
+    ]
+  },
+  {
+    "palabra": "angie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "anika",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "annie",
+    "reglas_violadas": [
+      "nn",
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "aorig",
+    "reglas_violadas": [
+      "ig$"
+    ]
+  },
+  {
+    "palabra": "arnie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "artie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "asahi",
+    "reglas_violadas": [
+      "ahi"
+    ]
+  },
+  {
+    "palabra": "asuka",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "audra",
+    "reglas_violadas": [
+      "dra"
+    ]
+  },
+  {
+    "palabra": "augie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "avery",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "ayako",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "bablu",
+    "reglas_violadas": [
+      "blu$"
+    ]
+  },
+  {
+    "palabra": "baker",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "belle",
+    "reglas_violadas": [
+      "lle$"
+    ]
+  },
+  {
+    "palabra": "bevan",
+    "reglas_violadas": [
+      "van"
+    ]
+  },
+  {
+    "palabra": "bijou",
+    "reglas_violadas": [
+      "ou"
+    ]
+  },
+  {
+    "palabra": "bilal",
+    "reglas_violadas": [
+      "lal"
+    ]
+  },
+  {
+    "palabra": "blade",
+    "reglas_violadas": [
+      "^bl"
+    ]
+  },
+  {
+    "palabra": "blair",
+    "reglas_violadas": [
+      "^bl"
+    ]
+  },
+  {
+    "palabra": "blake",
+    "reglas_violadas": [
+      "k",
+      "^bl"
+    ]
+  },
+  {
+    "palabra": "blane",
+    "reglas_violadas": [
+      "^bl"
+    ]
+  },
+  {
+    "palabra": "blaze",
+    "reglas_violadas": [
+      "^bl"
+    ]
+  },
+  {
+    "palabra": "bledo",
+    "reglas_violadas": [
+      "^bl"
+    ]
+  },
+  {
+    "palabra": "blues",
+    "reglas_violadas": [
+      "^bl"
+    ]
+  },
+  {
+    "palabra": "bodie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "brain",
+    "reglas_violadas": [
+      "ain"
+    ]
+  },
+  {
+    "palabra": "burke",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "caine",
+    "reglas_violadas": [
+      "ain"
+    ]
+  },
+  {
+    "palabra": "caray",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "carey",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "casey",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "categ",
+    "reglas_violadas": [
+      "eg$"
+    ]
+  },
+  {
+    "palabra": "chaka",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "cirie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "cohen",
+    "reglas_violadas": [
+      "ohe"
+    ]
+  },
+  {
+    "palabra": "comfa",
+    "reglas_violadas": [
+      "mf"
+    ]
+  },
+  {
+    "palabra": "coney",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "corey",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "cosme",
+    "reglas_violadas": [
+      "sme"
+    ]
+  },
+  {
+    "palabra": "coyne",
+    "reglas_violadas": [
+      "oyn"
+    ]
+  },
+  {
+    "palabra": "curie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "daily",
+    "reglas_violadas": [
+      "ly",
+      "y$"
+    ]
+  },
+  {
+    "palabra": "daisy",
+    "reglas_violadas": [
+      "sy",
+      "y$"
+    ]
+  },
+  {
+    "palabra": "dakar",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "daley",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "dalle",
+    "reglas_violadas": [
+      "lle$"
+    ]
+  },
+  {
+    "palabra": "danni",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "davey",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "david",
+    "reglas_violadas": [
+      "vid"
+    ]
+  },
+  {
+    "palabra": "davie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "dixie",
+    "reglas_violadas": [
+      "xie",
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "ñoñez",
+    "reglas_violadas": [
+      "^ñ"
+    ]
+  },
+  {
+    "palabra": "donna",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "draco",
+    "reglas_violadas": [
+      "dra"
+    ]
+  },
+  {
+    "palabra": "draga",
+    "reglas_violadas": [
+      "dra"
+    ]
+  },
+  {
+    "palabra": "drago",
+    "reglas_violadas": [
+      "dra"
+    ]
+  },
+  {
+    "palabra": "drake",
+    "reglas_violadas": [
+      "k",
+      "dra"
+    ]
+  },
+  {
+    "palabra": "drazi",
+    "reglas_violadas": [
+      "dra"
+    ]
+  },
+  {
+    "palabra": "dukes",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "dunne",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "elfos",
+    "reglas_violadas": [
+      "fos$"
+    ]
+  },
+  {
+    "palabra": "ellie",
+    "reglas_violadas": [
+      "lli",
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "ellis",
+    "reglas_violadas": [
+      "lli"
+    ]
+  },
+  {
+    "palabra": "elroy",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "elsie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "elyse",
+    "reglas_violadas": [
+      "ly"
+    ]
+  },
+  {
+    "palabra": "emery",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "emily",
+    "reglas_violadas": [
+      "ly",
+      "y$"
+    ]
+  },
+  {
+    "palabra": "emory",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "ennis",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "erika",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "erinn",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "ernie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "estoy",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "evans",
+    "reglas_violadas": [
+      "van"
+    ]
+  },
+  {
+    "palabra": "fatso",
+    "reglas_violadas": [
+      "ts"
+    ]
+  },
+  {
+    "palabra": "finna",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "fiske",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "foley",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "fonna",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "found",
+    "reglas_violadas": [
+      "ou"
+    ]
+  },
+  {
+    "palabra": "friki",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "fusco",
+    "reglas_violadas": [
+      "fus(?![aeiouáéíóú])"
+    ]
+  },
+  {
+    "palabra": "fusta",
+    "reglas_violadas": [
+      "fus(?![aeiouáéíóú])"
+    ]
+  },
+  {
+    "palabra": "fuste",
+    "reglas_violadas": [
+      "fus(?![aeiouáéíóú])"
+    ]
+  },
+  {
+    "palabra": "gayle",
+    "reglas_violadas": [
+      "gay"
+    ]
+  },
+  {
+    "palabra": "geary",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "gemfa",
+    "reglas_violadas": [
+      "mf"
+    ]
+  },
+  {
+    "palabra": "gogol",
+    "reglas_violadas": [
+      "gog"
+    ]
+  },
+  {
+    "palabra": "gohan",
+    "reglas_violadas": [
+      "oha"
+    ]
+  },
+  {
+    "palabra": "gonna",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "gorka",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "gould",
+    "reglas_violadas": [
+      "ou"
+    ]
+  },
+  {
+    "palabra": "gozne",
+    "reglas_violadas": [
+      "zn"
+    ]
+  },
+  {
+    "palabra": "graig",
+    "reglas_violadas": [
+      "ig$"
+    ]
+  },
+  {
+    "palabra": "hadji",
+    "reglas_violadas": [
+      "dj"
+    ]
+  },
+  {
+    "palabra": "hakan",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "haley",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "hanna",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "hanne",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "hazai",
+    "reglas_violadas": [
+      "haz[aeiouáéíóú]"
+    ]
+  },
+  {
+    "palabra": "hazel",
+    "reglas_violadas": [
+      "haz[aeiouáéíóú]"
+    ]
+  },
+  {
+    "palabra": "healy",
+    "reglas_violadas": [
+      "ly",
+      "hea",
+      "y$"
+    ]
+  },
+  {
+    "palabra": "heard",
+    "reglas_violadas": [
+      "hea"
+    ]
+  },
+  {
+    "palabra": "henna",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "hidra",
+    "reglas_violadas": [
+      "dra"
+    ]
+  },
+  {
+    "palabra": "homie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "honey",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "ienda",
+    "reglas_violadas": [
+      "ienda"
+    ]
+  },
+  {
+    "palabra": "iendo",
+    "reglas_violadas": [
+      "iendo"
+    ]
+  },
+  {
+    "palabra": "iente",
+    "reglas_violadas": [
+      "iente"
+    ]
+  },
+  {
+    "palabra": "iento",
+    "reglas_violadas": [
+      "iento"
+    ]
+  },
+  {
+    "palabra": "ikari",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "indie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "indra",
+    "reglas_violadas": [
+      "dra"
+    ]
+  },
+  {
+    "palabra": "ivana",
+    "reglas_violadas": [
+      "van"
+    ]
+  },
+  {
+    "palabra": "jakes",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "jakob",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "jamie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "janey",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "janie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "janus",
+    "reglas_violadas": [
+      "nus"
+    ]
+  },
+  {
+    "palabra": "javed",
+    "reglas_violadas": [
+      "ved"
+    ]
+  },
+  {
+    "palabra": "jayne",
+    "reglas_violadas": [
+      "ayn"
+    ]
+  },
+  {
+    "palabra": "jenna",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "jenni",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "jihad",
+    "reglas_violadas": [
+      "iha"
+    ]
+  },
+  {
+    "palabra": "jodie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "johan",
+    "reglas_violadas": [
+      "oha"
+    ]
+  },
+  {
+    "palabra": "joker",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "jolie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "josie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "julie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "jutsu",
+    "reglas_violadas": [
+      "ts"
+    ]
+  },
+  {
+    "palabra": "lacey",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "lahey",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "laney",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "lanie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "lanka",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "leann",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "leary",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "lille",
+    "reglas_violadas": [
+      "lle$"
+    ]
+  },
+  {
+    "palabra": "lilli",
+    "reglas_violadas": [
+      "lli"
+    ]
+  },
+  {
+    "palabra": "linus",
+    "reglas_violadas": [
+      "nus"
+    ]
+  },
+  {
+    "palabra": "lohan",
+    "reglas_violadas": [
+      "oha"
+    ]
+  },
+  {
+    "palabra": "lucie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "lukas",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "maeby",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "magog",
+    "reglas_violadas": [
+      "gog",
+      "og$"
+    ]
+  },
+  {
+    "palabra": "mahal",
+    "reglas_violadas": [
+      "aha"
+    ]
+  },
+  {
+    "palabra": "maine",
+    "reglas_violadas": [
+      "ain"
+    ]
+  },
+  {
+    "palabra": "maker",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "makes",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "mamie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "marie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "marko",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "maury",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "maxie",
+    "reglas_violadas": [
+      "xie",
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "mayar",
+    "reglas_violadas": [
+      "^may"
+    ]
+  },
+  {
+    "palabra": "maybe",
+    "reglas_violadas": [
+      "^may"
+    ]
+  },
+  {
+    "palabra": "mayer",
+    "reglas_violadas": [
+      "^may"
+    ]
+  },
+  {
+    "palabra": "mayko",
+    "reglas_violadas": [
+      "k",
+      "^may"
+    ]
+  },
+  {
+    "palabra": "mbias",
+    "reglas_violadas": [
+      "^mb"
+    ]
+  },
+  {
+    "palabra": "medra",
+    "reglas_violadas": [
+      "dra"
+    ]
+  },
+  {
+    "palabra": "mihai",
+    "reglas_violadas": [
+      "iha"
+    ]
+  },
+  {
+    "palabra": "mikey",
+    "reglas_violadas": [
+      "k",
+      "y$"
+    ]
+  },
+  {
+    "palabra": "miley",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "minna",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "mirko",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "mohan",
+    "reglas_violadas": [
+      "oha"
+    ]
+  },
+  {
+    "palabra": "moray",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "mouse",
+    "reglas_violadas": [
+      "ou"
+    ]
+  },
+  {
+    "palabra": "moved",
+    "reglas_violadas": [
+      "ved"
+    ]
+  },
+  {
+    "palabra": "movie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "munna",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "munni",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "naina",
+    "reglas_violadas": [
+      "ain"
+    ]
+  },
+  {
+    "palabra": "nanna",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "nanni",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "naoko",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "natsu",
+    "reglas_violadas": [
+      "ts"
+    ]
+  },
+  {
+    "palabra": "navid",
+    "reglas_violadas": [
+      "vid"
+    ]
+  },
+  {
+    "palabra": "neill",
+    "reglas_violadas": [
+      "ll$"
+    ]
+  },
+  {
+    "palabra": "nelle",
+    "reglas_violadas": [
+      "lle$"
+    ]
+  },
+  {
+    "palabra": "novel",
+    "reglas_violadas": [
+      "vel$"
+    ]
+  },
+  {
+    "palabra": "odell",
+    "reglas_violadas": [
+      "ll$"
+    ]
+  },
+  {
+    "palabra": "okada",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "oldie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "ollie",
+    "reglas_violadas": [
+      "lli",
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "olvid",
+    "reglas_violadas": [
+      "vid"
+    ]
+  },
+  {
+    "palabra": "omaha",
+    "reglas_violadas": [
+      "aha"
+    ]
+  },
+  {
+    "palabra": "osaka",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "oskar",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "pacey",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "paine",
+    "reglas_violadas": [
+      "ain"
+    ]
+  },
+  {
+    "palabra": "paley",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "pauly",
+    "reglas_violadas": [
+      "ly",
+      "y$"
+    ]
+  },
+  {
+    "palabra": "pavel",
+    "reglas_violadas": [
+      "vel$"
+    ]
+  },
+  {
+    "palabra": "payne",
+    "reglas_violadas": [
+      "ayn"
+    ]
+  },
+  {
+    "palabra": "pelle",
+    "reglas_violadas": [
+      "lle$"
+    ]
+  },
+  {
+    "palabra": "petey",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "query",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "quill",
+    "reglas_violadas": [
+      "ll$"
+    ]
+  },
+  {
+    "palabra": "quinn",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "raina",
+    "reglas_violadas": [
+      "ain"
+    ]
+  },
+  {
+    "palabra": "rayna",
+    "reglas_violadas": [
+      "ayn"
+    ]
+  },
+  {
+    "palabra": "regis",
+    "reglas_violadas": [
+      "gis"
+    ]
+  },
+  {
+    "palabra": "rehan",
+    "reglas_violadas": [
+      "eha"
+    ]
+  },
+  {
+    "palabra": "revel",
+    "reglas_violadas": [
+      "vel$"
+    ]
+  },
+  {
+    "palabra": "riker",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "riley",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "robie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "rohan",
+    "reglas_violadas": [
+      "oha"
+    ]
+  },
+  {
+    "palabra": "rosie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "rouge",
+    "reglas_violadas": [
+      "ou"
+    ]
+  },
+  {
+    "palabra": "roxie",
+    "reglas_violadas": [
+      "xie",
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "rozno",
+    "reglas_violadas": [
+      "zn"
+    ]
+  },
+  {
+    "palabra": "rufus",
+    "reglas_violadas": [
+      "fus(?![aeiouáéíóú])"
+    ]
+  },
+  {
+    "palabra": "sacie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "sadie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "sahib",
+    "reglas_violadas": [
+      "ahi"
+    ]
+  },
+  {
+    "palabra": "sanne",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "savoy",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "senna",
+    "reglas_violadas": [
+      "nn"
+    ]
+  },
+  {
+    "palabra": "sikes",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "sisko",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "skate",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "snake",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "sofie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "sofos",
+    "reglas_violadas": [
+      "fos$"
+    ]
+  },
+  {
+    "palabra": "souza",
+    "reglas_violadas": [
+      "ou"
+    ]
+  },
+  {
+    "palabra": "spain",
+    "reglas_violadas": [
+      "ain"
+    ]
+  },
+  {
+    "palabra": "spike",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "srita",
+    "reglas_violadas": [
+      "sr"
+    ]
+  },
+  {
+    "palabra": "stace",
+    "reglas_violadas": [
+      "^st"
+    ]
+  },
+  {
+    "palabra": "stein",
+    "reglas_violadas": [
+      "^st"
+    ]
+  },
+  {
+    "palabra": "steve",
+    "reglas_violadas": [
+      "^st"
+    ]
+  },
+  {
+    "palabra": "stica",
+    "reglas_violadas": [
+      "^st"
+    ]
+  },
+  {
+    "palabra": "stico",
+    "reglas_violadas": [
+      "^st"
+    ]
+  },
+  {
+    "palabra": "stoke",
+    "reglas_violadas": [
+      "k",
+      "^st"
+    ]
+  },
+  {
+    "palabra": "susie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "suzie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "taeko",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "tetsu",
+    "reglas_violadas": [
+      "ts"
+    ]
+  },
+  {
+    "palabra": "tifus",
+    "reglas_violadas": [
+      "fus(?![aeiouáéíóú])"
+    ]
+  },
+  {
+    "palabra": "tipoy",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "token",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "tokyo",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "tomie",
+    "reglas_violadas": [
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "tours",
+    "reglas_violadas": [
+      "ou"
+    ]
+  },
+  {
+    "palabra": "ujier",
+    "reglas_violadas": [
+      "jie"
+    ]
+  },
+  {
+    "palabra": "unnie",
+    "reglas_violadas": [
+      "nn",
+      "ie$"
+    ]
+  },
+  {
+    "palabra": "vacuo",
+    "reglas_violadas": [
+      "cuo$"
+    ]
+  },
+  {
+    "palabra": "vader",
+    "reglas_violadas": [
+      "vad"
+    ]
+  },
+  {
+    "palabra": "vaina",
+    "reglas_violadas": [
+      "ain"
+    ]
+  },
+  {
+    "palabra": "vanas",
+    "reglas_violadas": [
+      "van"
+    ]
+  },
+  {
+    "palabra": "vance",
+    "reglas_violadas": [
+      "van"
+    ]
+  },
+  {
+    "palabra": "vanos",
+    "reglas_violadas": [
+      "van"
+    ]
+  },
+  {
+    "palabra": "vanya",
+    "reglas_violadas": [
+      "van"
+    ]
+  },
+  {
+    "palabra": "vedar",
+    "reglas_violadas": [
+      "ved"
+    ]
+  },
+  {
+    "palabra": "vesre",
+    "reglas_violadas": [
+      "sr"
+    ]
+  },
+  {
+    "palabra": "vijay",
+    "reglas_violadas": [
+      "y$"
+    ]
+  },
+  {
+    "palabra": "ville",
+    "reglas_violadas": [
+      "lle$"
+    ]
+  },
+  {
+    "palabra": "yagyu",
+    "reglas_violadas": [
+      "gy"
+    ]
+  },
+  {
+    "palabra": "yedra",
+    "reglas_violadas": [
+      "dra"
+    ]
+  },
+  {
+    "palabra": "yihad",
+    "reglas_violadas": [
+      "iha"
+    ]
+  },
+  {
+    "palabra": "yonki",
+    "reglas_violadas": [
+      "k"
+    ]
+  },
+  {
+    "palabra": "ávido",
+    "reglas_violadas": [
+      "vid"
+    ]
+  },
+  {
+    "palabra": "ñanga",
+    "reglas_violadas": [
+      "^ñ"
+    ]
+  },
+  {
+    "palabra": "ñaque",
+    "reglas_violadas": [
+      "^ñ"
+    ]
+  },
+  {
+    "palabra": "ñeque",
+    "reglas_violadas": [
+      "^ñ"
+    ]
+  }
+]
