@@ -23,7 +23,6 @@ export default function timeTrialMode() {
   const [loading, setLoading] = useState(true);
 
   const { userId } = useAuth();
-  
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const scaleAnim = useRef(new Animated.Value(0.3)).current;
   const fadeAnimEnd = useRef(new Animated.Value(0)).current;
@@ -139,7 +138,6 @@ export default function timeTrialMode() {
     setGameOfTheDay(gameData);
     setHasPlayedToday(true);
     setGameOver(true);
-    
     setTimeout(() => {
       showModalWithAnimation();
     }, 500);
@@ -180,8 +178,8 @@ export default function timeTrialMode() {
       {gameStarted && !hasPlayedToday ? (
         <>
           <Text style={styles.title}> Contrarreloj </Text>
-          <Game 
-            mode="timeTrial" 
+          <Game
+            mode="timeTrial"
             onGameEnd={handleGameEnd}
             onGameStart={handleGameStart}
           />
@@ -192,13 +190,18 @@ export default function timeTrialMode() {
           <Text style={styles.playedSubtext}>Vuelve mañana para un nuevo desafío</Text>
         </View>
       ) : null}
-      
+
       {gameStarted && !gameOver && (
-        <View style={styles.navigationBlocker}>
-          <Text style={styles.barBlockText}>Finaliza para cambiar de modo</Text>
-        </View>
+        <>
+          <View style={styles.topNavigationBlocker}>
+            <Text style={styles.barBlockText}>Finaliza para cambiar de modo</Text>
+          </View>
+          <View style={styles.navigationBlocker}>
+            <Text style={styles.barBlockText}>Finaliza para cambiar de modo</Text>
+          </View>
+        </>
       )}
-      
+
       {showEndModal && gameOfTheDay && (
         <Animated.View style={[
           styles.overlay,
@@ -213,7 +216,7 @@ export default function timeTrialMode() {
           </Animated.View>
         </Animated.View>
       )}
-      
+
       {showStartModal && (
         <Animated.View style={[
           styles.overlay,
@@ -310,5 +313,16 @@ const styles = StyleSheet.create({
     color: "#5792EE",
     textAlign: "center",
     marginTop: 30,
+  },
+  topNavigationBlocker: {
+    position: "absolute",
+    top: -80,
+    left: 0,
+    right: 0,
+    height: 80,
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+    zIndex: 10000,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

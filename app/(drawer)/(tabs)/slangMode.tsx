@@ -150,9 +150,14 @@ export default function slangMode() {
         </View>
       )}
       {gameStarted && !gameOver && (
-        <View style={styles.navigationBlocker}>
-          <Text style={styles.barBlockText}>Finaliza para cambiar de modo</Text>
-        </View>
+        <>
+          <View style={styles.topNavigationBlocker}>
+            <Text style={styles.barBlockText}>Finaliza para cambiar de modo</Text>
+          </View>
+          <View style={styles.navigationBlocker}>
+            <Text style={styles.barBlockText}>Finaliza para cambiar de modo</Text>
+          </View>
+        </>
       )}
       {showEndModal && gameOfTheDay && (
         <Animated.View style={[
@@ -250,5 +255,16 @@ const styles = StyleSheet.create({
     color: "#5792EE",
     textAlign: "center",
     marginTop: 30,
+  },
+  topNavigationBlocker: {
+    position: "absolute",
+    top: -80,
+    left: 0,
+    right: 0,
+    height: 80,
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+    zIndex: 10000,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
