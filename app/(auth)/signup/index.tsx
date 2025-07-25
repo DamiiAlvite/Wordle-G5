@@ -34,7 +34,7 @@ export default function Register() {
       });
       if (error) {
         throw error;
-      }else {
+      } else {
         const user = await supabase.auth.getUser();
         const userId = user.data.user?.id;
         if (userId) {
@@ -46,6 +46,7 @@ export default function Register() {
             return;
           }
         }
+        await new Promise(resolve => setTimeout(resolve, 1000));
       }
       const { error: loginError } = await supabase.auth.signInWithPassword({
         email: data.email,
@@ -57,13 +58,13 @@ export default function Register() {
       }
 
     } catch (error) {
-        setError(error instanceof Error ? error.message : "Error al registrarse");
+      setError(error instanceof Error ? error.message : "Error al registrarse");
     }
-};
+  };
 
   return (
     <View style={styles.container}>
-      <WavesBackground style={styles.WavesBackground}/>
+      <WavesBackground style={styles.WavesBackground} />
       <View style={styles.subcontainer}>
         <Text style={styles.title}>Registrate</Text>
         <Text style={styles.subtitle}>Crea tu cuenta</Text>
@@ -73,17 +74,17 @@ export default function Register() {
           name="username"
           rules={{ required: "El nombre de usuario es obligatorio" }}
           render={({ field: { onChange, value } }) => (
-          <View style={{ width: "100%", alignItems: "center" }}>
-            <TextInput
-              style={styles.textInput}
-              placeholder="Nombre de usuario"
-              autoCapitalize="none"
-              placeholderTextColor="#a3b1bd"
-              value={value}
-              onChangeText={onChange}
-            />
-            {errors.username && <Text style={styles.inputError}>{errors.username.message}</Text>}
-          </View>
+            <View style={{ width: "100%", alignItems: "center" }}>
+              <TextInput
+                style={styles.textInput}
+                placeholder="Nombre de usuario"
+                autoCapitalize="none"
+                placeholderTextColor="#a3b1bd"
+                value={value}
+                onChangeText={onChange}
+              />
+              {errors.username && <Text style={styles.inputError}>{errors.username.message}</Text>}
+            </View>
           )}
         />
 
