@@ -177,7 +177,9 @@ export default function timeTrialMode() {
       <WavesBackground style={styles.wavesBackground} />
       {gameStarted && !hasPlayedToday ? (
         <>
-          <Text style={styles.title}> Contrarreloj </Text>
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}> Contrarreloj </Text>
+          </View>
           <Game
             mode="timeTrial"
             onGameEnd={handleGameEnd}
@@ -248,15 +250,16 @@ const styles = StyleSheet.create({
     left: 0,
     zIndex: 0,
   },
+  titleContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: "2%"
+  },
   title: {
     fontSize: 36,
     fontWeight: "900",
-    marginTop: "5%",
-    marginBottom: "4%",
     color: "#2E3A59",
     letterSpacing: 3,
-    textAlign: "center",
-    paddingHorizontal: 20,
   },
   playedContainer: {
     flex: 1,
@@ -286,18 +289,13 @@ const styles = StyleSheet.create({
     color: "#2E3A59",
     fontWeight: "600",
   },
-  day: {
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "#333",
-  },
   overlay: {
     position: "absolute",
     width: "100%",
     height: "100%",
     backgroundColor: "rgba(0,0,0,0.4)",
     zIndex: 10,
-    paddingTop: 75
+    paddingTop: "10%",
   },
   navigationBlocker: {
     position: "absolute",
@@ -305,7 +303,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    height: 100,
+    height: "12%",
     backgroundColor: 'rgba(255, 255, 255, 0.95)',
     zIndex: 10000,
   },

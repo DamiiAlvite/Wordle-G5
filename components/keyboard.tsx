@@ -59,7 +59,7 @@ export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors =
   };
 
   return (
-    <View style={styles.keyboardContainer}>
+    <View >
       {KEYS.map((row, rowIndex) => (
         <View key={rowIndex} style={styles.row}>
           {rowIndex === 2 && (
@@ -122,9 +122,6 @@ export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors =
 }
 
 const styles = StyleSheet.create({
-  keyboardContainer: {
-    paddingVertical: "1%",
-  },
   row: {
     flexDirection: "row",
     justifyContent: "center",

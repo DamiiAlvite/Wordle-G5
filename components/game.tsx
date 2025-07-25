@@ -262,13 +262,15 @@ export default function Game({ mode, onGameEnd, onGameStart }: GameProps) {
         ]}>Tiempo: {timeLeft}</Text>
         </View>
       )}
-      <WordsList
-        letters={letters}
-        colors={colors}
-        flipRow={flipRow}
-        errorRow={errorRow}
-        onFlipEnd={handleFlipEnd}
-      />
+      <View style={styles.wordList}>
+        <WordsList
+          letters={letters}
+          colors={colors}
+          flipRow={flipRow}
+          errorRow={errorRow}
+          onFlipEnd={handleFlipEnd}
+        />
+      </View>
       <View style={styles.keyboard}>
         <Keyboard
           onKeyPress={handleKeyPress}
@@ -288,9 +290,13 @@ const styles = StyleSheet.create({
     position: "relative",
     alignItems: "center",
   },
+  wordList: {
+    height: "50%",
+  },
   keyboard: {
     alignItems: "center",
     justifyContent: "flex-end",
+    height: "30%",
   },
   timerContainer: {
     flexDirection: "row",
@@ -301,6 +307,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(255, 255, 255, 0.9)",
     borderRadius: 10,
     paddingVertical: 10,
+    marginVertical: "1%",
   },
   timerText: {
     fontSize: 18,

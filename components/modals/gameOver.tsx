@@ -140,20 +140,21 @@ const styles = StyleSheet.create({
   },
   stat: {
     marginBottom: 24,
-    paddingLeft: 16,
+    paddingLeft: "1%",
   },
   statItem: {
-    marginBottom: 16,
+    marginBottom: "1%",
+    
   },
   label: {
     fontWeight: "600",
     fontSize: 20,
     color: "#444",
-    marginBottom: 4,
+    marginBottom:"1%",
   },
   value: {
     marginLeft: 8,
-    marginTop: 4,
+    marginTop: "1%",
     fontSize: 18,
     color: "#222",
   },
@@ -161,7 +162,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginVertical: 12,
     gap: 6,
-    marginLeft: 24,
+    justifyContent: "center",
   },
   footer: {
     textAlign: "center",

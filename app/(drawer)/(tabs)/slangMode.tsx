@@ -21,7 +21,6 @@ export default function slangMode() {
   const [gameOver, setGameOver] = useState(false);
 
   const { userId } = useAuth();
-  
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const scaleAnim = useRef(new Animated.Value(0.3)).current;
 
@@ -114,7 +113,6 @@ export default function slangMode() {
     setGameOfTheDay(gameData);
     setHasPlayedToday(true);
     setGameOver(true);
-    
     setTimeout(() => {
       showModalWithAnimation();
     }, 500);
@@ -136,12 +134,16 @@ export default function slangMode() {
       <WavesBackground style={styles.wavesBackground} />
       {!hasPlayedToday ? (
         <>
-          <Text style={styles.title}> Lunfardo </Text>
-          <Game 
-            mode="slang" 
-            onGameEnd={handleGameEnd}
-            onGameStart={handleGameStart}
-          />
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}> Lunfardo </Text>
+          </View>
+          <View style={styles.gameContainer}>
+            <Game
+              mode="slang"
+              onGameEnd={handleGameEnd}
+              onGameStart={handleGameStart}
+            />
+          </View>
         </>
       ) : (
         <View style={styles.playedContainer}>
@@ -190,15 +192,21 @@ const styles = StyleSheet.create({
     left: 0,
     zIndex: 0,
   },
+  titleContainer: {
+    height: "10%",
+    justifyContent: "center",
+    alignItems: "center",
+  },
   title: {
     fontSize: 36,
     fontWeight: "900",
-    marginTop: "5%",
-    marginBottom: "4%",
     color: "#2E3A59",
     letterSpacing: 3,
-    textAlign: "center",
-    paddingHorizontal: 20,
+  },
+  gameContainer: {
+    height: "95%",
+    justifyContent: "center",
+    alignItems: "center",
   },
   playedContainer: {
     flex: 1,
@@ -239,7 +247,7 @@ const styles = StyleSheet.create({
     height: "100%",
     backgroundColor: "rgba(0,0,0,0.4)",
     zIndex: 10,
-    paddingTop: 75
+    paddingTop: "10%",
   },
   navigationBlocker: {
     position: "absolute",

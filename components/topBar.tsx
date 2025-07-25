@@ -49,11 +49,11 @@ export default function TopBar() {
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    paddingTop: 60,
+    paddingTop: "15%",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingVertical: 10,
+    paddingBottom: "2%",
     backgroundColor: "white",
   },
   iconButton: {
