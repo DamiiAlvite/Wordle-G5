@@ -1,11 +1,12 @@
 import { View, Text, ScrollView } from 'react-native';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { StyleSheet } from 'react-native';
 import { useAuth } from '@/providers/authProvider';
 import TopBar from "@/components/topBar";
 import { supabase } from "@/lib/supabase";
 import WavesBackground from "@/assets/svg/wavesBackground2";
 import { Shadow } from 'react-native-shadow-2';
+import { useFocusEffect } from '@react-navigation/native';
 
 type Game = {
   win: boolean;
@@ -101,19 +102,25 @@ export default function StatsScreen() {
     };
   }
 
-  useEffect(() => {
-    (async () => {
-      const [classic, slang, timeTrial] = await Promise.all([
-        getGamesByMode('classic'),
-        getGamesByMode('slang'),
-        getGamesByMode('timeTrial'),
-      ]);
+  const loadStats = useCallback(async () => {
+    if (!userId) return;
+    
+    const [classic, slang, timeTrial] = await Promise.all([
+      getGamesByMode('classic'),
+      getGamesByMode('slang'),
+      getGamesByMode('timeTrial'),
+    ]);
 
-      setClassicStats(classic);
-      setSlangStats(slang);
-      setTimeTrialStats(timeTrial);
-    })();
+    setClassicStats(classic);
+    setSlangStats(slang);
+    setTimeTrialStats(timeTrial);
   }, [userId]);
+
+  useFocusEffect(
+    useCallback(() => {
+      loadStats();
+    }, [loadStats])
+  );
 
   return (
     <View style={styles.background}>
