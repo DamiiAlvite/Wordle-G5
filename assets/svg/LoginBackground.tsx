@@ -8,7 +8,7 @@ interface Props extends SvgProps {
 function SvgComponent({ isDark, ...props }: Props) {
   // Colores para modo claro y oscuro
   const colors = isDark
-    ? ["#1e1e1e", "#283f65", "#2a3a5a", "#222f4a", "#1a2233"]
+    ? ["#151c31ff", "#283f65", "#2a3a5a", "#222f4a", "#1a2233"]
     : ["#69a4fa", "#5792ee", "#4680e1", "#356ed4", "#245cc7"];
   return (
     <Svg

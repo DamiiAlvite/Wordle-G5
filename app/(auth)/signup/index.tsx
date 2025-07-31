@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, useColorScheme } from "react-native";
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, useColorScheme, TouchableWithoutFeedback, Keyboard } from "react-native";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useForm, Controller, set } from "react-hook-form";
@@ -67,7 +67,8 @@ export default function Register() {
   };
 
   return (
-    <View style={[styles.container, { backgroundColor: isDark ? '#283f65ff' : '#d5e6ff' }]}>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <View style={[styles.container, { backgroundColor: isDark ? '#283f65ff' : '#d5e6ff' }]}>
       <WavesBackground style={styles.WavesBackground} waveColor={isDark ? '#000000' : '#ffffff'} />
       <View style={[styles.subcontainer, { backgroundColor: isDark ? 'rgba(30,30,30,0.85)' : 'rgba(255,255,255,0.7)' }]}>
         <Text style={[styles.title, { color: isDark ? '#ffffff' : '#34434d' }]}>Registrate</Text>
@@ -171,6 +172,8 @@ export default function Register() {
                 placeholderTextColor={theme.colors.textSecondary}
                 value={value}
                 onChangeText={onChange}
+                returnKeyType="done"
+                onSubmitEditing={handleSubmit(onSubmit)}
               />
               {errors.confirmPassword && <Text style={styles.inputError}>{errors.confirmPassword.message}</Text>}
             </View>
@@ -192,6 +195,7 @@ export default function Register() {
       </View>
       <StatusBar style="auto" />
     </View>
+    </TouchableWithoutFeedback>
   );
 }
 

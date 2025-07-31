@@ -4,7 +4,7 @@ import LogoBlack from "@/assets/svg/LogoBlack";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, useColorScheme } from "react-native";
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, useColorScheme, TouchableWithoutFeedback, Keyboard } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { supabase } from "@/lib/supabase";
 import { useTheme } from "@/context/themeContext";
@@ -43,12 +43,18 @@ export default function Login() {
   };
 
   return (
-    <View style={[styles.container, { backgroundColor: theme.colors.card }]}>
-      <LoginBackground style={styles.background} pointerEvents="none" />
-      <View style={styles.solidBackground} pointerEvents="none" />
-      <Logo style={styles.logo} width={300} pointerEvents="none" />
-      <Text style={[styles.title, { color: isDark ? '#ffffff' : '#34434d' }]}>Bienvenido!</Text>
-      <Text style={[styles.subtitle, { color: isDark ? '#b0b0b0' : 'grey' }]}>Inicia sesión en tu cuenta</Text>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <View style={styles.container}>
+        <View style={[styles.baseBackground, { backgroundColor: theme.colors.card }]} pointerEvents="none" />
+        <View style={styles.solidBackground} pointerEvents="none" />
+        <LoginBackground style={styles.background} isDark={isDark} pointerEvents="none" />
+        {isDark ? (
+          <Logo style={styles.logo} width={300} pointerEvents="none" />
+        ) : (
+          <LogoBlack style={styles.logo} width={300} pointerEvents="none" />
+        )}
+        <Text style={[styles.title, { color: isDark ? '#ffffff' : '#34434d' }]}>Bienvenido!</Text>
+        <Text style={[styles.subtitle, { color: isDark ? '#b0b0b0' : 'grey' }]}>Inicia sesión en tu cuenta</Text>
 
       <Controller
         control={control}
@@ -98,6 +104,8 @@ export default function Login() {
               placeholderTextColor={theme.colors.textSecondary}
               value={value}
               onChangeText={onChange}
+              returnKeyType="done"
+              onSubmitEditing={handleSubmit(onSubmit)}
             />
             {errors.password && <Text style={styles.inputError}>{errors.password.message}</Text>}
           </View>
@@ -122,6 +130,7 @@ export default function Login() {
       </View>
       <StatusBar style="auto" />
     </View>
+    </TouchableWithoutFeedback>
   );
 }
 
@@ -131,27 +140,38 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  baseBackground: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    zIndex: -200,
+  },
   solidBackground: {
     position: 'absolute',
     top: 0,
     left: 0,
     width: '100%',
     height: '5%',
-    backgroundColor: '#245CC7',
+    zIndex: 1150,
   },
   background: {
-    ...StyleSheet.absoluteFillObject,
+    position: 'absolute',
+    top: -35,
+    left: 0,
+    zIndex: -100,
   },
   logo: {
     position: 'absolute',
-    top: 50, // Ajusta según necesidad
-    alignSelf: 'center',
+    top: -825,
+    zIndex: -80,
   },
   title: {
     fontSize: 70,
     fontWeight: "bold",
     color: '#34434d',
-    marginTop: 200, // Ajusta según necesidad
+    marginTop: 150,
   },
   subtitle: {
     fontSize: 20,
@@ -168,6 +188,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     color: 'black',
     fontSize: 20,
+    zIndex: 100,
   },
   forgotPassword: {
     color: 'grey',
@@ -175,6 +196,7 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
     marginRight: '-40%',
     marginTop: 13,
+    zIndex: 100,
   },
   loginButton: {
     backgroundColor: '#5792EE',
@@ -184,6 +206,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 33,
     width: '80%',
+    zIndex: 100,
   },
   loginButtonText: {
     color: '#fff',
@@ -203,10 +226,12 @@ const styles = StyleSheet.create({
   registerText: {
     color: 'grey',
     fontSize: 18,
+    zIndex: 100,
   },
   registerLink: {
     color: '#5792EE',
     fontSize: 18,
+    zIndex: 100,
   },
   inputError: {
     color: "red",
