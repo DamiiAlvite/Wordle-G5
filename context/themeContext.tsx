@@ -8,6 +8,7 @@ export type ThemeMode = 'light' | 'dark' | 'system';
 export interface Theme {
   colors: {
     background: string;
+    background2: string;
     surface: string;
     primary: string;
     secondary: string;
@@ -26,6 +27,7 @@ export interface Theme {
 const lightTheme: Theme = {
   colors: {
     background: '#E8F0FE',
+    background2: '#d5e6ff',
     surface: '#FFFFFF',
     primary: '#5792EE',
     secondary: '#34434d',
@@ -43,7 +45,8 @@ const lightTheme: Theme = {
 
 const darkTheme: Theme = {
   colors: {
-    background: '#283f65ff',
+    background: '#233655ff',
+    background2: '#283f65ff',
     surface: '#1e1e1e',
     primary: '#5792EE',
     secondary: '#e0e0e0',

@@ -7,6 +7,7 @@ import React from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, useColorScheme } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { supabase } from "@/lib/supabase";
+import { useTheme } from "@/context/themeContext";
 
 type FormData = {
   email: string;
@@ -17,6 +18,7 @@ export default function Login() {
   const router = useRouter();
   const [error, setError] = React.useState<string | null>(null);
   const systemColorScheme = useColorScheme();
+  const { theme } = useTheme();
   const isDark = systemColorScheme === 'dark';
 
   const { control, handleSubmit, formState: { errors } } = useForm<FormData>({
@@ -41,14 +43,10 @@ export default function Login() {
   };
 
   return (
-    <View style={[styles.container, { backgroundColor: isDark ? '#283f65ff' : '#fff' }]}>
+    <View style={[styles.container, { backgroundColor: theme.colors.card }]}>
       <LoginBackground style={styles.background} pointerEvents="none" />
-      <View style={[styles.solidBackground, { backgroundColor: isDark ? '#1e1e1e' : '#245CC7' }]}></View>
-      {isDark ? (
-        <Logo style={styles.logo} width={300} pointerEvents="none" />
-      ) : (
-        <LogoBlack style={styles.logo} width={300} pointerEvents="none" />
-      )}
+      <View style={styles.solidBackground} pointerEvents="none" />
+      <Logo style={styles.logo} width={300} pointerEvents="none" />
       <Text style={[styles.title, { color: isDark ? '#ffffff' : '#34434d' }]}>Bienvenido!</Text>
       <Text style={[styles.subtitle, { color: isDark ? '#b0b0b0' : 'grey' }]}>Inicia sesión en tu cuenta</Text>
 
@@ -66,12 +64,12 @@ export default function Login() {
           <View style={{ width: "100%", alignItems: "center" }}>
             <TextInput
               style={[styles.textInput, { 
-                backgroundColor: isDark ? '#1e1e1e' : '#fff',
+                backgroundColor: theme.colors.border,
                 color: isDark ? '#ffffff' : '#000000'
               }]}
               placeholder="Correo electrónico"
               autoCapitalize="none"
-              placeholderTextColor={isDark ? '#b0b0b0' : '#a3b1bd'}
+              placeholderTextColor={theme.colors.textSecondary}
               value={value}
               onChangeText={onChange}
               keyboardType="email-address"
@@ -92,12 +90,12 @@ export default function Login() {
           <View style={{ width: "100%", alignItems: "center" }}>
             <TextInput
               style={[styles.textInput, { 
-                backgroundColor: isDark ? '#1e1e1e' : '#fff',
+                backgroundColor: theme.colors.border,
                 color: isDark ? '#ffffff' : '#000000'
               }]}
               placeholder="Contraseña"
               secureTextEntry
-              placeholderTextColor={isDark ? '#b0b0b0' : '#a3b1bd'}
+              placeholderTextColor={theme.colors.textSecondary}
               value={value}
               onChangeText={onChange}
             />
@@ -139,31 +137,26 @@ const styles = StyleSheet.create({
     left: 0,
     width: '100%',
     height: '5%',
-    zIndex: 1,
+    backgroundColor: '#245CC7',
   },
   background: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    zIndex: 0, // Mantener en 0 para que esté detrás de todo
+    ...StyleSheet.absoluteFillObject,
   },
   logo: {
     position: 'absolute',
-    top: 50,
-    zIndex: 15, // Aumentado de 10 a 15 para asegurar que esté encima del background
+    top: 50, // Ajusta según necesidad
+    alignSelf: 'center',
   },
   title: {
     fontSize: 70,
     fontWeight: "bold",
-    marginTop: 200,
-    zIndex: 4,
+    color: '#34434d',
+    marginTop: 200, // Ajusta según necesidad
   },
   subtitle: {
     fontSize: 20,
+    color: 'grey',
     marginBottom: 23,
-    zIndex: 4,
   },
   textInput: {
     padding: 10,
@@ -172,15 +165,16 @@ const styles = StyleSheet.create({
     width: '80%',
     height: 50,
     borderRadius: 20,
+    backgroundColor: '#fff',
+    color: 'black',
     fontSize: 20,
-    zIndex: 4,
   },
   forgotPassword: {
+    color: 'grey',
     fontSize: 16,
     alignSelf: 'flex-end',
     marginRight: '-40%',
     marginTop: 13,
-    zIndex: 4,
   },
   loginButton: {
     backgroundColor: '#5792EE',
@@ -190,7 +184,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 33,
     width: '80%',
-    zIndex: 4,
   },
   loginButtonText: {
     color: '#fff',
@@ -206,9 +199,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    zIndex: 4,
   },
   registerText: {
+    color: 'grey',
     fontSize: 18,
   },
   registerLink: {
@@ -216,7 +209,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   inputError: {
-    color: "#ff4444",
+    color: "red",
     marginTop: 5,
     marginLeft: "10%",
     fontSize: 13,

@@ -121,7 +121,6 @@ export default function DrawerLayout() {
         drawerActiveTintColor: theme.colors.primary,
         drawerInactiveTintColor: theme.colors.textSecondary,
         drawerStyle: { backgroundColor: theme.colors.surface },
-        drawerLabelStyle: { color: theme.colors.text },
       }}
       drawerContent={(props) => <CustomDrawerContent {...props} />}
     >

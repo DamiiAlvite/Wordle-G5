@@ -5,6 +5,7 @@ import { StatusBar } from "expo-status-bar";
 import { useForm, Controller, set } from "react-hook-form";
 import { supabase } from "@/lib/supabase";
 import WavesBackground from "@/assets/svg/wavesBackground";
+import { useTheme } from "@/context/themeContext";
 
 type FormData = {
   username: string;
@@ -17,6 +18,7 @@ export default function Register() {
   const [error, setError] = React.useState<string | null>(null);
   const router = useRouter();
   const systemColorScheme = useColorScheme();
+  const { theme } = useTheme();
   const isDark = systemColorScheme === 'dark';
   const { control, handleSubmit, formState: { errors }, watch } = useForm<FormData>({
     defaultValues: {
@@ -79,12 +81,12 @@ export default function Register() {
             <View style={{ width: "100%", alignItems: "center" }}>
               <TextInput
                 style={[styles.textInput, { 
-                  backgroundColor: isDark ? '#1e1e1e' : '#fff',
+                  backgroundColor: theme.colors.border,
                   color: isDark ? '#ffffff' : '#000000'
                 }]}
                 placeholder="Nombre de usuario"
                 autoCapitalize="none"
-                placeholderTextColor={isDark ? '#b0b0b0' : '#a3b1bd'}
+                placeholderTextColor={theme.colors.textSecondary}
                 value={value}
                 onChangeText={onChange}
               />
@@ -107,13 +109,13 @@ export default function Register() {
             <View style={{ width: "100%", alignItems: "center" }}>
               <TextInput
                 style={[styles.textInput, { 
-                  backgroundColor: isDark ? '#1e1e1e' : '#fff',
+                  backgroundColor: theme.colors.border,
                   color: isDark ? '#ffffff' : '#000000'
                 }]}
                 placeholder="Correo electrónico"
                 autoCapitalize="none"
                 keyboardType="email-address"
-                placeholderTextColor={isDark ? '#b0b0b0' : '#a3b1bd'}
+                placeholderTextColor={theme.colors.textSecondary}
                 value={value}
                 onChangeText={onChange}
               />
@@ -135,12 +137,12 @@ export default function Register() {
             <View style={{ width: "100%", alignItems: "center" }}>
               <TextInput
                 style={[styles.textInput, { 
-                  backgroundColor: isDark ? '#1e1e1e' : '#fff',
+                  backgroundColor: theme.colors.border,
                   color: isDark ? '#ffffff' : '#000000'
                 }]}
                 placeholder="Contraseña"
                 secureTextEntry
-                placeholderTextColor={isDark ? '#b0b0b0' : '#a3b1bd'}
+                placeholderTextColor={theme.colors.textSecondary}
                 value={value}
                 onChangeText={onChange}
               />
@@ -161,12 +163,12 @@ export default function Register() {
             <View style={{ width: "100%", alignItems: "center" }}>
               <TextInput
                 style={[styles.textInput, { 
-                  backgroundColor: isDark ? '#1e1e1e' : '#fff',
+                  backgroundColor: theme.colors.border,
                   color: isDark ? '#ffffff' : '#000000'
                 }]}
                 placeholder="Repetir contraseña"
                 secureTextEntry
-                placeholderTextColor={isDark ? '#b0b0b0' : '#a3b1bd'}
+                placeholderTextColor={theme.colors.textSecondary}
                 value={value}
                 onChangeText={onChange}
               />

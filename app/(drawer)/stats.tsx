@@ -125,7 +125,7 @@ export default function StatsScreen() {
   );
 
   return (
-    <View style={[styles.background, { backgroundColor: theme.colors.background }]}>
+    <View style={[styles.background, { backgroundColor: theme.colors.background2 }]}>
       <TopBar />
       <ScrollView contentContainerStyle={[styles.container, { backgroundColor: theme.colors.background }]}>
         <WavesBackground style={styles.wavesBackground} waveColor={theme.colors.waves} pointerEvents="none" />

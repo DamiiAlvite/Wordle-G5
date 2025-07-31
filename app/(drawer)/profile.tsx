@@ -74,7 +74,7 @@ export default function MiPerfil() {
 
 
   return (
-    <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
+    <View style={[styles.container, { backgroundColor: theme.colors.background2 }]}>
       <WavesBackground style={styles.WavesBackground} waveColor={theme.colors.waves} pointerEvents="none" />
       <TopBar />
       <View style={[styles.subcontainer, { backgroundColor: theme.colors.card }]}>
