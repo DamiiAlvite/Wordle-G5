@@ -2,6 +2,7 @@
 
 import { View, Text } from 'react-native';
 import { StyleSheet } from 'react-native';
+import { useTheme } from "@/context/themeContext";
 
 function getCurrentStreak(games: { win: boolean }[]) {
   let streak = 0;
@@ -38,6 +39,7 @@ export default function StatsContainer({ title, games }: {
   title: string,
   games: { win: boolean; win_attempt?: number }[]
 }) {
+  const { theme } = useTheme();
   const played = games.length;
   const wins = games.filter(g => g.win).length;
   const winPercentage = played ? Math.round((wins / played) * 100) : 0;
@@ -46,8 +48,8 @@ export default function StatsContainer({ title, games }: {
   const guessDistribution = getGuessDistribution(games.filter(g => g.win));
 
   return (
-    <View style={styles.wrapper}>
-      <Text style={styles.modeTitle}>{title}</Text>
+    <View style={[styles.wrapper, { backgroundColor: theme.colors.card }]}>
+      <Text style={[styles.modeTitle, { color: theme.colors.text }]}>{title}</Text>
       <View style={styles.statRow}>
         <StatBlock label="Jugados" value={played} />
         <StatBlock label="Ganados" value={wins} />
@@ -57,12 +59,18 @@ export default function StatsContainer({ title, games }: {
         <StatBlock label="Racha actual" value={currentStreak} />
         <StatBlock label="Racha máxima" value={maxStreak} />
       </View>
-      <Text style={styles.subTitle}>Distribución de intentos</Text>
+      <Text style={[styles.subTitle, { color: theme.colors.text }]}>Distribución de intentos</Text>
       {guessDistribution.map((count, i) => (
         <View key={i} style={styles.guessDistributionRow}>
-          <Text style={styles.try}>{i + 1}</Text>
-          <View style={[styles.bar, { width: count * 20 }]} />
-          <Text style={styles.count}>{count}</Text>
+          <Text style={[styles.try, { 
+            backgroundColor: theme.colors.primary + '40',
+            color: theme.colors.text 
+          }]}>{i + 1}</Text>
+          <View style={[styles.bar, { 
+            width: count * 20,
+            backgroundColor: theme.colors.primary + '60'
+          }]} />
+          <Text style={[styles.count, { color: theme.colors.text }]}>{count}</Text>
         </View>
       ))}
     </View>
@@ -70,11 +78,13 @@ export default function StatsContainer({ title, games }: {
 }
 
 function StatBlock({ label, value }: { label: string; value: number | string }) {
+  const { theme } = useTheme();
+  
   return (
-    <View style={styles.statShadowWrapper}>
-      <View style={styles.statBlock}>
-        <Text style={styles.statValue}>{value}</Text>
-        <Text style={styles.statLabel}>{label}</Text>
+    <View style={[styles.statShadowWrapper, { backgroundColor: theme.colors.surface }]}>
+      <View style={[styles.statBlock, { backgroundColor: theme.colors.card }]}>
+        <Text style={[styles.statValue, { color: theme.colors.text }]}>{value}</Text>
+        <Text style={[styles.statLabel, { color: theme.colors.textSecondary }]}>{label}</Text>
       </View>
     </View>
   );
@@ -82,7 +92,6 @@ function StatBlock({ label, value }: { label: string; value: number | string }) 
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: 'rgba(255,255,255,0.85)',
     borderRadius: 24,
     padding: 20,
     marginBottom: 32,
@@ -107,7 +116,6 @@ const styles = StyleSheet.create({
   statShadowWrapper: {
     width: 100,
     borderRadius: 12,
-    backgroundColor: '#fff',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
@@ -119,7 +127,6 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     alignItems: 'center',
     paddingVertical: 12,
-    backgroundColor: "rgba(255,255,255,0.85)",
   },
   statLabel: {
     fontSize: 12,
@@ -130,7 +137,6 @@ const styles = StyleSheet.create({
   statValue: {
     fontSize: 22,
     fontWeight: 'bold',
-    color: '#222',
     marginBottom: 4,
   },
   subTitle: {
@@ -148,20 +154,16 @@ const styles = StyleSheet.create({
   try: {
     width: 24,
     textAlign: 'center',
-    backgroundColor: 'rgba(197, 226, 251, 0.85)',
-    color: '#222',
     paddingVertical: 4,
     borderRadius: 4,
   },
   bar: {
     height: 20,
-    backgroundColor: 'rgba(140, 201, 255, 0.85)',
     borderRadius: 6,
     marginLeft: 8,
   },
   count: {
     marginLeft: 8,
-    color: '#222',
     fontWeight: '500',
   },
 });

@@ -1,9 +1,10 @@
 import LoginBackground from "@/assets/svg/LoginBackground";
 import Logo from "@/assets/svg/LogoWhite";
+import LogoBlack from "@/assets/svg/LogoBlack";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, useColorScheme } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { supabase } from "@/lib/supabase";
 
@@ -15,6 +16,8 @@ type FormData = {
 export default function Login() {
   const router = useRouter();
   const [error, setError] = React.useState<string | null>(null);
+  const systemColorScheme = useColorScheme();
+  const isDark = systemColorScheme === 'dark';
 
   const { control, handleSubmit, formState: { errors } } = useForm<FormData>({
     defaultValues: {
@@ -38,12 +41,16 @@ export default function Login() {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.solidBackground}></View>
+    <View style={[styles.container, { backgroundColor: isDark ? '#283f65ff' : '#fff' }]}>
       <LoginBackground style={styles.background} pointerEvents="none" />
-      <Logo style={styles.logo} width={300} pointerEvents="none" />
-      <Text style={styles.title}>Bienvenido!</Text>
-      <Text style={styles.subtitle}>Inicia sesión en tu cuenta</Text>
+      <View style={[styles.solidBackground, { backgroundColor: isDark ? '#1e1e1e' : '#245CC7' }]}></View>
+      {isDark ? (
+        <Logo style={styles.logo} width={300} pointerEvents="none" />
+      ) : (
+        <LogoBlack style={styles.logo} width={300} pointerEvents="none" />
+      )}
+      <Text style={[styles.title, { color: isDark ? '#ffffff' : '#34434d' }]}>Bienvenido!</Text>
+      <Text style={[styles.subtitle, { color: isDark ? '#b0b0b0' : 'grey' }]}>Inicia sesión en tu cuenta</Text>
 
       <Controller
         control={control}
@@ -58,10 +65,13 @@ export default function Login() {
         render={({ field: { onChange, value } }) => (
           <View style={{ width: "100%", alignItems: "center" }}>
             <TextInput
-              style={styles.textInput}
+              style={[styles.textInput, { 
+                backgroundColor: isDark ? '#1e1e1e' : '#fff',
+                color: isDark ? '#ffffff' : '#000000'
+              }]}
               placeholder="Correo electrónico"
               autoCapitalize="none"
-              placeholderTextColor="#a3b1bd"
+              placeholderTextColor={isDark ? '#b0b0b0' : '#a3b1bd'}
               value={value}
               onChangeText={onChange}
               keyboardType="email-address"
@@ -81,10 +91,13 @@ export default function Login() {
         render={({ field: { onChange, value } }) => (
           <View style={{ width: "100%", alignItems: "center" }}>
             <TextInput
-              style={styles.textInput}
+              style={[styles.textInput, { 
+                backgroundColor: isDark ? '#1e1e1e' : '#fff',
+                color: isDark ? '#ffffff' : '#000000'
+              }]}
               placeholder="Contraseña"
               secureTextEntry
-              placeholderTextColor="#a3b1bd"
+              placeholderTextColor={isDark ? '#b0b0b0' : '#a3b1bd'}
               value={value}
               onChangeText={onChange}
             />
@@ -94,7 +107,7 @@ export default function Login() {
       />
 
       <TouchableOpacity>
-        <Text style={styles.forgotPassword}>Olvido su contraseña?</Text>
+        <Text style={[styles.forgotPassword, { color: isDark ? '#b0b0b0' : 'grey' }]}>Olvido su contraseña?</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.loginButton} onPress={handleSubmit(onSubmit)}>
         <Text style={styles.loginButtonText}>Iniciar sesión</Text>
@@ -102,7 +115,7 @@ export default function Login() {
       {error && <Text style={styles.inputError}>{error}</Text>}
 
       <View style={styles.registerContainer}>
-        <Text style={styles.registerText}>
+        <Text style={[styles.registerText, { color: isDark ? '#b0b0b0' : 'grey' }]}>
           No tienes cuenta?
         </Text>
         <TouchableOpacity onPress={() => router.push("/signup")}>
@@ -126,30 +139,31 @@ const styles = StyleSheet.create({
     left: 0,
     width: '100%',
     height: '5%',
-    backgroundColor: '#245CC7',
-    zIndex: 1150,
+    zIndex: 1,
   },
   background: {
     position: 'absolute',
-    top: -80,
+    top: 0,
     left: 0,
-    zIndex: -100,
+    width: '100%',
+    height: '100%',
+    zIndex: 0, // Mantener en 0 para que esté detrás de todo
   },
   logo: {
     position: 'absolute',
-    top: -825,
-    zIndex: -80,
+    top: 50,
+    zIndex: 15, // Aumentado de 10 a 15 para asegurar que esté encima del background
   },
   title: {
     fontSize: 70,
     fontWeight: "bold",
-    color: '#34434d',
-    marginTop: 150,
+    marginTop: 200,
+    zIndex: 4,
   },
   subtitle: {
     fontSize: 20,
-    color: 'grey',
     marginBottom: 23,
+    zIndex: 4,
   },
   textInput: {
     padding: 10,
@@ -158,18 +172,15 @@ const styles = StyleSheet.create({
     width: '80%',
     height: 50,
     borderRadius: 20,
-    backgroundColor: '#fff',
-    color: 'black',
     fontSize: 20,
-    zIndex: 100,
+    zIndex: 4,
   },
   forgotPassword: {
-    color: 'grey',
     fontSize: 16,
     alignSelf: 'flex-end',
     marginRight: '-40%',
     marginTop: 13,
-    zIndex: 100,
+    zIndex: 4,
   },
   loginButton: {
     backgroundColor: '#5792EE',
@@ -179,7 +190,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 33,
     width: '80%',
-    zIndex: 100,
+    zIndex: 4,
   },
   loginButtonText: {
     color: '#fff',
@@ -195,19 +206,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
+    zIndex: 4,
   },
   registerText: {
-    color: 'grey',
     fontSize: 18,
-    zIndex: 100,
   },
   registerLink: {
     color: '#5792EE',
     fontSize: 18,
-    zIndex: 100,
   },
   inputError: {
-    color: "red",
+    color: "#ff4444",
     marginTop: 5,
     marginLeft: "10%",
     fontSize: 13,

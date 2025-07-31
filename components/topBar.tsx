@@ -3,9 +3,11 @@ import { View, TouchableOpacity, StyleSheet } from "react-native";
 import { router, usePathname, useLocalSearchParams } from "expo-router";
 import { MaterialCommunityIcons, AntDesign, SimpleLineIcons } from "@expo/vector-icons";
 import { useNavigation, DrawerActions } from '@react-navigation/native';
+import { useTheme } from "@/context/themeContext";
 
 
 export default function TopBar() {
+  const { theme } = useTheme();
   
   const pathname = usePathname();
   const navigation = useNavigation();
@@ -29,17 +31,17 @@ export default function TopBar() {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: theme.colors.surface }]}>
       <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())} style={styles.iconButton}>
-        <SimpleLineIcons name="menu" size={28} color="black" />
+        <SimpleLineIcons name="menu" size={28} color={theme.colors.text} />
       </TouchableOpacity>
       {showClose ? (
         <TouchableOpacity onPress={handleClose} style={styles.iconButton}>
-          <AntDesign name="close" size={28} color="black" />
+          <AntDesign name="close" size={28} color={theme.colors.text} />
         </TouchableOpacity>
       ) : (
         <TouchableOpacity onPress={handleRulesPress} style={styles.iconButton}>
-          <MaterialCommunityIcons name="lightbulb-on-outline" size={28} color="#333" />
+          <MaterialCommunityIcons name="lightbulb-on-outline" size={28} color={theme.colors.secondary} />
         </TouchableOpacity>
       )}
     </View>
@@ -54,7 +56,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     paddingBottom: "2%",
-    backgroundColor: "white",
   },
   iconButton: {
     padding: 6,

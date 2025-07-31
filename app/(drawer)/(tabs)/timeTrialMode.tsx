@@ -7,8 +7,10 @@ import WavesBackground from "@/assets/svg/wavesBackground";
 import Game from "@/components/game";
 import EndGame from "@/components/modals/gameOver";
 import StartTimeTrial from "@/components/modals/startTimeTrial";
+import { useTheme } from "@/context/themeContext";
 
 export default function timeTrialMode() {
+  const { theme } = useTheme();
 
   const [gameOfTheDay, setGameOfTheDay] = useState<{
     win: boolean;
@@ -163,22 +165,22 @@ export default function timeTrialMode() {
 
   if (loading) {
     return (
-      <View style={styles.container}>
-        <WavesBackground style={styles.wavesBackground} />
+      <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
+        <WavesBackground style={styles.wavesBackground} waveColor={theme.colors.waves} />
         <View style={styles.loadingContainer}>
-          <Text style={styles.loadingText}>Cargando...</Text>
+          <Text style={[styles.loadingText, { color: theme.colors.secondary }]}>Cargando...</Text>
         </View>
       </View>
     );
   }
 
   return (
-    <View style={styles.container}>
-      <WavesBackground style={styles.wavesBackground} />
+    <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
+      <WavesBackground style={styles.wavesBackground} waveColor={theme.colors.waves} />
       {gameStarted && !hasPlayedToday ? (
         <>
           <View style={styles.titleContainer}>
-            <Text style={styles.title}> Contrarreloj </Text>
+            <Text style={[styles.title, { color: theme.colors.secondary }]}> Contrarreloj </Text>
           </View>
           <Game
             mode="timeTrial"
@@ -188,18 +190,18 @@ export default function timeTrialMode() {
         </>
       ) : hasPlayedToday ? (
         <View style={styles.playedContainer}>
-          <Text style={styles.playedText}>Ya jugaste hoy</Text>
-          <Text style={styles.playedSubtext}>Vuelve mañana para un nuevo desafío</Text>
+          <Text style={[styles.playedText, { color: theme.colors.secondary }]}>Ya jugaste hoy</Text>
+          <Text style={[styles.playedSubtext, { color: theme.colors.textSecondary }]}>Vuelve mañana para un nuevo desafío</Text>
         </View>
       ) : null}
 
       {gameStarted && !gameOver && (
         <>
-          <View style={styles.topNavigationBlocker}>
-            <Text style={styles.barBlockText}>Finaliza para cambiar de modo</Text>
+          <View style={[styles.topNavigationBlocker, { backgroundColor: theme.colors.card }]}>
+            <Text style={[styles.barBlockText, { color: theme.colors.primary }]}>Finaliza para cambiar de modo</Text>
           </View>
-          <View style={styles.navigationBlocker}>
-            <Text style={styles.barBlockText}>Finaliza para cambiar de modo</Text>
+          <View style={[styles.navigationBlocker, { backgroundColor: theme.colors.card }]}>
+            <Text style={[styles.barBlockText, { color: theme.colors.primary }]}>Finaliza para cambiar de modo</Text>
           </View>
         </>
       )}
@@ -209,6 +211,7 @@ export default function timeTrialMode() {
           styles.overlay,
           {
             opacity: fadeAnimEnd,
+            backgroundColor: theme.colors.overlay,
           }
         ]}>
           <Animated.View style={{
@@ -224,6 +227,7 @@ export default function timeTrialMode() {
           styles.overlay,
           {
             opacity: fadeAnim,
+            backgroundColor: theme.colors.overlay,
           }
         ]}>
           <Animated.View style={{
@@ -242,7 +246,6 @@ const styles = StyleSheet.create({
     flex: 1,
     position: "relative",
     alignItems: "center",
-    backgroundColor: "#E8F0FE",
   },
   wavesBackground: {
     position: "absolute",
@@ -258,7 +261,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 36,
     fontWeight: "900",
-    color: "#2E3A59",
     letterSpacing: 3,
   },
   playedContainer: {
@@ -270,13 +272,11 @@ const styles = StyleSheet.create({
   playedText: {
     fontSize: 24,
     fontWeight: "bold",
-    color: "#2E3A59",
     textAlign: "center",
     marginBottom: 10,
   },
   playedSubtext: {
     fontSize: 16,
-    color: "#666",
     textAlign: "center",
   },
   loadingContainer: {
@@ -286,14 +286,12 @@ const styles = StyleSheet.create({
   },
   loadingText: {
     fontSize: 18,
-    color: "#2E3A59",
     fontWeight: "600",
   },
   overlay: {
     position: "absolute",
     width: "100%",
     height: "100%",
-    backgroundColor: "rgba(0,0,0,0.4)",
     zIndex: 10,
     paddingTop: "10%",
   },
@@ -304,11 +302,9 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     height: "12%",
-    backgroundColor: 'rgba(255, 255, 255, 0.95)',
     zIndex: 10000,
   },
   barBlockText: {
-    color: "#5792EE",
     textAlign: "center",
     marginTop: 30,
   },
@@ -318,7 +314,6 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     height: 80,
-    backgroundColor: 'rgba(255, 255, 255, 0.95)',
     zIndex: 10000,
     justifyContent: 'center',
     alignItems: 'center',
