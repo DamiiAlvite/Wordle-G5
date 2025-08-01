@@ -48,11 +48,7 @@ export default function Login() {
         <View style={[styles.baseBackground, { backgroundColor: theme.colors.card }]} pointerEvents="none" />
         <View style={styles.solidBackground} pointerEvents="none" />
         <LoginBackground style={styles.background} isDark={isDark} pointerEvents="none" />
-        {isDark ? (
-          <Logo style={styles.logo} width={300} pointerEvents="none" />
-        ) : (
-          <LogoBlack style={styles.logo} width={300} pointerEvents="none" />
-        )}
+        <Logo style={styles.logo} width={300} pointerEvents="none" />
         <Text style={[styles.title, { color: isDark ? '#ffffff' : '#34434d' }]}>Bienvenido!</Text>
         <Text style={[styles.subtitle, { color: isDark ? '#b0b0b0' : 'grey' }]}>Inicia sesión en tu cuenta</Text>
 
