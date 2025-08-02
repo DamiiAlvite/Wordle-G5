@@ -27,19 +27,33 @@ export default function AuthProvider(props: Props) {
     const [loading, setLoading] = useState(true);
     const [session, setSession] = useState<Session | null>(null);
     const [username, setUsername] = useState<string | null>(null);
+    
     const refreshUserData = async (id: string | null) => {
         if (!id) return;
-        const { data, error } = await supabase
-            .from("user")
-            .select("name")
-            .eq("user_id", id)
-            .single();
+        
+        // Retry logic para manejar casos donde el usuario aún no está en la BD
+        let retries = 3;
+        while (retries > 0) {
+            const { data, error } = await supabase
+                .from("user")
+                .select("name")
+                .eq("user_id", id)
+                .single();
 
-        if (error) {
-            console.error("Error fetching user name:", error);
-            return;
+            if (error) {
+                if (error.code === "PGRST116" && retries > 1) {
+                    // Si no se encuentra el usuario, esperar y reintentar
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                    retries--;
+                    continue;
+                }
+                console.error("Error fetching user name:", error);
+                return;
+            }
+            
+            setUsername(data?.name ?? null);
+            break;
         }
-        setUsername(data?.name ?? null);
     };
 
     useEffect(() => {
@@ -76,11 +90,20 @@ export default function AuthProvider(props: Props) {
     useEffect(() => {
         if (session?.user?.id) {
             refreshUserData(session.user.id);
+        } else {
+            // Limpiar el username cuando no hay sesión
+            setUsername(null);
         }
     }, [session]);
 
     return (
-        <AuthContext.Provider value={{ loading, session, userId: session?.user?.id ?? null, username, refreshUserData: () => refreshUserData(session?.user?.id ?? null) }}>
+        <AuthContext.Provider value={{ 
+            loading, 
+            session, 
+            userId: session?.user?.id ?? null, 
+            username, 
+            refreshUserData: () => refreshUserData(session?.user?.id ?? null) 
+        }}>
             {props.children}
         </AuthContext.Provider>
     );

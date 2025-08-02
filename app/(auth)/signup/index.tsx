@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, useColorScheme, TouchableWithoutFeedback, Keyboard } from "react-native";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { useForm, Controller, set } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { supabase } from "@/lib/supabase";
 import WavesBackground from "@/assets/svg/wavesBackground";
 import { useTheme } from "@/context/themeContext";
@@ -32,35 +32,35 @@ export default function Register() {
   const onSubmit = async (data: FormData) => {
     setError(null);
     try {
-      const { error } = await supabase.auth.signUp({
+      const { data: authData, error } = await supabase.auth.signUp({
         email: data.email,
         password: data.password,
       });
+      
       if (error) {
         throw error;
-      } else {
-        const user = await supabase.auth.getUser();
-        const userId = user.data.user?.id;
-        if (userId) {
-          const { error: userInsertError } = await supabase
-            .from("user")
-            .insert([{ user_id: userId, name: data.username }]);
-          if (userInsertError) {
-            setError("Error al guardar el nombre de usuario");
-            return;
-          }
+      }
+      
+      if (authData.user) {
+        const { error: userInsertError } = await supabase
+          .from("user")
+          .insert([{ user_id: authData.user.id, name: data.username }]);
+        
+        if (userInsertError) {
+          setError("Error al guardar el nombre de usuario");
+          return;
         }
-        await new Promise(resolve => setTimeout(resolve, 1000));
-      }
-      const { error: loginError } = await supabase.auth.signInWithPassword({
-        email: data.email,
-        password: data.password,
-      });
+        await new Promise(resolve => setTimeout(resolve, 500));
+        
+        const { error: loginError } = await supabase.auth.signInWithPassword({
+          email: data.email,
+          password: data.password,
+        });
 
-      if (loginError) {
-        throw loginError;
+        if (loginError) {
+          throw loginError;
+        }
       }
-
     } catch (error) {
       setError(error instanceof Error ? error.message : "Error al registrarse");
     }
