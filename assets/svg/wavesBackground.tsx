@@ -1,27 +1,30 @@
 import * as React from "react"
 import Svg, { Path, SvgProps } from "react-native-svg"
 
-function SvgComponent(props: SvgProps) {
+interface WavesBackgroundProps extends SvgProps {
+  waveColor?: string;
+}
+
+function SvgComponent({ waveColor = "#fff", ...props }: WavesBackgroundProps) {
   return (
-    
-        <Svg
-          viewBox="0 -240.502 587.138 1265.075"
-          {...props}
-        >
+    <Svg
+      viewBox="0 -240.502 587.138 1265.075"
+      {...props}
+    >
       <Path
         d="M341.47 1045.62s75.004-81.397 86.438-124.337c10.063-37.792-14.605-85.691-10.195-116.848 3.103-21.928 4.903-46.872 20.913-54.204 27.877-12.767 123.59 27.532 165.849 59.35 37.742 28.417 75.715 72.875 82.063 114.049 6.323 41.016-7.272 107.127-43.569 132.45-53.39 37.248-301.499-10.46-301.499-10.46"
-        fill="#fff"
-        stroke="#fff"
+        fill={waveColor}
+        stroke={waveColor}
       />
       <Path
         d="M-199.57 844.366S59.959 527.807 61.262 370.124C62.547 214.621-184.75-95.226-184.75-95.226"
-        fill="#fff"
-        stroke="#fff"
+        fill={waveColor}
+        stroke={waveColor}
       />
       <Path
         d="M885.304-51.598S663.7 16.263 584.457 15.093c-52.059-.769-99.328-8.638-128.935-32.605-26.603-21.535-20.672-79.9-47.424-96.328-28.807-17.69-94.059 17.398-124.488 1.48-26.975-14.11-32.962-56.322-54.835-81.02-22.778-25.72-86.2-54.794-80.028-69.65 15.699-37.79 585.616-29.03 684.687 48.91 49.39 38.855 51.87 162.522 51.87 162.522"
-        fill="#fff"
-        stroke="#fff"
+        fill={waveColor}
+        stroke={waveColor}
       />
     </Svg>
   )

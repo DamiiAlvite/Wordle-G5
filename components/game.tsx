@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { useWordOfDay } from "@/context/wordOfTheDayProvider";
+import { useTheme } from "@/context/themeContext";
 import Keyboard from "./keyboard";
 import WordsList from "./wordsList";
 import wordsData from "@/utils/validGuesses.json";
@@ -21,7 +22,7 @@ interface GameProps {
 }
 
 export default function Game({ mode, onGameEnd, onGameStart }: GameProps) {
-
+  const { theme } = useTheme();
   const { wordClassic, wordIdClassic, wordSlang, wordIdSlang, wordTimeTrial, wordIdTimeTrial, loading } = useWordOfDay();
   let word: string | null = null;
   let wordId: number | null = null;
@@ -254,10 +255,12 @@ export default function Game({ mode, onGameEnd, onGameStart }: GameProps) {
       {mode === "timeTrial" && (
         <View style={[
           styles.timerContainer,
+          { backgroundColor: theme.colors.card },
           (timeLeft === 5 || timeLeft === 3 || timeLeft === 1) && styles.timerContainerWarning
         ]}>
           <Text style={[
           styles.timerText,
+          { color: theme.colors.text },
           (timeLeft === 5 || timeLeft === 3 || timeLeft === 1) && styles.timerTextWarning
         ]}>Tiempo: {timeLeft}</Text>
         </View>
@@ -304,7 +307,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "90%",
     paddingHorizontal: 20,
-    backgroundColor: "rgba(255, 255, 255, 0.9)",
     borderRadius: 10,
     paddingVertical: 10,
     marginVertical: "1%",
@@ -312,7 +314,6 @@ const styles = StyleSheet.create({
   timerText: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#2E3A59",
   },
   timerContainerWarning: {
     backgroundColor: "#ff4d4f",

@@ -7,6 +7,7 @@ import TopBar from "@/components/topBar";
 import UpdateUsernameModal from "@/components/modals/updateUsernameModal";
 import UpdatePasswordModal from "@/components/modals/updatePasswordModal";
 import DeleteAccountModal from "@/components/modals/deleteAccountModal";
+import { useTheme } from "@/context/themeContext";
 
 type FormData = {
   name: string;
@@ -17,6 +18,7 @@ type FormData = {
 
 export default function MiPerfil() {
   const { userId, username, refreshUserData } = useAuth();
+  const { theme } = useTheme();
   const [email, setEmail] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -72,28 +74,28 @@ export default function MiPerfil() {
 
 
   return (
-    <View style={styles.container}>
-      <WavesBackground style={styles.WavesBackground} pointerEvents="none" />
+    <View style={[styles.container, { backgroundColor: theme.colors.background2 }]}>
+      <WavesBackground style={styles.WavesBackground} waveColor={theme.colors.waves} pointerEvents="none" />
       <TopBar />
-      <View style={styles.subcontainer}>
-        <Text style={styles.title}>Mi Perfil</Text>
-        <Text style={styles.subtitle}>Edita tu información</Text>
+      <View style={[styles.subcontainer, { backgroundColor: theme.colors.card }]}>
+        <Text style={[styles.title, { color: theme.colors.text }]}>Mi Perfil</Text>
+        <Text style={[styles.subtitle, { color: theme.colors.textSecondary }]}>Edita tu información</Text>
         <View style={styles.dataContainer}>
-          <Text style={styles.label}>Correo</Text>
-          <Text style={styles.userData}>{loading ? "Cargando..." : email}</Text>
+          <Text style={[styles.label, { color: theme.colors.textSecondary }]}>Correo</Text>
+          <Text style={[styles.userData, { color: theme.colors.text }]}>{loading ? "Cargando..." : email}</Text>
         </View>
         <View style={styles.dataContainer}>
-          <Text style={styles.label}>Usuario</Text>
-          <Text style={styles.userData}>{loading ? "Cargando..." : username}</Text>
+          <Text style={[styles.label, { color: theme.colors.textSecondary }]}>Usuario</Text>
+          <Text style={[styles.userData, { color: theme.colors.text }]}>{loading ? "Cargando..." : username}</Text>
         </View>
         <View style={styles.buttonsContainer}>
-          <TouchableOpacity style={styles.updateButton} onPress={openUpdateUsernameModal}>
+          <TouchableOpacity style={[styles.updateButton, { backgroundColor: theme.colors.primary }]} onPress={openUpdateUsernameModal}>
             <Text style={styles.ButtonText}>Modificar usuario</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.updateButton} onPress={openUpdatePasswordModal}>
+          <TouchableOpacity style={[styles.updateButton, { backgroundColor: theme.colors.primary }]} onPress={openUpdatePasswordModal}>
             <Text style={styles.ButtonText}>Modificar contraseña</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.deleteButton} onPress={openDeleteAccountModal}>
+          <TouchableOpacity style={[styles.deleteButton, { backgroundColor: theme.colors.error }]} onPress={openDeleteAccountModal}>
             <Text style={styles.ButtonText}>Eliminar cuenta</Text>
           </TouchableOpacity>
         </View>
@@ -109,7 +111,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: "#d5e6ff",
   },
   WavesBackground: {
     position: "absolute",
@@ -121,19 +122,16 @@ const styles = StyleSheet.create({
     width: "80%",
     paddingVertical: 40,
     alignItems: "center",
-    backgroundColor: "rgba(255,255,255,0.7)",
     borderRadius: 30,
     borderWidth: 1,
-    borderColor: "#e0e0e0",
+    borderColor: "rgba(0,0,0,0.1)",
   },
   title: {
     fontSize: 60,
     fontWeight: "bold",
-    color: "#34434d",
   },
   subtitle: {
     fontSize: 20,
-    color: "grey",
     marginBottom: 20,
   },
   dataContainer: {
@@ -142,7 +140,6 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 16,
-    color: "grey",
     marginBottom: 8,
     marginLeft: 8,
   },
@@ -150,7 +147,6 @@ const styles = StyleSheet.create({
     marginLeft: 8,
     fontSize: 18,
     fontWeight: "600",
-    color: "#34434d",
   },
   buttonsContainer: {
     width: "100%",
@@ -160,7 +156,6 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   updateButton: {
-    backgroundColor: "#5792EE",
     borderRadius: 12,
     margin: 16,
     padding: 12,
@@ -173,7 +168,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   deleteButton: {
-    backgroundColor: '#d00',
     borderRadius: 12,
     margin: 16,
     padding: 12,

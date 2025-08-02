@@ -1,7 +1,11 @@
 import * as React from "react"
 import Svg, { Path, SvgProps } from "react-native-svg"
 
-function SvgComponent(props: SvgProps) {
+interface WavesBackgroundProps extends SvgProps {
+  waveColor?: string;
+}
+
+function SvgComponent({ waveColor = "#fff", ...props }: WavesBackgroundProps) {
   return (
     <Svg
       viewBox="-21.839 -23.766 417.135 890.217"
@@ -9,8 +13,8 @@ function SvgComponent(props: SvgProps) {
     >
       <Path
         d="M-52.534 818.59l-.277-352.326c74.734-10.97 130.304 18.285 166.712 87.765 11.825 22.57-9.253 37.807-63.235 45.711-57.105 8.361-62.854 63.215-17.246 164.56 14.695 32.655-7.733 50.105-86.305 54.019M420.366 99.524l2.722 331.974c-41.286-6.01-71.683-24.747-91.19-56.212-17.652-28.473-10.394-59.585 21.777-93.336 27.052-28.38 27.052-63.735 0-106.061-17.783-27.824 4.447-53.279 66.691-76.365zM-49.728 63.055v183.273c20.057-3.258 37.029-22.807 50.915-58.647A6103.688 6103.688 0 0140.53 88.714c9.234-22.647 29.291-35.274 60.173-37.877 25.446-2.146 16.574-27.418-26.615-75.82-31.769-35.603-78.055-37.639-138.86-6.11-27.229 14.12-22.214 45.502 15.044 94.148z"
-        stroke="#fff"
-        fill="#fff"
+        stroke={waveColor}
+        fill={waveColor}
       />
     </Svg>
   )

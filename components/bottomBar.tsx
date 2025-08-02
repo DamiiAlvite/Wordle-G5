@@ -3,6 +3,7 @@ import { View, TouchableOpacity, StyleSheet, Dimensions, Text} from 'react-nativ
 import { useRouter, usePathname } from 'expo-router'
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons'
 import { Shadow } from 'react-native-shadow-2'
+import { useTheme } from '@/context/themeContext'
 
 
 const TABS = [
@@ -14,9 +15,10 @@ const TABS = [
 export default function GameModeTabBar() {
   const router = useRouter()
   const pathname = usePathname()
+  const { theme } = useTheme()
 
   const renderIcon = (tab: typeof TABS[0], isActive: boolean) => {
-    const iconColor = isActive ? '#5792EE' : '#9ca3af'
+    const iconColor = isActive ? theme.colors.primary : theme.colors.textSecondary
     const iconSize = 24
     
     if (tab.iconLib === 'MaterialCommunityIcons') {
@@ -40,7 +42,7 @@ export default function GameModeTabBar() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.tabBar}>
+      <View style={[styles.tabBar, { backgroundColor: theme.colors.card }]}>
           {TABS.map((tab) => {
             const isActive = pathname.includes(tab.label)
             return (
@@ -48,7 +50,7 @@ export default function GameModeTabBar() {
                 key={tab.name}
                 style={[
                   styles.tab,
-                  isActive && styles.activeTab
+                  isActive && [styles.activeTab, { backgroundColor: theme.colors.primary + '20' }]
                 ]}
                 onPress={() => router.replace(`/(drawer)/(tabs)/${tab.label}`)}
                 activeOpacity={0.7}
@@ -61,7 +63,8 @@ export default function GameModeTabBar() {
                 </View>
                 <Text style={[
                   styles.label,
-                  isActive && styles.activeLabel
+                  { color: theme.colors.textSecondary },
+                  isActive && [styles.activeLabel, { color: theme.colors.primary }]
                 ]}>
                   {tab.name}
                 </Text>
@@ -84,7 +87,6 @@ const styles = StyleSheet.create({
   },
   tabBar: {
     flexDirection: 'row',
-    backgroundColor: 'rgba(255, 255, 255, 0.95)',
     borderRadius: 24,
     paddingHorizontal: 8,
     paddingBottom: 30,
@@ -101,7 +103,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 4,
   },
   activeTab: {
-    backgroundColor: 'rgba(87, 146, 238, 0.1)',
   },
   iconContainer: {
     marginBottom: 4,
@@ -112,11 +113,9 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 11,
     fontWeight: '500',
-    color: '#9ca3af',
     textAlign: 'center',
   },
   activeLabel: {
-    color: '#5792EE',
     fontWeight: '600',
   },
 })

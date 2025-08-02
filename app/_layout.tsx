@@ -7,6 +7,7 @@ import 'react-native-reanimated';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import AuthProvider from '@/providers/authProvider';
 import { WordOfDayProvider } from '@/context/wordOfTheDayProvider';
+import { ThemeProvider } from '@/context/themeContext';
 
 // Evita que la pantalla inicial se oculte hasta que las fuentes estén cargadas.
 SplashScreen.preventAutoHideAsync();
@@ -31,11 +32,13 @@ export default function RootLayout() {
     <AuthProvider>
       <GestureHandlerRootView>
         <WordOfDayProvider>
-          <Stack>
-            <Stack.Screen name="(auth)/signin/index" options={{ headerShown: false }} />
-            <Stack.Screen name="(auth)/signup/index" options={{ headerShown: false }} />
-            <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
-          </Stack>
+          <ThemeProvider>
+            <Stack screenOptions={{ headerShown: false }}>
+              <Stack.Screen name="(auth)/signin/index" />
+              <Stack.Screen name="(auth)/signup/index" />
+              <Stack.Screen name="(drawer)" />
+            </Stack>
+          </ThemeProvider>
           <StatusBar style="auto" />
         </WordOfDayProvider>
       </GestureHandlerRootView>

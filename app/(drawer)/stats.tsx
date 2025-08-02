@@ -7,6 +7,7 @@ import { supabase } from "@/lib/supabase";
 import WavesBackground from "@/assets/svg/wavesBackground2";
 import { Shadow } from 'react-native-shadow-2';
 import { useFocusEffect } from '@react-navigation/native';
+import { useTheme } from '@/context/themeContext';
 
 type Game = {
   win: boolean;
@@ -24,6 +25,7 @@ type Stats = {
 
 export default function StatsScreen() {
   const { userId } = useAuth();
+  const { theme } = useTheme();
 
   const [classicStats, setClassicStats] = useState<Stats | null>(null);
   const [slangStats, setSlangStats] = useState<Stats | null>(null);
@@ -123,10 +125,10 @@ export default function StatsScreen() {
   );
 
   return (
-    <View style={styles.background}>
+    <View style={[styles.background, { backgroundColor: theme.colors.background2 }]}>
       <TopBar />
-      <ScrollView contentContainerStyle={styles.container}>
-        <WavesBackground style={styles.wavesBackground} pointerEvents="none" />
+      <ScrollView contentContainerStyle={[styles.container, { backgroundColor: theme.colors.background }]}>
+        <WavesBackground style={styles.wavesBackground} waveColor={theme.colors.waves} pointerEvents="none" />
         <View style={styles.centerContentWrapper}>
           {classicStats && (
             <GameStats title="Modo Clásico" stats={classicStats} />
@@ -144,20 +146,22 @@ export default function StatsScreen() {
 }
 
 function GameStats({ title, stats }: { title: string; stats: Stats }) {
+  const { theme } = useTheme();
+  
   return (
     <Shadow
       distance={6}
       startColor="rgba(0,0,0,0.2)"
       offset={[0, 4]}
       style={{
-        backgroundColor: "rgba(255, 255, 255, 0.69)",
+        backgroundColor: theme.colors.card,
         borderRadius: 24,
         marginBottom: 32,
       }}
     >
       <View style={styles.contentBox}>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>{title}</Text>
+        <View style={[styles.titleContainer, { backgroundColor: theme.colors.surface }]}>
+          <Text style={[styles.title, { color: theme.colors.text }]}>{title}</Text>
         </View>
         <View style={styles.statContainer}>
           <View style={styles.statRow}>
@@ -171,15 +175,15 @@ function GameStats({ title, stats }: { title: string; stats: Stats }) {
             <StatBlock label="Racha máxima" value={stats.maxStreak} />
           </View>
         </View>
-        <Text style={styles.subTitle}>Distribución de intentos</Text>
+        <Text style={[styles.subTitle, { backgroundColor: theme.colors.surface, color: theme.colors.text }]}>Distribución de intentos</Text>
         {stats.guessDistribution.map((count, i) => (
           <View key={i} style={styles.guessDistributionRow}>
-            <Text style={styles.try}>{i + 1}</Text>
-            <View style={[styles.bar, { width: count * 20 }]} />
-            <Text style={styles.count}>{count}</Text>
+            <Text style={[styles.try, { backgroundColor: theme.colors.primary + '40', color: theme.colors.text }]}>{i + 1}</Text>
+            <View style={[styles.bar, { width: count * 20, backgroundColor: theme.colors.primary + '60' }]} />
+            <Text style={[styles.count, { color: theme.colors.text }]}>{count}</Text>
           </View>
         ))}
-        <Text style={[styles.statLabel, { textAlign: 'center' }]}>
+        <Text style={[styles.statLabel, { textAlign: 'center', color: theme.colors.textSecondary }]}>
           Este gráfico muestra cuántas veces ganaste en cada intento.
         </Text>
       </View>
@@ -188,11 +192,13 @@ function GameStats({ title, stats }: { title: string; stats: Stats }) {
 }
 
 function StatBlock({ label, value }: { label: string; value: number | string }) {
+  const { theme } = useTheme();
+  
   return (
-    <View style={styles.statShadowWrapper}>
-      <View style={styles.statBlock}>
-        <Text style={styles.statValue}>{value}</Text>
-        <Text style={styles.statLabel}>{label}</Text>
+    <View style={[styles.statShadowWrapper, { backgroundColor: theme.colors.surface }]}>
+      <View style={[styles.statBlock, { backgroundColor: theme.colors.card }]}>
+        <Text style={[styles.statValue, { color: theme.colors.text }]}>{value}</Text>
+        <Text style={[styles.statLabel, { color: theme.colors.textSecondary }]}>{label}</Text>
       </View>
     </View>
   );
@@ -201,11 +207,9 @@ function StatBlock({ label, value }: { label: string; value: number | string }) 
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: '#E8F0FE',
     position: "relative",
   },
   container: {
-    backgroundColor: '#E8F0FE',
     flexGrow: 1,
   },
   wavesBackground: {
@@ -225,13 +229,11 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   titleContainer: {
-    backgroundColor: '#FFF',
     padding: 10,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#222',
     textAlign: 'center',
   },
   statContainer: {
@@ -251,7 +253,6 @@ const styles = StyleSheet.create({
   statShadowWrapper: {
     width: 100,
     borderRadius: 12,
-    backgroundColor: '#fff',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
@@ -263,7 +264,6 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     alignItems: 'center',
     paddingVertical: 12,
-    backgroundColor: "rgba(255,255,255,0.85)",
   },
   statLabel: {
     fontSize: 12,
@@ -274,13 +274,10 @@ const styles = StyleSheet.create({
   statValue: {
     fontSize: 22,
     fontWeight: 'bold',
-    color: '#222',
     marginBottom: 4,
   },
   subTitle: {
     width: '100%',
-    backgroundColor: '#fff',
-    color: '#222',
     fontSize: 18,
     fontWeight: '600',
     textAlign: 'center',
@@ -297,20 +294,16 @@ const styles = StyleSheet.create({
   try: {
     width: 24,
     textAlign: 'center',
-    backgroundColor: 'rgba(197, 226, 251, 0.85)',
-    color: '#222',
     paddingVertical: 4,
     borderRadius: 4,
   },
   bar: {
     height: 20,
-    backgroundColor: 'rgba(140, 201, 255, 0.85)',
     borderRadius: 6,
     marginLeft: 8,
   },
   count: {
     marginLeft: 8,
-    color: '#222',
     fontWeight: '500',
   },
 });

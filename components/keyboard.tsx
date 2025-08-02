@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Modal } from "react-native";
+import { useTheme } from "@/context/themeContext";
 
 const KEYS = [
   ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
@@ -29,20 +30,22 @@ const keyWidth = (SCREEN_WIDTH - 16 * 2 - 10 * 6) / 10;
 const isAccentedKey = (key: string): key is keyof typeof ACCENTED => {
   return key in ACCENTED;
 };
-const COLORS = {
-  default: "#111",
-  present: "#facc15",
-  absent: "#9ca3af",
-  correct: "#22c55e",
-};
 
 export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors = {}, disabled = false}: KeyboardProps) {
+  const { theme } = useTheme();
   const [accentModal, setAccentModal] = useState<{ visible: boolean; key: string | null; x: number; y: number }>({
     visible: false,
     key: null,
     x: 0,
     y: 0,
   });
+
+  const COLORS = {
+    default: theme.colors.secondary,
+    present: "#facc15",
+    absent: "#9ca3af",
+    correct: "#22c55e",
+  };
 
   const handleLongPress = (key: string, event: any) => {
     if (disabled) return;
@@ -59,12 +62,12 @@ export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors =
   };
 
   return (
-    <View >
+    <View>
       {KEYS.map((row, rowIndex) => (
         <View key={rowIndex} style={styles.row}>
           {rowIndex === 2 && (
-            <TouchableOpacity style={styles.specialKey} onPress={onEnter}>
-              <Text style={styles.keyText}>ENTER</Text>
+            <TouchableOpacity style={[styles.specialKey, { backgroundColor: theme.colors.primary }]} onPress={onEnter}>
+              <Text style={[styles.keyText, { color: theme.colors.surface }]}>ENTER</Text>
             </TouchableOpacity>
           )}
           {row.map((key) => (
@@ -78,12 +81,12 @@ export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors =
               onLongPress={(e) => handleLongPress(key, e)}
               delayLongPress={250}
             >
-              <Text style={styles.keyText}>{key}</Text>
+              <Text style={[styles.keyText, { color: keyColors[key] ? "#fff" : theme.colors.background }]}>{key}</Text>
             </TouchableOpacity>
           ))}
           {rowIndex === 2 && (
-            <TouchableOpacity style={styles.specialKey} onPress={onBackspace}>
-              <Text style={styles.keyText}>⌫</Text>
+            <TouchableOpacity style={[styles.specialKey, { backgroundColor: theme.colors.primary }]} onPress={onBackspace}>
+              <Text style={[styles.keyText, { color: theme.colors.surface }]}>⌫</Text>
             </TouchableOpacity>
           )}
         </View>
@@ -102,7 +105,11 @@ export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors =
           <View
             style={[
               styles.accentContainer,
-              { top: accentModal.y - 60, left: accentModal.x - 30 },
+              { 
+                top: accentModal.y - 60, 
+                left: accentModal.x - 30,
+                backgroundColor: theme.colors.surface
+              },
             ]}
           >
             {accentModal.key && isAccentedKey(accentModal.key) && ACCENTED[accentModal.key].map((accent) => (
@@ -111,7 +118,7 @@ export default function Keyboard({ onKeyPress, onBackspace, onEnter, keyColors =
                 style={styles.accentKey}
                 onPress={() => handleAccentSelect(accent)}
               >
-                <Text style={styles.accentText}>{accent}</Text>
+                <Text style={[styles.accentText, { color: theme.colors.text }]}>{accent}</Text>
               </TouchableOpacity>
             ))}
           </View>
@@ -135,7 +142,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   specialKey: {
-    backgroundColor: "#5792EE",
     margin: 3,
     borderRadius: 8,
     paddingVertical: 12,
@@ -144,7 +150,6 @@ const styles = StyleSheet.create({
   keyText: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "#fff",
   },
   modalOverlay: {
     flex: 1,
@@ -152,7 +157,6 @@ const styles = StyleSheet.create({
   accentContainer: {
     position: "absolute",
     flexDirection: "row",
-    backgroundColor: "#fff",
     borderRadius: 8,
     elevation: 5,
     padding: 4,
@@ -165,6 +169,5 @@ const styles = StyleSheet.create({
   accentText: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#222",
   },
 });

@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, TextInput, TouchableOpacity, Modal, Alert } fro
 import { Controller, useForm } from "react-hook-form";
 import { useAuth } from "@/providers/authProvider";
 import { supabase } from "@/lib/supabase";
+import { useTheme } from "@/context/themeContext";
 
 interface UpdatePasswordModalProps {
   visible: boolean;
@@ -16,6 +17,7 @@ type FormData = {
 };
 
 export default function UpdatePasswordModal({ visible, onClose }: UpdatePasswordModalProps) {
+  const { theme } = useTheme();
   const { userId, refreshUserData } = useAuth();
   const { control, handleSubmit, formState: { errors }, setError, reset } = useForm<FormData>({
     defaultValues: {
@@ -80,9 +82,9 @@ export default function UpdatePasswordModal({ visible, onClose }: UpdatePassword
       visible={visible}
       onRequestClose={onClose}
     >
-      <View style={styles.overlay}>
-        <View style={styles.container}>
-          <Text style={styles.title}>Modificar contraseña</Text>
+      <View style={[styles.overlay, { backgroundColor: theme.colors.overlay }]}>
+        <View style={[styles.container, { backgroundColor: theme.colors.surface }]}>
+          <Text style={[styles.title, { color: theme.colors.text }]}>Modificar contraseña</Text>
           <View style={styles.modalContent}>
             <Controller
               control={control}
@@ -90,13 +92,17 @@ export default function UpdatePasswordModal({ visible, onClose }: UpdatePassword
               rules={{ required: "La contraseña es obligatoria" }}
               render={({ field: { onChange, value } }) => (
                 <TextInput
-                  style={styles.input}
+                  style={[styles.input, { 
+                    backgroundColor: theme.colors.card,
+                    color: theme.colors.text,
+                    borderColor: theme.colors.border 
+                  }]}
                   placeholder="Contraseña actual"
                   autoCapitalize="none"
                   value={value}
                   onChangeText={onChange}
                   secureTextEntry
-                  placeholderTextColor="#a3b1bd"
+                  placeholderTextColor={theme.colors.textSecondary}
                 />
               )}
             />
@@ -109,13 +115,17 @@ export default function UpdatePasswordModal({ visible, onClose }: UpdatePassword
               rules={{ required: "La nueva contraseña es obligatoria" }}
               render={({ field: { onChange, value } }) => (
                 <TextInput
-                  style={styles.input}
+                  style={[styles.input, { 
+                    backgroundColor: theme.colors.card,
+                    color: theme.colors.text,
+                    borderColor: theme.colors.border 
+                  }]}
                   placeholder="Nueva contraseña"
                   autoCapitalize="none"
                   value={value}
                   onChangeText={onChange}
                   secureTextEntry
-                  placeholderTextColor="#a3b1bd"
+                  placeholderTextColor={theme.colors.textSecondary}
                 />
               )}
             />
@@ -128,13 +138,17 @@ export default function UpdatePasswordModal({ visible, onClose }: UpdatePassword
               rules={{ required: "Repetir la nueva contraseña es obligatorio" }}
               render={({ field: { onChange, value } }) => (
                 <TextInput
-                  style={styles.input}
+                  style={[styles.input, { 
+                    backgroundColor: theme.colors.card,
+                    color: theme.colors.text,
+                    borderColor: theme.colors.border 
+                  }]}
                   placeholder="Repita nueva contraseña"
                   autoCapitalize="none"
                   value={value}
                   onChangeText={onChange}
                   secureTextEntry
-                  placeholderTextColor="#a3b1bd"
+                  placeholderTextColor={theme.colors.textSecondary}
                 />
               )}
             />
@@ -143,9 +157,9 @@ export default function UpdatePasswordModal({ visible, onClose }: UpdatePassword
             )}
             <View style={styles.buttonContainer}>
               <TouchableOpacity style={styles.cancelButton} onPress={onClose}>
-                <Text style={styles.cancelButtonText}>Cancelar</Text>
+                <Text style={styles.buttonText}>Cancelar</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.button} onPress={handleSubmit(onSubmit)}>
+              <TouchableOpacity style={[styles.button, { backgroundColor: theme.colors.primary }]} onPress={handleSubmit(onSubmit)}>
                 <Text style={styles.buttonText}>Actualizar</Text>
               </TouchableOpacity>
             </View>
@@ -156,7 +170,6 @@ export default function UpdatePasswordModal({ visible, onClose }: UpdatePassword
   );
 }
 
-
 const styles = StyleSheet.create({
   overlay: {
     flex: 1,
@@ -166,7 +179,6 @@ const styles = StyleSheet.create({
   },
   container: {
     width: "80%",
-    backgroundColor: "white",
     borderRadius: 20,
     padding: 20,
     alignItems: "center",
@@ -178,37 +190,30 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#34434d",
     marginBottom: 10,
     textAlign: "center",
   },
   input: {
     width: "100%",
     height: 50,
-    borderRadius: 10,
+    borderRadius: 12,
     paddingHorizontal: 15,
     marginTop: 15,
-    backgroundColor: "#f9f9f9",
     fontSize: 16,
+    borderWidth: 1,
   },
   buttonContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     width: "100%",
-    marginTop: 10,
+    marginTop: 20,
   },
   button: {
-    backgroundColor: "#5792EE",
     borderTopRightRadius: 10,
     borderBottomRightRadius: 10,
     padding: 15,
     flex: 1,
     alignItems: "center",
-  },
-  buttonText: {
-    color: "white",
-    fontWeight: "bold",
-    fontSize: 16,
   },
   cancelButton: {
     backgroundColor: "#d00",
@@ -218,7 +223,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
   },
-  cancelButtonText: {
+  buttonText: {
     color: "white",
     fontWeight: "bold",
     fontSize: 16,

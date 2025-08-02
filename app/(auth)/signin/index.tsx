@@ -1,11 +1,13 @@
 import LoginBackground from "@/assets/svg/LoginBackground";
 import Logo from "@/assets/svg/LogoWhite";
+import LogoBlack from "@/assets/svg/LogoBlack";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, useColorScheme, TouchableWithoutFeedback, Keyboard } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { supabase } from "@/lib/supabase";
+import { useTheme } from "@/context/themeContext";
 
 type FormData = {
   email: string;
@@ -15,6 +17,9 @@ type FormData = {
 export default function Login() {
   const router = useRouter();
   const [error, setError] = React.useState<string | null>(null);
+  const systemColorScheme = useColorScheme();
+  const { theme } = useTheme();
+  const isDark = systemColorScheme === 'dark';
 
   const { control, handleSubmit, formState: { errors } } = useForm<FormData>({
     defaultValues: {
@@ -38,12 +43,14 @@ export default function Login() {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.solidBackground}></View>
-      <LoginBackground style={styles.background} pointerEvents="none" />
-      <Logo style={styles.logo} width={300} pointerEvents="none" />
-      <Text style={styles.title}>Bienvenido!</Text>
-      <Text style={styles.subtitle}>Inicia sesión en tu cuenta</Text>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <View style={styles.container}>
+        <View style={[styles.baseBackground, { backgroundColor: theme.colors.card }]} pointerEvents="none" />
+        <View style={styles.solidBackground} pointerEvents="none" />
+        <LoginBackground style={styles.background} isDark={isDark} pointerEvents="none" />
+        <Logo style={styles.logo} width={300} pointerEvents="none" />
+        <Text style={[styles.title, { color: isDark ? '#ffffff' : '#34434d' }]}>Bienvenido!</Text>
+        <Text style={[styles.subtitle, { color: isDark ? '#b0b0b0' : 'grey' }]}>Inicia sesión en tu cuenta</Text>
 
       <Controller
         control={control}
@@ -58,10 +65,13 @@ export default function Login() {
         render={({ field: { onChange, value } }) => (
           <View style={{ width: "100%", alignItems: "center" }}>
             <TextInput
-              style={styles.textInput}
+              style={[styles.textInput, { 
+                backgroundColor: theme.colors.border,
+                color: isDark ? '#ffffff' : '#000000'
+              }]}
               placeholder="Correo electrónico"
               autoCapitalize="none"
-              placeholderTextColor="#a3b1bd"
+              placeholderTextColor={theme.colors.textSecondary}
               value={value}
               onChangeText={onChange}
               keyboardType="email-address"
@@ -81,12 +91,17 @@ export default function Login() {
         render={({ field: { onChange, value } }) => (
           <View style={{ width: "100%", alignItems: "center" }}>
             <TextInput
-              style={styles.textInput}
+              style={[styles.textInput, { 
+                backgroundColor: theme.colors.border,
+                color: isDark ? '#ffffff' : '#000000'
+              }]}
               placeholder="Contraseña"
               secureTextEntry
-              placeholderTextColor="#a3b1bd"
+              placeholderTextColor={theme.colors.textSecondary}
               value={value}
               onChangeText={onChange}
+              returnKeyType="done"
+              onSubmitEditing={handleSubmit(onSubmit)}
             />
             {errors.password && <Text style={styles.inputError}>{errors.password.message}</Text>}
           </View>
@@ -94,7 +109,7 @@ export default function Login() {
       />
 
       <TouchableOpacity>
-        <Text style={styles.forgotPassword}>Olvido su contraseña?</Text>
+        <Text style={[styles.forgotPassword, { color: isDark ? '#b0b0b0' : 'grey' }]}>Olvido su contraseña?</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.loginButton} onPress={handleSubmit(onSubmit)}>
         <Text style={styles.loginButtonText}>Iniciar sesión</Text>
@@ -102,7 +117,7 @@ export default function Login() {
       {error && <Text style={styles.inputError}>{error}</Text>}
 
       <View style={styles.registerContainer}>
-        <Text style={styles.registerText}>
+        <Text style={[styles.registerText, { color: isDark ? '#b0b0b0' : 'grey' }]}>
           No tienes cuenta?
         </Text>
         <TouchableOpacity onPress={() => router.push("/signup")}>
@@ -111,6 +126,7 @@ export default function Login() {
       </View>
       <StatusBar style="auto" />
     </View>
+    </TouchableWithoutFeedback>
   );
 }
 
@@ -120,18 +136,25 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  baseBackground: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    zIndex: -200,
+  },
   solidBackground: {
     position: 'absolute',
     top: 0,
     left: 0,
     width: '100%',
     height: '5%',
-    backgroundColor: '#245CC7',
     zIndex: 1150,
   },
   background: {
     position: 'absolute',
-    top: -80,
+    top: -35,
     left: 0,
     zIndex: -100,
   },

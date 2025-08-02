@@ -1,10 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, useColorScheme, TouchableWithoutFeedback, Keyboard } from "react-native";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useForm, Controller, set } from "react-hook-form";
 import { supabase } from "@/lib/supabase";
 import WavesBackground from "@/assets/svg/wavesBackground";
+import { useTheme } from "@/context/themeContext";
 
 type FormData = {
   username: string;
@@ -16,6 +17,9 @@ type FormData = {
 export default function Register() {
   const [error, setError] = React.useState<string | null>(null);
   const router = useRouter();
+  const systemColorScheme = useColorScheme();
+  const { theme } = useTheme();
+  const isDark = systemColorScheme === 'dark';
   const { control, handleSubmit, formState: { errors }, watch } = useForm<FormData>({
     defaultValues: {
       username: "",
@@ -63,11 +67,12 @@ export default function Register() {
   };
 
   return (
-    <View style={styles.container}>
-      <WavesBackground style={styles.WavesBackground} />
-      <View style={styles.subcontainer}>
-        <Text style={styles.title}>Registrate</Text>
-        <Text style={styles.subtitle}>Crea tu cuenta</Text>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <View style={[styles.container, { backgroundColor: isDark ? '#283f65ff' : '#d5e6ff' }]}>
+      <WavesBackground style={styles.WavesBackground} waveColor={isDark ? '#000000' : '#ffffff'} />
+      <View style={[styles.subcontainer, { backgroundColor: isDark ? 'rgba(30,30,30,0.85)' : 'rgba(255,255,255,0.7)' }]}>
+        <Text style={[styles.title, { color: isDark ? '#ffffff' : '#34434d' }]}>Registrate</Text>
+        <Text style={[styles.subtitle, { color: isDark ? '#b0b0b0' : 'grey' }]}>Crea tu cuenta</Text>
 
         <Controller
           control={control}
@@ -76,10 +81,13 @@ export default function Register() {
           render={({ field: { onChange, value } }) => (
             <View style={{ width: "100%", alignItems: "center" }}>
               <TextInput
-                style={styles.textInput}
+                style={[styles.textInput, { 
+                  backgroundColor: theme.colors.border,
+                  color: isDark ? '#ffffff' : '#000000'
+                }]}
                 placeholder="Nombre de usuario"
                 autoCapitalize="none"
-                placeholderTextColor="#a3b1bd"
+                placeholderTextColor={theme.colors.textSecondary}
                 value={value}
                 onChangeText={onChange}
               />
@@ -101,11 +109,14 @@ export default function Register() {
           render={({ field: { onChange, value } }) => (
             <View style={{ width: "100%", alignItems: "center" }}>
               <TextInput
-                style={styles.textInput}
+                style={[styles.textInput, { 
+                  backgroundColor: theme.colors.border,
+                  color: isDark ? '#ffffff' : '#000000'
+                }]}
                 placeholder="Correo electrónico"
                 autoCapitalize="none"
                 keyboardType="email-address"
-                placeholderTextColor="#a3b1bd"
+                placeholderTextColor={theme.colors.textSecondary}
                 value={value}
                 onChangeText={onChange}
               />
@@ -126,10 +137,13 @@ export default function Register() {
           render={({ field: { onChange, value } }) => (
             <View style={{ width: "100%", alignItems: "center" }}>
               <TextInput
-                style={styles.textInput}
+                style={[styles.textInput, { 
+                  backgroundColor: theme.colors.border,
+                  color: isDark ? '#ffffff' : '#000000'
+                }]}
                 placeholder="Contraseña"
                 secureTextEntry
-                placeholderTextColor="#a3b1bd"
+                placeholderTextColor={theme.colors.textSecondary}
                 value={value}
                 onChangeText={onChange}
               />
@@ -149,12 +163,17 @@ export default function Register() {
           render={({ field: { onChange, value } }) => (
             <View style={{ width: "100%", alignItems: "center" }}>
               <TextInput
-                style={styles.textInput}
+                style={[styles.textInput, { 
+                  backgroundColor: theme.colors.border,
+                  color: isDark ? '#ffffff' : '#000000'
+                }]}
                 placeholder="Repetir contraseña"
                 secureTextEntry
-                placeholderTextColor="#a3b1bd"
+                placeholderTextColor={theme.colors.textSecondary}
                 value={value}
                 onChangeText={onChange}
+                returnKeyType="done"
+                onSubmitEditing={handleSubmit(onSubmit)}
               />
               {errors.confirmPassword && <Text style={styles.inputError}>{errors.confirmPassword.message}</Text>}
             </View>
@@ -167,7 +186,7 @@ export default function Register() {
         {error && <Text style={styles.inputError}>{error}</Text>}
       </View>
       <View style={styles.loginContainer}>
-        <Text style={styles.loginText}>
+        <Text style={[styles.loginText, { color: isDark ? '#b0b0b0' : 'grey' }]}>
           Ya tienes cuenta?
         </Text>
         <TouchableOpacity onPress={() => router.replace("/signin")}>
@@ -176,6 +195,7 @@ export default function Register() {
       </View>
       <StatusBar style="auto" />
     </View>
+    </TouchableWithoutFeedback>
   );
 }
 
@@ -184,7 +204,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#d5e6ff",
   },
   WavesBackground: {
     position: "absolute",
@@ -196,7 +215,6 @@ const styles = StyleSheet.create({
     width: "80%",
     paddingVertical: 40,
     alignItems: "center",
-    backgroundColor: "rgba(255,255,255,0.7)",
     borderRadius: 30,
     borderWidth: 1,
     borderColor: "#e0e0e0",
@@ -204,11 +222,9 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 60,
     fontWeight: "bold",
-    color: "#34434d",
   },
   subtitle: {
     fontSize: 20,
-    color: "grey",
     marginBottom: 20,
   },
   textInput: {
@@ -218,8 +234,6 @@ const styles = StyleSheet.create({
     width: "80%",
     height: 50,
     borderRadius: 20,
-    backgroundColor: "#fff",
-    color: "black",
     fontSize: 20,
   },
   registerButton: {
@@ -246,7 +260,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   loginText: {
-    color: "grey",
     fontSize: 18,
   },
   loginLink: {
@@ -254,7 +267,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   inputError: {
-    color: "red",
+    color: "#ff4444",
     marginTop: 5,
     marginLeft: "10%",
     fontSize: 13,

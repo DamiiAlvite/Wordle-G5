@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 import { useWordOfDay } from "@/context/wordOfTheDayProvider";
 import AnimatedCell from "../animatedCell";
 import slangWords from "@/utils/slang.json";
+import { useTheme } from "@/context/themeContext";
 
 type GameProps = {
   game: {
@@ -14,6 +15,7 @@ type GameProps = {
 };
 
 export default function EndGame({ game, mode }: GameProps) {
+  const { theme } = useTheme();
   const today = new Date().toISOString().split("T")[0];
   const { wordClassic, wordSlang, wordTimeTrial, loading } = useWordOfDay();
   let word: string | null = null;
@@ -51,34 +53,34 @@ export default function EndGame({ game, mode }: GameProps) {
   }, [word]);
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: theme.colors.surface }]}>
       {mode === "classic" && (
-        <Text style={styles.title}>Modo clásico</Text>
+        <Text style={[styles.title, { color: theme.colors.text }]}>Modo clásico</Text>
       )}
       {mode === "slang" && (
-        <Text style={styles.title}>Modo lunfardo</Text>
+        <Text style={[styles.title, { color: theme.colors.text }]}>Modo lunfardo</Text>
       )}
       {mode === "timeTrial" && (
-        <Text style={styles.title}>Modo contrarreloj</Text>
+        <Text style={[styles.title, { color: theme.colors.text }]}>Modo contrarreloj</Text>
       )}
-      <Text style={styles.subtitle}>Haz finalizado la partida:</Text>
+      <Text style={[styles.subtitle, { color: theme.colors.textSecondary }]}>Haz finalizado la partida:</Text>
       <View style={styles.stat}>
         <View style={styles.statItem}>
-          <Text style={styles.label}>Fecha:</Text>
-          <Text style={styles.value}>{game?.date ?? today}</Text>
+          <Text style={[styles.label, { color: theme.colors.text }]}>Fecha:</Text>
+          <Text style={[styles.value, { color: theme.colors.textSecondary }]}>{game?.date ?? today}</Text>
         </View>
         {game?.win ? (
           <View style={styles.statItem}>
-            <Text style={styles.label}>Intento Ganador:</Text>
-            <Text style={styles.value}>{game?.win_attempt ?? "-"}</Text>
+            <Text style={[styles.label, { color: theme.colors.text }]}>Intento Ganador:</Text>
+            <Text style={[styles.value, { color: theme.colors.textSecondary }]}>{game?.win_attempt ?? "-"}</Text>
           </View>
         ) : (
           <View style={styles.statItem}>
-            <Text style={styles.label}>No adivinaste la palabra del día.</Text>
+            <Text style={[styles.label, { color: theme.colors.text }]}>No adivinaste la palabra del día.</Text>
           </View>
         )}
         <View style={styles.statItem}>
-          <Text style={styles.label}>Palabra:</Text>
+          <Text style={[styles.label, { color: theme.colors.text }]}>Palabra:</Text>
           {word ? (<>
             <View style={styles.wordContainer}>
               {word.split('').map((letter, index) => (
@@ -93,19 +95,19 @@ export default function EndGame({ game, mode }: GameProps) {
             </View>
             {mode === "slang" && (
             <View style={styles.statItem}>
-              <Text style={styles.label}>Significado:</Text>
-              <Text style={styles.value}>{getSlangDefinition(word)}</Text>
+              <Text style={[styles.label, { color: theme.colors.text }]}>Significado:</Text>
+              <Text style={[styles.value, { color: theme.colors.textSecondary }]}>{getSlangDefinition(word)}</Text>
             </View>
             )}
           </>
           ) : (
-            <Text style={styles.value}>-</Text>
+            <Text style={[styles.value, { color: theme.colors.textSecondary }]}>-</Text>
           )}
         </View>
       </View>
-      <Text style={styles.footer}>Vuelve mañana para un nuevo desafío.</Text>
-      <Text style={styles.footer}>o</Text>
-      <Text style={styles.footer}>Puedes probar otros modos.</Text>
+      <Text style={[styles.footer, { color: theme.colors.textSecondary }]}>Vuelve mañana para un nuevo desafío.</Text>
+      <Text style={[styles.footer, { color: theme.colors.textSecondary }]}>o</Text>
+      <Text style={[styles.footer, { color: theme.colors.textSecondary }]}>Puedes probar otros modos.</Text>
     </View>
   );
 }
@@ -116,7 +118,6 @@ const styles = StyleSheet.create({
     height: "auto",
     maxWidth: 400,
     padding: 28,
-    backgroundColor: "#f9f9fb",
     borderRadius: 32,
     alignSelf: "center",
     shadowColor: "#000",
@@ -130,13 +131,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 24,
-    color: "#222",
   },
   subtitle: {
     fontSize: 22,
     fontWeight: "bold",
     marginBottom: 16,
-    color: "#555",
   },
   stat: {
     marginBottom: 24,
@@ -149,14 +148,12 @@ const styles = StyleSheet.create({
   label: {
     fontWeight: "600",
     fontSize: 20,
-    color: "#444",
     marginBottom:"1%",
   },
   value: {
     marginLeft: 8,
     marginTop: "1%",
     fontSize: 18,
-    color: "#222",
   },
   wordContainer: {
     flexDirection: "row",
@@ -167,6 +164,5 @@ const styles = StyleSheet.create({
   footer: {
     textAlign: "center",
     fontSize: 15,
-    color: "#666",
   },
 });

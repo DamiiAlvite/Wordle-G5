@@ -4,6 +4,7 @@ import { Controller, useForm } from "react-hook-form";
 import { useAuth } from "@/providers/authProvider";
 import { supabase } from "@/lib/supabase";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useTheme } from "@/context/themeContext";
 
 interface deleteAccountModalProps {
   visible: boolean;
@@ -15,6 +16,7 @@ type FormData = {
 };
 
 export default function deleteAccounteModal({ visible, onClose }: deleteAccountModalProps) {
+  const { theme } = useTheme();
   const { control, handleSubmit, formState: { errors }, setError, reset } = useForm<FormData>({
     defaultValues: {
       email: "",
@@ -70,9 +72,9 @@ export default function deleteAccounteModal({ visible, onClose }: deleteAccountM
       visible={visible}
       onRequestClose={onClose}
     >
-      <View style={styles.overlay}>
-        <View style={styles.container}>
-          <Text style={styles.title}>Está seguro de eliminar su cuenta?</Text>
+      <View style={[styles.overlay, { backgroundColor: theme.colors.overlay }]}>
+        <View style={[styles.container, { backgroundColor: theme.colors.surface }]}>
+          <Text style={[styles.title, { color: theme.colors.text }]}>Está seguro de eliminar su cuenta?</Text>
           <View style={styles.modalContent}>
             <Controller
               control={control}
@@ -80,13 +82,17 @@ export default function deleteAccounteModal({ visible, onClose }: deleteAccountM
               rules={{ required: "La contraseña es obligatoria" }}
               render={({ field: { onChange, value } }) => (
                 <TextInput
-                  style={styles.input}
+                  style={[styles.input, { 
+                    backgroundColor: theme.colors.card,
+                    color: theme.colors.text,
+                    borderColor: theme.colors.border 
+                  }]}
                   placeholder="Ingrese su contraseña"
                   autoCapitalize="none"
                   value={value}
                   onChangeText={onChange}
                   secureTextEntry
-                  placeholderTextColor="#a3b1bd"
+                  placeholderTextColor={theme.colors.textSecondary}
                 />
               )}
             />
@@ -97,7 +103,7 @@ export default function deleteAccounteModal({ visible, onClose }: deleteAccountM
               <TouchableOpacity style={styles.button} onPress={handleSubmit(onSubmit)}>
                 <Text style={styles.buttonText}>ELIMINAR</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.cancelButton} onPress={onClose}>
+              <TouchableOpacity style={[styles.cancelButton, { backgroundColor: theme.colors.primary }]} onPress={onClose}>
                 <Text style={styles.cancelButtonText}>Cancelar</Text>
               </TouchableOpacity>
             </View>
@@ -108,7 +114,6 @@ export default function deleteAccounteModal({ visible, onClose }: deleteAccountM
   )
 }
 
-
 const styles = StyleSheet.create({
   overlay: {
     flex: 1,
@@ -118,7 +123,6 @@ const styles = StyleSheet.create({
   },
   container: {
     width: "80%",
-    backgroundColor: "white",
     borderRadius: 20,
     padding: 20,
     alignItems: "center",
@@ -130,17 +134,16 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#34434d",
     marginBottom: 20,
     textAlign: "center",
   },
   input: {
     width: "100%",
     height: 50,
-    borderRadius: 10,
+    borderRadius: 12,
     paddingHorizontal: 15,
-    backgroundColor: "#f9f9f9",
     fontSize: 16,
+    borderWidth: 1,
   },
   buttonContainer: {
     marginTop: 15,
@@ -161,7 +164,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   cancelButton: {
-    backgroundColor: "#5792EE",
     borderRadius: 10,
     padding: 10,
     alignItems: "center",

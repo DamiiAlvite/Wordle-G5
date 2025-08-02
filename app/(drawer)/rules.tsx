@@ -4,6 +4,7 @@ import TopBar from "@/components/topBar";
 import WavesBackground from "@/assets/svg/wavesBackground2";
 import AnimatedCell from "@/components/animatedCell";
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { useTheme } from "@/context/themeContext";
 
 type ColorRule = {
   color: "correct" | "present" | "absent";
@@ -55,20 +56,25 @@ const RuleSection = ({
   rules: string[];
   footer: string;
   children?: React.ReactNode;
-}) => (
-  <View style={styles.subcontainer}>
-    <Text style={styles.title}>{title}</Text>
-    <View style={styles.rulesList}>
-      {rules.map((rule, idx) => (
-        <Text key={idx} style={styles.rule}>{rule}</Text>
-      ))}
-      {children}
+}) => {
+  const { theme } = useTheme();
+  
+  return (
+    <View style={[styles.subcontainer, { backgroundColor: theme.colors.card }]}>
+      <Text style={[styles.title, { color: theme.colors.text }]}>{title}</Text>
+      <View style={styles.rulesList}>
+        {rules.map((rule, idx) => (
+          <Text key={idx} style={[styles.rule, { color: theme.colors.text }]}>{rule}</Text>
+        ))}
+        {children}
+      </View>
+      <Text style={[styles.footer, { color: theme.colors.textSecondary }]}>{footer}</Text>
     </View>
-    <Text style={styles.footer}>{footer}</Text>
-  </View>
-);
+  );
+};
 
 export default function RulesPage() {
+  const { theme } = useTheme();
   const [flipTriggers, setFlipTriggers] = useState([false, false, false]);
   const [errorTriggers, setErrorTriggers] = useState([false, false, false, false, false]);
 
@@ -108,10 +114,10 @@ export default function RulesPage() {
   }, []);
 
   return (
-    <View style={styles.background}>
+    <View style={[styles.background, { backgroundColor: theme.colors.background2 }]}>
       <TopBar />
-      <ScrollView contentContainerStyle={styles.container}>
-        <WavesBackground style={styles.wavesBackground} pointerEvents="none" />
+      <ScrollView contentContainerStyle={[styles.container, { backgroundColor: theme.colors.background }]}>
+        <WavesBackground style={styles.wavesBackground} waveColor={theme.colors.waves} pointerEvents="none" />
 
         <RuleSection
           title="Reglas de Wordle"
@@ -127,7 +133,7 @@ export default function RulesPage() {
                 shakeTrigger={false}
                 persistColor={false}
               />
-              <Text style={styles.colorRuleText}>{rule.text}</Text>
+              <Text style={[styles.colorRuleText, { color: theme.colors.text }]}>{rule.text}</Text>
             </View>
           ))}
 
@@ -174,17 +180,13 @@ export default function RulesPage() {
   );
 }
 
-
-
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: "#d5e6ff",
     position: "relative",
   },
   container: {
     flexGrow: 1,
-    backgroundColor: "#d5e6ff",
     alignItems: "center",
     zIndex: -1000,
   },
@@ -197,7 +199,6 @@ const styles = StyleSheet.create({
   subcontainer: {
     width: "90%",
     marginTop: 30,
-    backgroundColor: "rgba(255,255,255,0.85)",
     borderRadius: 16,
     padding: 24,
     alignItems: "center",
@@ -211,7 +212,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 24,
     textAlign: "center",
-    color: "#34434d",
   },
   rulesList: {
     marginBottom: 24,
@@ -220,7 +220,6 @@ const styles = StyleSheet.create({
   rule: {
     marginBottom: 12,
     fontSize: 18,
-    color: "#222",
   },
   colorRuleContainer: {
     flexDirection: "row",
@@ -231,7 +230,6 @@ const styles = StyleSheet.create({
   colorRuleText: {
     marginLeft: 12,
     fontSize: 18,
-    color: "#222",
     flex: 1,
   },
   wordContainer: {
@@ -244,6 +242,5 @@ const styles = StyleSheet.create({
     fontStyle: "italic",
     fontSize: 16,
     textAlign: "center",
-    color: "#444",
   },
 });
