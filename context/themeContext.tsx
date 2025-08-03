@@ -84,7 +84,11 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   const theme = isDark ? darkTheme : lightTheme;
 
   const loadTheme = async () => {
-    if (!userId) return;
+    if (!userId) {
+      // Si no hay usuario, resetear al tema del sistema
+      setThemeModeState('system');
+      return;
+    }
     
     const { data, error } = await supabase
       .from('user')
