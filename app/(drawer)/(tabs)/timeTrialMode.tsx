@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { View, Text, Animated } from "react-native";
 import { StyleSheet } from "react-native";
-import { supabase } from "@/lib/supabase";
+import { db } from "@/lib/db";
 import { useAuth } from "@/providers/authProvider";
 import WavesBackground from "@/assets/svg/wavesBackground";
 import Game from "@/components/game";
@@ -70,7 +70,7 @@ export default function timeTrialMode() {
       return;
     }
     const today = new Date().toISOString().split("T")[0];
-    const { data, error } = await supabase
+    const { data, error } = await db
       .from("game")
       .select("*")
       .eq("user_id", userId)
@@ -112,7 +112,7 @@ export default function timeTrialMode() {
   ) => {
     const today = new Date().toISOString().split("T")[0];
 
-    const { error } = await supabase
+    const { error } = await db
       .from("game")
       .insert({
         date: today,

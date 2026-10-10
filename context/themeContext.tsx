@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { useColorScheme } from 'react-native';
-import { supabase } from '@/lib/supabase';
+import { db } from "@/lib/db";
 import { useAuth } from '@/providers/authProvider';
 
 export type ThemeMode = 'light' | 'dark' | 'system';
@@ -90,7 +90,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       return;
     }
     
-    const { data, error } = await supabase
+    const { data, error } = await db
       .from('user')
       .select('theme')
       .eq('user_id', userId)
@@ -105,7 +105,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     setThemeModeState(mode);
     
     if (userId) {
-      await supabase
+      await db
         .from('user')
         .update({ theme: mode })
         .eq('user_id', userId);

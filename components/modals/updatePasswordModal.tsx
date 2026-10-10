@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, View, Text, TextInput, TouchableOpacity, Modal, Alert } from "react-native";
 import { Controller, useForm } from "react-hook-form";
 import { useAuth } from "@/providers/authProvider";
-import { supabase } from "@/lib/supabase";
+import { db } from "@/lib/db";
 import { useTheme } from "@/context/themeContext";
 
 interface UpdatePasswordModalProps {
@@ -42,12 +42,12 @@ export default function UpdatePasswordModal({ visible, onClose }: UpdatePassword
         });
         return;
       }
-      const { data: userData, error: authError } = await supabase.auth.getUser();
+      const { data: userData, error: authError } = await db.auth.getUser();
       if (authError || !userData?.user?.email) {
         throw new Error("No se pudo obtener el email del usuario.");
       }
       const email = userData.user.email;
-      const { error: loginError } = await supabase.auth.signInWithPassword({
+      const { error: loginError } = await db.auth.signInWithPassword({
         email,
         password,
       });
@@ -58,7 +58,7 @@ export default function UpdatePasswordModal({ visible, onClose }: UpdatePassword
         });
         return;
       }
-      const { error: updateError } = await supabase.auth.updateUser({
+      const { error: updateError } = await db.auth.updateUser({
         password: newPassword,
       });
       if (updateError) {

@@ -1,8 +1,8 @@
 import React from "react";
 import { View, TouchableOpacity, StyleSheet } from "react-native";
-import { router, usePathname, useLocalSearchParams } from "expo-router";
+import { router, usePathname, useLocalSearchParams, useNavigation } from "expo-router";
 import { MaterialCommunityIcons, AntDesign, SimpleLineIcons } from "@expo/vector-icons";
-import { useNavigation, DrawerActions } from '@react-navigation/native';
+import { DrawerActions } from 'expo-router/react-navigation';
 import { useTheme } from "@/context/themeContext";
 
 

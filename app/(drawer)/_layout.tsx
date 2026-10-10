@@ -1,8 +1,7 @@
-import { Drawer } from 'expo-router/drawer';
-import { DrawerContentScrollView, DrawerItemList, DrawerContentComponentProps, } from '@react-navigation/drawer';
+import { Drawer, DrawerContentScrollView, DrawerItemList, DrawerContentComponentProps } from 'expo-router/drawer';
 import { View, Text, TouchableOpacity, StyleSheet, } from 'react-native';
 import { useAuth } from '@/providers/authProvider';
-import { supabase } from '@/lib/supabase';
+import { db } from "@/lib/db";
 import Feather from '@expo/vector-icons/Feather';
 import { useTheme, ThemeMode } from '@/context/themeContext';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -14,7 +13,7 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
   const [themeModalVisible, setThemeModalVisible] = useState(false);
 
   const logOut = () => {
-    supabase.auth.signOut();
+    db.auth.signOut();
   };
 
   const getThemeIcon = (mode: ThemeMode) => {

@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect, useContext, useRef } from "react";
-import { supabase } from "@/lib/supabase";
+import { db } from "@/lib/db";
 import wordsData from "@/utils/5letters.json";
 import slangData from "@/utils/slang.json";
 
@@ -90,7 +90,7 @@ export const WordOfDayProvider = ({ children }: { children: React.ReactNode }) =
 
       try {
         // Verificar si ya existen todas las palabras del día
-        const { data: existingWords, error: fetchError } = await supabase
+        const { data: existingWords, error: fetchError } = await db
           .from("word")
           .select("id, description, mode")
           .eq("date", today)
@@ -121,7 +121,7 @@ export const WordOfDayProvider = ({ children }: { children: React.ReactNode }) =
         if (!classicWord) {
           const randomWordClassic = words[Math.floor(Math.random() * words.length)];
           try {
-            const { data: insertClassicData, error: insertClassicError } = await supabase
+            const { data: insertClassicData, error: insertClassicError } = await db
               .from("word")
               .insert([{ description: randomWordClassic, date: today, mode: "classic" }])
               .select("id")
@@ -134,7 +134,7 @@ export const WordOfDayProvider = ({ children }: { children: React.ReactNode }) =
             } else {
               // Si hay error de duplicado, obtener la palabra existente
               if (insertClassicError?.code === '23505') {
-                const { data: existingClassic } = await supabase
+                const { data: existingClassic } = await db
                   .from("word")
                   .select("id, description")
                   .eq("date", today)
@@ -158,7 +158,7 @@ export const WordOfDayProvider = ({ children }: { children: React.ReactNode }) =
         if (!timeTrialWord) {
           const randomWordTimeTrial = words[Math.floor(Math.random() * words.length)];
           try {
-            const { data: insertTimeTrialData, error: insertTimeTrialError } = await supabase
+            const { data: insertTimeTrialData, error: insertTimeTrialError } = await db
               .from("word")
               .insert([{ description: randomWordTimeTrial, date: today, mode: "timeTrial" }])
               .select("id")
@@ -171,7 +171,7 @@ export const WordOfDayProvider = ({ children }: { children: React.ReactNode }) =
             } else {
               // Si hay error de duplicado, obtener la palabra existente
               if (insertTimeTrialError?.code === '23505') {
-                const { data: existingTimeTrial } = await supabase
+                const { data: existingTimeTrial } = await db
                   .from("word")
                   .select("id, description")
                   .eq("date", today)
@@ -195,7 +195,7 @@ export const WordOfDayProvider = ({ children }: { children: React.ReactNode }) =
         if (!slangWord) {
           const randomWordSlang = slangWords[Math.floor(Math.random() * slangWords.length)].word;
           try {
-            const { data: insertSlangData, error: insertSlangError } = await supabase
+            const { data: insertSlangData, error: insertSlangError } = await db
               .from("word")
               .insert([{ description: randomWordSlang, date: today, mode: "slang" }])
               .select("id")
@@ -208,7 +208,7 @@ export const WordOfDayProvider = ({ children }: { children: React.ReactNode }) =
             } else {
               // Si hay error de duplicado, obtener la palabra existente
               if (insertSlangError?.code === '23505') {
-                const { data: existingSlang } = await supabase
+                const { data: existingSlang } = await db
                   .from("word")
                   .select("id, description")
                   .eq("date", today)

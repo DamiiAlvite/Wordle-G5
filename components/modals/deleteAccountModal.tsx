@@ -2,8 +2,7 @@ import React from "react";
 import { StyleSheet, View, Text, TextInput, TouchableOpacity, Modal, Alert } from "react-native";
 import { Controller, useForm } from "react-hook-form";
 import { useAuth } from "@/providers/authProvider";
-import { supabase } from "@/lib/supabase";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { db } from "@/lib/db";
 import { useTheme } from "@/context/themeContext";
 
 interface deleteAccountModalProps {
@@ -25,12 +24,12 @@ export default function deleteAccounteModal({ visible, onClose }: deleteAccountM
   });
   const onSubmit = async ({ password }: FormData) => {
     try {
-      const { data: userData, error: authError } = await supabase.auth.getUser();
+      const { data: userData, error: authError } = await db.auth.getUser();
       if (authError || !userData?.user?.email) {
         throw new Error("No se pudo obtener el email del usuario.");
       }
       const email = userData.user.email;
-      const { error: loginError } = await supabase.auth.signInWithPassword({
+      const { error: loginError } = await db.auth.signInWithPassword({
         email,
         password,
       });
@@ -41,7 +40,7 @@ export default function deleteAccounteModal({ visible, onClose }: deleteAccountM
         });
         return;
       }
-      const { error: deleteError } = await supabase
+      const { error: deleteError } = await db
         .from('user')
         .delete()
         .eq('user_id', userData.user.id);
@@ -50,12 +49,11 @@ export default function deleteAccounteModal({ visible, onClose }: deleteAccountM
         Alert.alert("Error", "No se pudo eliminar la cuenta.");
         return;
       }
-      const { error: signOutError } = await supabase.auth.signOut();
+      const { error: signOutError } = await db.auth.signOut();
       if (signOutError) {
         console.error('Error al cerrar sesión:', signOutError);
       }
-      await supabase.auth.signOut();
-      await AsyncStorage.removeItem("@supabase.auth.token");
+      await db.auth.signOut();
       reset();
       onClose();
       Alert.alert("Éxito", "Cuenta eliminada exitosamente.");

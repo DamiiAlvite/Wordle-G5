@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect, useContext } from "react";
-import { Session } from "@supabase/supabase-js";
+import { Session } from "../lib/db";
 import { router } from "expo-router";
-import { supabase } from "../lib/supabase";
+import { db } from "../lib/db";
 
 type AuthData = {
     loading: boolean;
@@ -34,7 +34,7 @@ export default function AuthProvider(props: Props) {
         // Retry logic para manejar casos donde el usuario aún no está en la BD
         let retries = 3;
         while (retries > 0) {
-            const { data, error } = await supabase
+            const { data, error } = await db
                 .from("user")
                 .select("name")
                 .eq("user_id", id)
@@ -58,7 +58,7 @@ export default function AuthProvider(props: Props) {
 
     useEffect(() => {
         async function fetchSession() {
-            const { error, data } = await supabase.auth.getSession();
+            const { error, data } = await db.auth.getSession();
             if (error) {
                 console.error("Error fetching session:", error);
             }
@@ -72,7 +72,7 @@ export default function AuthProvider(props: Props) {
 
         fetchSession();
 
-        const { data: authListener } = supabase.auth.onAuthStateChange(async (_, session) => {
+        const { data: authListener } = db.auth.onAuthStateChange(async (_, session) => {
             setSession(session);
             setLoading(false);
             if (session) {

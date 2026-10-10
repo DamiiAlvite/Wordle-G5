@@ -3,7 +3,7 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View, useColorScheme, To
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useForm, Controller } from "react-hook-form";
-import { supabase } from "@/lib/supabase";
+import { db } from "@/lib/db";
 import WavesBackground from "@/assets/svg/wavesBackground";
 import { useTheme } from "@/context/themeContext";
 
@@ -32,7 +32,7 @@ export default function Register() {
   const onSubmit = async (data: FormData) => {
     setError(null);
     try {
-      const { data: authData, error } = await supabase.auth.signUp({
+      const { data: authData, error } = await db.auth.signUp({
         email: data.email,
         password: data.password,
       });
@@ -42,7 +42,7 @@ export default function Register() {
       }
       
       if (authData.user) {
-        const { error: userInsertError } = await supabase
+        const { error: userInsertError } = await db
           .from("user")
           .insert([{ user_id: authData.user.id, name: data.username }]);
         
@@ -52,7 +52,7 @@ export default function Register() {
         }
         await new Promise(resolve => setTimeout(resolve, 500));
         
-        const { error: loginError } = await supabase.auth.signInWithPassword({
+        const { error: loginError } = await db.auth.signInWithPassword({
           email: data.email,
           password: data.password,
         });

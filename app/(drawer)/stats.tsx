@@ -3,10 +3,10 @@ import { useEffect, useState, useCallback } from 'react';
 import { StyleSheet } from 'react-native';
 import { useAuth } from '@/providers/authProvider';
 import TopBar from "@/components/topBar";
-import { supabase } from "@/lib/supabase";
+import { db } from "@/lib/db";
 import WavesBackground from "@/assets/svg/wavesBackground2";
 import { Shadow } from 'react-native-shadow-2';
-import { useFocusEffect } from '@react-navigation/native';
+import { useFocusEffect } from 'expo-router';
 import { useTheme } from '@/context/themeContext';
 
 type Game = {
@@ -74,7 +74,7 @@ export default function StatsScreen() {
 
   async function getGamesByMode(mode: string): Promise<Stats | null> {
     if (!userId) return null;
-    const { data: games, error } = await supabase
+    const { data: games, error } = await db
       .from('game')
       .select('*')
       .eq('user_id', userId)

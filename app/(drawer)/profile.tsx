@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, Alert, } from "react-native";
 import { useAuth } from "@/providers/authProvider";
-import { supabase } from "@/lib/supabase";
+import { db } from "@/lib/db";
 import WavesBackground from "@/assets/svg/wavesBackground";
 import TopBar from "@/components/topBar";
 import UpdateUsernameModal from "@/components/modals/updateUsernameModal";
@@ -28,7 +28,7 @@ export default function MiPerfil() {
       return;
     }
     try {
-      const { data, error: userError } = await supabase.auth.getUser();
+      const { data, error: userError } = await db.auth.getUser();
       if (userError || !data.user) {
         throw new Error("No se pudo obtener el usuario autenticado.");
       }

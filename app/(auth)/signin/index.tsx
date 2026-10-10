@@ -6,7 +6,7 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, useColorScheme, TouchableWithoutFeedback, Keyboard } from "react-native";
 import { useForm, Controller } from "react-hook-form";
-import { supabase } from "@/lib/supabase";
+import { db } from "@/lib/db";
 import { useTheme } from "@/context/themeContext";
 
 type FormData = {
@@ -31,7 +31,7 @@ export default function Login() {
   const onSubmit = async (data: FormData) => {
     setError(null);
     try {
-      const { error } = await supabase.auth.signInWithPassword({
+      const { error } = await db.auth.signInWithPassword({
         email: data.email,
         password: data.password,
       });
